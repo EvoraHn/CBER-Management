@@ -84,6 +84,42 @@ namespace Punto_de_venta.Inicio
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "" || txtContraseña.Text == "")
+            {
+                btnEntrar.Enabled = false;
+            }
+            else
+            {
+                btnEntrar.Enabled = true;
+            }
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if(txtUsuario.Text == "" || txtContraseña.Text == "")
+            {
+                btnEntrar.Enabled = false;
+            }
+            else
+            {
+                btnEntrar.Enabled = true;
+            }
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "" || txtContraseña.Text == "")
+            {
+                btnEntrar.Enabled = false;
+            }
+            else
+            {
+                btnEntrar.Enabled = true;
+            }
+        }
     }
     public class Hash
     {

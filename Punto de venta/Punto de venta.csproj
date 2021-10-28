@@ -405,6 +405,8 @@
     </Content>
     <Content Include="Imagenes\casa %281%29.png" />
     <Content Include="Imagenes\casa.png" />
+    <None Include="Resources\Ciber El Inge.png" />
+    <None Include="Resources\Ciber El Inge.gif" />
     <None Include="Resources\escritura.png" />
     <None Include="Resources\disco-flexible 1.png" />
     <None Include="Resources\nuevo.png" />

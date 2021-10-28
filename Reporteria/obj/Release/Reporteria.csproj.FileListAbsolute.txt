@@ -28,3 +28,33 @@ G:\Punto de Venta\Reporteria\obj\Release\Reporteria.csproj.CopyComplete
 G:\Punto de Venta\Reporteria\obj\Release\Reporteria.exe
 G:\Punto de Venta\Reporteria\obj\Release\Reporteria.pdb
 G:\Punto de Venta\Reporteria\obj\Release\Reporteria.csproj.AssemblyReference.cache
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\Reporteria.exe
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\Reporteria.pdb
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\AxShockwaveFlashObjects.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\ShockwaveFlashObjects.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\bin\Release\stdole.dll
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.AssemblyReference.cache
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.Form1.resources
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.PresentadordeReportes.resources
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.Properties.Resources.resources
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.GenerateResource.cache
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.CoreCompileInputs.cache
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.CopyComplete
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.exe
+C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.pdb
