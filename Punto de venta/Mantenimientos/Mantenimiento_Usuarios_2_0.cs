@@ -80,14 +80,14 @@ namespace Punto_de_venta.Mantenimientos
                 {
                     id = Convert.ToInt32(dgProductos.SelectedCells[0].Value);
                     var tabla = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
-                    txtUsr.Text = tabla.Usr;
+                    txtUsr.Text = tabla.Usr;/*
                     txtCelular.Text = tabla.Contacto;
                     TxtFamiliar.Text = tabla.ContactoFamiliar;
                     txtIdentidad.Text = tabla.Identidad;
                     txtPNombre.Text = tabla.PrimerNombre;
                     txtSNombre.Text = tabla.SegundoNombre;
                     txtSApellido.Text = tabla.SegundoApellido;
-                    txtPApellido.Text = tabla.PrimerApellido;
+                    txtPApellido.Text = tabla.PrimerApellido;*/
                     //modulo de Acceso
                     if (tabla.FKPerfil == 1)
                     {
@@ -160,9 +160,9 @@ namespace Punto_de_venta.Mantenimientos
                     else if (cmbAcceso.Text == "Auditoría")
                     {
                         tUsuarios.FKPerfil = 3;
-                    }
+                    }/*
                     tUsuarios.Contacto = txtCelular.Text;
-                    tUsuarios.ContactoFamiliar = TxtFamiliar.Text;
+                    tUsuarios.ContactoFamiliar = TxtFamiliar.Text;*/
 
                     if (txtPwd.Text == txtConfirmacionPwd.Text)
                     {
@@ -273,6 +273,12 @@ namespace Punto_de_venta.Mantenimientos
                     MessageBox.Show("¡Error al Eliminar Usuario!"); return;
                 }
             }
+        }
+
+        private void btneditarDetalles_Click(object sender, EventArgs e)
+        {
+            Mantenimiento_Usuarios_Detalles form = new Mantenimiento_Usuarios_Detalles();
+            form.ShowDialog();
         }
     }
 }
