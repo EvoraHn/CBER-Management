@@ -18,6 +18,7 @@ namespace Punto_de_venta.Mantenimientos
         DataView mifiltro;
         //inicializar las variables
         int id = 0;
+        int idDetalle = 0;
         bool editar = false;
         public Mantenimiento_Usuarios_2_0()
         {
@@ -63,11 +64,11 @@ namespace Punto_de_venta.Mantenimientos
         private void Mostrar_datos()
         {
             var tUsuarios = from p in entity.Usuario
-                             select new
-                             {
-                                 p.IdUsuario,
-                                 p.Usr,
-                             };
+                            select new
+                            {
+                                p.IdUsuario,
+                                p.Usr,
+                            };
             this.mifiltro = (tUsuarios.CopyAnonymusToDataTable()).DefaultView;
             this.dgProductos.DataSource = mifiltro;
 
@@ -113,7 +114,7 @@ namespace Punto_de_venta.Mantenimientos
                     editar = true;
                 }
                 catch (Exception)
-                {}
+                { }
             }
         }
 
@@ -122,9 +123,7 @@ namespace Punto_de_venta.Mantenimientos
         {
             if (editar)
             {
-                if (txtIdentidad.Text.Equals("") | txtPApellido.Text.Equals("") | txtPNombre.Text.Equals("") | txtPwd.Text.Equals("")
-                        | txtConfirmacionPwd.Text.Equals("") | txtSApellido.Text.Equals("") | txtSNombre.Text.Equals("") | txtUsr.Text.Equals("")
-                        | txtCelular.Text.Equals("") | TxtFamiliar.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
+                if (txtPwd.Text.Equals("") | txtConfirmacionPwd.Text.Equals("") | txtUsr.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
                 {
                     MessageBox.Show("Por favor ingresar todos los datos en el formulario");
                     return;
@@ -133,11 +132,7 @@ namespace Punto_de_venta.Mantenimientos
                 {
                     var tUsuarios = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
                     tUsuarios.Usr = txtUsr.Text;
-                    tUsuarios.Identidad = txtIdentidad.Text;
-                    tUsuarios.PrimerNombre = txtPNombre.Text;
-                    tUsuarios.SegundoNombre = txtSNombre.Text;
-                    tUsuarios.PrimerApellido = txtPApellido.Text;
-                    tUsuarios.SegundoApellido = txtSApellido.Text;
+
                     //modulo estado
                     if (cmbEstado.Text == "Activo")
                     {
@@ -180,9 +175,7 @@ namespace Punto_de_venta.Mantenimientos
             }
             else
             {
-                if (txtIdentidad.Text.Equals("") | txtPApellido.Text.Equals("") | txtPNombre.Text.Equals("") | txtPwd.Text.Equals("")
-                        | txtConfirmacionPwd.Text.Equals("") | txtSApellido.Text.Equals("") | txtSNombre.Text.Equals("") | txtUsr.Text.Equals("")
-                        | txtCelular.Text.Equals("") | TxtFamiliar.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
+                if (txtPwd.Text.Equals("") | txtConfirmacionPwd.Text.Equals("") | txtUsr.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
                 {
                     MessageBox.Show("Por favor ingresar todos los datos en el formulario");
                     return;
@@ -191,11 +184,7 @@ namespace Punto_de_venta.Mantenimientos
                 {
                     Punto_de_venta.Bases_de_datos.Usuario tUsuarios = new Punto_de_venta.Bases_de_datos.Usuario();
                     tUsuarios.Usr = txtUsr.Text;
-                    tUsuarios.Identidad = txtIdentidad.Text;
-                    tUsuarios.PrimerNombre = txtPNombre.Text;
-                    tUsuarios.SegundoNombre = txtSNombre.Text;
-                    tUsuarios.PrimerApellido = txtPApellido.Text;
-                    tUsuarios.SegundoApellido = txtSApellido.Text;
+
                     //modulo estado
                     if (cmbEstado.Text == "Activo")
                     {
@@ -219,8 +208,6 @@ namespace Punto_de_venta.Mantenimientos
                     {
                         tUsuarios.FKPerfil = 3;
                     }
-                    tUsuarios.Contacto = txtCelular.Text;
-                    tUsuarios.ContactoFamiliar = TxtFamiliar.Text;
                     if (txtPwd.Text == txtConfirmacionPwd.Text)
                     {
                         tUsuarios.Pwd = Hash.obtenerHash256(txtPwd.Text);
@@ -248,14 +235,13 @@ namespace Punto_de_venta.Mantenimientos
 
         private void Limpiar()
         {
-            txtCelular.Text = txtConfirmacionPwd.Text = txtIdentidad.Text = txtPApellido.Text = txtPNombre.Text =
-            txtPwd.Text = txtSApellido.Text = txtSNombre.Text = txtUsr.Text = TxtFamiliar.Text = string.Empty;
+            txtConfirmacionPwd.Text = txtPwd.Text = txtUsr.Text = string.Empty;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             id = Convert.ToInt32(dgProductos.SelectedCells[0].Value);
-            
+
             if (editar || id != 0)
             {
                 try
@@ -277,7 +263,7 @@ namespace Punto_de_venta.Mantenimientos
 
         private void btneditarDetalles_Click(object sender, EventArgs e)
         {
-            Mantenimiento_Usuarios_Detalles form = new Mantenimiento_Usuarios_Detalles();
+            Mantenimiento_Usuarios_Detalles form = new Mantenimiento_Usuarios_Detalles(idDetalle);
             form.ShowDialog();
         }
     }
