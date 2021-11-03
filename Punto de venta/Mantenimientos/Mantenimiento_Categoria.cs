@@ -13,7 +13,7 @@ namespace Punto_de_venta.Mantenimientos
     public partial class Mantenimiento_Categoria : Form
     {
         //conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
@@ -29,7 +29,7 @@ namespace Punto_de_venta.Mantenimientos
         }
         private void Mostrar_datos()
         {
-            var tProductos = from p in entity.Categoria
+            var tProductos = from p in entity.Categorias
                              select new
                              {
                                  p.IdCategoria,
@@ -68,7 +68,7 @@ namespace Punto_de_venta.Mantenimientos
                 try
                 {
                     id = Convert.ToInt32(dgDatos.SelectedCells[0].Value);
-                    var tabla = entity.Categoria.FirstOrDefault(x => x.IdCategoria == id);
+                    var tabla = entity.Categorias.FirstOrDefault(x => x.IdCategoria == id);
                     txtId.Text = tabla.IdCategoria.ToString();
                     txtNombre.Text = tabla.Nombre;
                     txtDescripcion.Text = tabla.Descripcion;
@@ -120,7 +120,7 @@ namespace Punto_de_venta.Mantenimientos
                     }
                     else
                     {
-                        var tablaP = entity.Categoria.FirstOrDefault(x => x.IdCategoria == id);
+                        var tablaP = entity.Categorias.FirstOrDefault(x => x.IdCategoria == id);
                         //tablaP.IdCategoria = Convert.ToInt32(txtId.Text);
                         tablaP.Nombre = txtNombre.Text;
                         tablaP.Descripcion = txtDescripcion.Text;
@@ -144,11 +144,11 @@ namespace Punto_de_venta.Mantenimientos
                     }
                     else
                     {
-                        Punto_de_venta.Bases_de_datos.Categoria tabla = new Punto_de_venta.Bases_de_datos.Categoria();
+                        Punto_de_venta.Categoria tabla = new Punto_de_venta.Categoria();
                         tabla.Descripcion = txtDescripcion.Text;
                         tabla.Nombre = txtNombre.Text;
                         //tabla.IdCategoria = Convert.ToInt32(txtId.Text);
-                        entity.Categoria.Add(tabla);
+                        entity.Categorias.Add(tabla);
                         entity.SaveChanges();
                         MessageBox.Show("¡Registro guardado correctamente!");
                         Limpiar();
@@ -173,8 +173,8 @@ namespace Punto_de_venta.Mantenimientos
             {
                 try
                 {
-                    var tablaP = entity.Categoria.FirstOrDefault(x => x.IdCategoria == id);
-                    entity.Categoria.Remove(tablaP);
+                    var tablaP = entity.Categorias.FirstOrDefault(x => x.IdCategoria == id);
+                    entity.Categorias.Remove(tablaP);
                     entity.SaveChanges();
                     MessageBox.Show("¡Registro eliminado correctamente!");
                     Limpiar();

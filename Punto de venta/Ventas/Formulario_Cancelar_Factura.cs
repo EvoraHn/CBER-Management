@@ -14,12 +14,12 @@ namespace Punto_de_venta.Ventas
     public partial class Formulario_Cancelar_Factura : Form
     {
         //Conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         DataView mifiltro2;
         int id = 0;
-        string producto = "";
+        long producto = 0;
         
         public Formulario_Cancelar_Factura()
         {
@@ -37,7 +37,7 @@ namespace Punto_de_venta.Ventas
         }
         private void Mostrar_datos()
         {
-            var tFacturas = from p in entity.Venta
+            var tFacturas = from p in entity.Ventas
                              where p.Estado == 1
                              select new
                              {
@@ -94,7 +94,7 @@ namespace Punto_de_venta.Ventas
                 try
                 {
                     id = Convert.ToInt32(dgFactura.SelectedCells[0].Value);
-                    var tabla = entity.Venta.FirstOrDefault(x => x.IdVenta == id);
+                    var tabla = entity.Ventas.FirstOrDefault(x => x.IdVenta == id);
                     if (tabla.Estado == 1)
                     {
                         txtEstado.Text = "Activo";
@@ -127,7 +127,7 @@ namespace Punto_de_venta.Ventas
                 }
                 else
                 {
-                    var tablaP = entity.Venta.FirstOrDefault(x => x.IdVenta == id);
+                    var tablaP = entity.Ventas.FirstOrDefault(x => x.IdVenta == id);
                     if (txtEstado.Text == "Activo")
                     {
                         tablaP.Estado = 1;
@@ -159,9 +159,9 @@ namespace Punto_de_venta.Ventas
         {
             foreach (DataGridViewRow dr in dgDetalles.Rows)
             {
-                Punto_de_venta.Bases_de_datos.Producto tabla = new Punto_de_venta.Bases_de_datos.Producto();
-                producto = (dr.Cells[0].Value).ToString();
-                var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == producto);
+                Punto_de_venta.Producto tabla = new Punto_de_venta.Producto();
+                producto = Convert.ToInt64(dr.Cells[0].Value);
+                var tablaP = entity.Productoes.FirstOrDefault(x => x.IdProducto == producto);
                 double n = Convert.ToDouble(dr.Cells[2].Value);
                 int numeroEntero = Convert.ToInt32(Math.Truncate(n));
                 tablaP.Cantidad += numeroEntero ;

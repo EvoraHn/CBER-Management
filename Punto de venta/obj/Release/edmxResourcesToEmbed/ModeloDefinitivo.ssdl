@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CyberElIngeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="smallint" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompraDetalle">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="int" Nullable="false" />
+    <Property Name="IdProducto" Type="bigint" Nullable="false" />
+    <Property Name="PrecioUnidad" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cantidad" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Total" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalle_Venta_Tiempo">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="bigint" Nullable="false" />
+    <Property Name="Fk_Pc" Type="bigint" Nullable="false" />
+    <Property Name="Fk_Usuario" Type="smallint" Nullable="false" />
+    <Property Name="Hora_Inicio" Type="time" Precision="7" />
+    <Property Name="Hora_fin" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="PC">
+    <Key>
+      <PropertyRef Name="IdPC" />
+    </Key>
+    <Property Name="IdPC" Type="bigint" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fila" Type="nvarchar" MaxLength="5" />
+    <Property Name="Columna" Type="nvarchar" MaxLength="5" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estante">
+    <Key>
+      <PropertyRef Name="IdEstante" />
+    </Key>
+    <Property Name="IdEstante" Type="int" Nullable="false" />
+    <Property Name="NombreEstante" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DescripciónEstante" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="PrecioVenta" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PrecioCosto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Categoria" Type="int" Nullable="false" />
+    <Property Name="Proveedor" Type="int" Nullable="false" />
+    <Property Name="Estante" Type="int" />
+    <Property Name="Tipo_Impuesto" Type="char" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empresa" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Vendedor" Type="varchar" MaxLength="100" />
+    <Property Name="Contacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contacto1" Type="varchar" MaxLength="100" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ModuloPrincipal">
+    <Key>
+      <PropertyRef Name="IdModuloPrincipal" />
+    </Key>
+    <Property Name="IdModuloPrincipal" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionModuloPrin" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstadoModuloPrin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulos" />
+    </Key>
+    <Property Name="IdModulos" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionModulo" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="EstadoModulo" Type="bit" Nullable="false" />
+    <Property Name="FKModuloPrincipal" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionPerfil" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="EstadoPerfil" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PerfilesModulos">
+    <Key>
+      <PropertyRef Name="FKPerfilId" />
+      <PropertyRef Name="FKModuloId" />
+    </Key>
+    <Property Name="FKPerfilId" Type="smallint" Nullable="false" />
+    <Property Name="FKModuloId" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PerfilModulo">
+    <Key>
+      <PropertyRef Name="IdPerfilModulo" />
+    </Key>
+    <Property Name="FKPerfilId" Type="smallint" Nullable="false" />
+    <Property Name="FKModuloId" Type="smallint" Nullable="false" />
+    <Property Name="IdPerfilModulo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usr" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="FKPerfil" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioDetalles">
+    <Key>
+      <PropertyRef Name="PKUsuario" />
+    </Key>
+    <Property Name="PKUsuario" Type="smallint" Nullable="false" />
+    <Property Name="userNombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userApellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userTelefono" Type="nvarchar" MaxLength="9" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleVentas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Producto" Type="bigint" Nullable="false" />
+    <Property Name="Venta" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripción estado" Type="nvarchar" MaxLength="10" />
+    <Property Name="FKUsuario" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha_Venta" Type="datetime" Nullable="false" />
+    <Property Name="Total_Venta" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="Impuesto_Gravado_15%" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Impuesto_Gravado_18%" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ISV15%" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ISV18%" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Importe_Exento" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Importe_Exonerado" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.Facturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="Factura" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Precio" />
+    </Key>
+    <Property Name="Factura" Type="int" Nullable="false" />
+    <Property Name="Producto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Precision="21" Scale="4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.Imprimir_Facturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Imprimir_Facturas">
+    <Key>
+      <PropertyRef Name="Factura" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Precio" />
+    </Key>
+    <Property Name="Factura" Type="int" Nullable="false" />
+    <Property Name="Producto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Monto" Type="decimal" Precision="21" Scale="4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.Vista1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Vista1">
+    <Key>
+      <PropertyRef Name="Codigo" />
+      <PropertyRef Name="Producto" />
+      <PropertyRef Name="Existencias" />
+      <PropertyRef Name="Precio" />
+      <PropertyRef Name="Costo" />
+      <PropertyRef Name="Categoria" />
+      <PropertyRef Name="Proveedor" />
+    </Key>
+    <Property Name="Codigo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Producto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Existencias" Type="int" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Costo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Categoria" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Proveedor" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.VistaProductoMasVendido' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaProductoMasVendido">
+    <Key>
+      <PropertyRef Name="Producto" />
+    </Key>
+    <Property Name="Producto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Vendidos" Type="decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.VistaVentasPorMes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VistaVentasPorMes">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Enero" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Febrero" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Marzo" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Abril" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Mayo" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Junio" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Julio" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Agosto" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Septiembre" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Octubre" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Noviembre" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="Diciembre" Type="decimal" Precision="38" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CyberElInge.dbo.VistaVentasPorMesSinOrdenar' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VistaVentasPorMesSinOrdenar">
+          <Property Name="Enero" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Febrero" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Marzo" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Abril" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Mayo" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Junio" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Julio" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Agosto" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Septiembre" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Octubre" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Noviembre" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Diciembre" Type="decimal" Precision="38" Scale="2" />
+        </EntityType>-->
+  <Association Name="FK_Compra_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompraDetalle_Compra">
+    <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+    <End Role="CompraDetalle" Type="Self.CompraDetalle" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Compra">
+        <PropertyRef Name="IdCompra" />
+      </Principal>
+      <Dependent Role="CompraDetalle">
+        <PropertyRef Name="IdCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompraDetalle_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="CompraDetalle" Type="Self.CompraDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="CompraDetalle">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Venta_Tiempo_PC">
+    <End Role="PC" Type="Self.PC" Multiplicity="1" />
+    <End Role="Detalle_Venta_Tiempo" Type="Self.Detalle_Venta_Tiempo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PC">
+        <PropertyRef Name="IdPC" />
+      </Principal>
+      <Dependent Role="Detalle_Venta_Tiempo">
+        <PropertyRef Name="Fk_Pc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Venta_Tiempo_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Detalle_Venta_Tiempo" Type="Self.Detalle_Venta_Tiempo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Detalle_Venta_Tiempo">
+        <PropertyRef Name="Fk_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="FKUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modulos_ModuloPrincipal">
+    <End Role="ModuloPrincipal" Type="Self.ModuloPrincipal" Multiplicity="1" />
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuloPrincipal">
+        <PropertyRef Name="IdModuloPrincipal" />
+      </Principal>
+      <Dependent Role="Modulos">
+        <PropertyRef Name="FKModuloPrincipal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilesModulos_Modulos">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1" />
+    <End Role="PerfilesModulos" Type="Self.PerfilesModulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="IdModulos" />
+      </Principal>
+      <Dependent Role="PerfilesModulos">
+        <PropertyRef Name="FKModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilesModulos_Perfiles">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
+    <End Role="PerfilesModulos" Type="Self.PerfilesModulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfiles">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="PerfilesModulos">
+        <PropertyRef Name="FKPerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilModulo_Modulos">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1" />
+    <End Role="PerfilModulo" Type="Self.PerfilModulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="IdModulos" />
+      </Principal>
+      <Dependent Role="PerfilModulo">
+        <PropertyRef Name="FKModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilModulo_Perfiles">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
+    <End Role="PerfilModulo" Type="Self.PerfilModulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfiles">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="PerfilModulo">
+        <PropertyRef Name="FKPerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Producto$Pertenece$Producto_Estante">
+    <End Role="Estante" Type="Self.Estante" Multiplicity="0..1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estante">
+        <PropertyRef Name="IdEstante" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Estante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Producto$Tiene_un$Productos_Proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="IdProveedor" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Producto$Tiene_una$Productos_Categoria">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Perfiles">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfiles">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="FKPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Usuario1" Type="Self.Usuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Usuario1">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioDetalles_UsuarioDetalles">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioDetalles" Type="Self.UsuarioDetalles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="UsuarioDetalles">
+        <PropertyRef Name="PKUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_DetalleVentas$Contiene$Productos_Producto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetalleVentas" Type="Self.DetalleVentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="DetalleVentas">
+        <PropertyRef Name="Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_DetalleVentas$Pertenece$Ventas_Ventas">
+    <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
+    <End Role="DetalleVentas" Type="Self.DetalleVentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta">
+        <PropertyRef Name="IdVenta" />
+      </Principal>
+      <Dependent Role="DetalleVentas">
+        <PropertyRef Name="Venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_Ventas$Pertenece$Ventas_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CyberElIngeModelStoreContainer">
+    <EntitySet Name="Compra" EntityType="Self.Compra" Schema="Compras" store:Type="Tables" />
+    <EntitySet Name="CompraDetalle" EntityType="Self.CompraDetalle" Schema="Compras" store:Type="Tables" />
+    <EntitySet Name="Detalle_Venta_Tiempo" EntityType="Self.Detalle_Venta_Tiempo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PC" EntityType="Self.PC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="Productos" store:Type="Tables" />
+    <EntitySet Name="Estante" EntityType="Self.Estante" Schema="Productos" store:Type="Tables" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="Productos" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="Productos" store:Type="Tables" />
+    <EntitySet Name="ModuloPrincipal" EntityType="Self.ModuloPrincipal" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="PerfilesModulos" EntityType="Self.PerfilesModulos" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="PerfilModulo" EntityType="Self.PerfilModulo" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="UsuarioDetalles" EntityType="Self.UsuarioDetalles" Schema="Usuarios" store:Type="Tables" />
+    <EntitySet Name="DetalleVentas" EntityType="Self.DetalleVentas" Schema="Ventas" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="Ventas" store:Type="Tables" />
+    <EntitySet Name="Venta" EntityType="Self.Venta" Schema="Ventas" store:Type="Tables" />
+    <EntitySet Name="Facturas" EntityType="Self.Facturas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Facturas].[Factura] AS [Factura], 
+[Facturas].[Producto] AS [Producto], 
+[Facturas].[Cantidad] AS [Cantidad], 
+[Facturas].[Precio] AS [Precio], 
+[Facturas].[Monto] AS [Monto]
+FROM [dbo].[Facturas] AS [Facturas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Imprimir_Facturas" EntityType="Self.Imprimir_Facturas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Imprimir_Facturas].[Factura] AS [Factura], 
+[Imprimir_Facturas].[Producto] AS [Producto], 
+[Imprimir_Facturas].[Cantidad] AS [Cantidad], 
+[Imprimir_Facturas].[Precio] AS [Precio], 
+[Imprimir_Facturas].[Monto] AS [Monto]
+FROM [dbo].[Imprimir_Facturas] AS [Imprimir_Facturas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vista1" EntityType="Self.Vista1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Vista1].[Codigo] AS [Codigo], 
+[Vista1].[Producto] AS [Producto], 
+[Vista1].[Existencias] AS [Existencias], 
+[Vista1].[Precio] AS [Precio], 
+[Vista1].[Costo] AS [Costo], 
+[Vista1].[Categoria] AS [Categoria], 
+[Vista1].[Proveedor] AS [Proveedor]
+FROM [dbo].[Vista1] AS [Vista1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaProductoMasVendido" EntityType="Self.VistaProductoMasVendido" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VistaProductoMasVendido].[Producto] AS [Producto], 
+[VistaProductoMasVendido].[Vendidos] AS [Vendidos]
+FROM [dbo].[VistaProductoMasVendido] AS [VistaProductoMasVendido]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VistaVentasPorMes" EntityType="Self.VistaVentasPorMes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VistaVentasPorMes].[IdVenta] AS [IdVenta], 
+[VistaVentasPorMes].[Enero] AS [Enero], 
+[VistaVentasPorMes].[Febrero] AS [Febrero], 
+[VistaVentasPorMes].[Marzo] AS [Marzo], 
+[VistaVentasPorMes].[Abril] AS [Abril], 
+[VistaVentasPorMes].[Mayo] AS [Mayo], 
+[VistaVentasPorMes].[Junio] AS [Junio], 
+[VistaVentasPorMes].[Julio] AS [Julio], 
+[VistaVentasPorMes].[Agosto] AS [Agosto], 
+[VistaVentasPorMes].[Septiembre] AS [Septiembre], 
+[VistaVentasPorMes].[Octubre] AS [Octubre], 
+[VistaVentasPorMes].[Noviembre] AS [Noviembre], 
+[VistaVentasPorMes].[Diciembre] AS [Diciembre]
+FROM [dbo].[VistaVentasPorMes] AS [VistaVentasPorMes]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Compra_Usuario" Association="Self.FK_Compra_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompraDetalle_Compra" Association="Self.FK_CompraDetalle_Compra">
+      <End Role="Compra" EntitySet="Compra" />
+      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompraDetalle_Producto" Association="Self.FK_CompraDetalle_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Venta_Tiempo_PC" Association="Self.FK_Detalle_Venta_Tiempo_PC">
+      <End Role="PC" EntitySet="PC" />
+      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Venta_Tiempo_Usuario" Association="Self.FK_Detalle_Venta_Tiempo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Usuario" Association="Self.FK_Estado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modulos_ModuloPrincipal" Association="Self.FK_Modulos_ModuloPrincipal">
+      <End Role="ModuloPrincipal" EntitySet="ModuloPrincipal" />
+      <End Role="Modulos" EntitySet="Modulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilesModulos_Modulos" Association="Self.FK_PerfilesModulos_Modulos">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="PerfilesModulos" EntitySet="PerfilesModulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilesModulos_Perfiles" Association="Self.FK_PerfilesModulos_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="PerfilesModulos" EntitySet="PerfilesModulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilModulo_Modulos" Association="Self.FK_PerfilModulo_Modulos">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilModulo_Perfiles" Association="Self.FK_PerfilModulo_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Producto$Pertenece$Producto_Estante" Association="Self.FK_Producto_Producto$Pertenece$Producto_Estante">
+      <End Role="Estante" EntitySet="Estante" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Producto$Tiene_un$Productos_Proveedor" Association="Self.FK_Productos_Producto$Tiene_un$Productos_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Producto$Tiene_una$Productos_Categoria" Association="Self.FK_Productos_Producto$Tiene_una$Productos_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Perfiles" Association="Self.FK_Usuario_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Usuario" Association="Self.FK_Usuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario1" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioDetalles_UsuarioDetalles" Association="Self.FK_UsuarioDetalles_UsuarioDetalles">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioDetalles" EntitySet="UsuarioDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_DetalleVentas$Contiene$Productos_Producto" Association="Self.FK_Ventas_DetalleVentas$Contiene$Productos_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_DetalleVentas$Pertenece$Ventas_Ventas" Association="Self.FK_Ventas_DetalleVentas$Pertenece$Ventas_Ventas">
+      <End Role="Venta" EntitySet="Venta" />
+      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_Ventas$Pertenece$Ventas_Estado" Association="Self.FK_Ventas_Ventas$Pertenece$Ventas_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

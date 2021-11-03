@@ -12,7 +12,7 @@ namespace Punto_de_venta.Mantenimientos
 {
     public partial class Mantenimiento_Perfiles : Form
     {
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Punto_de_venta.Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         public Mantenimiento_Perfiles()
         {
             InitializeComponent();
@@ -94,7 +94,7 @@ namespace Punto_de_venta.Mantenimientos
             }
             else
             {
-                Punto_de_venta.Bases_de_datos.PerfilModulo pm = new Punto_de_venta.Bases_de_datos.PerfilModulo();
+                Punto_de_venta.PerfilModulo pm = new Punto_de_venta.PerfilModulo();
                 pm.FKPerfilId = Convert.ToInt16(cmbPerfiles.SelectedValue);
                 pm.FKModuloId = Convert.ToInt16(cmbModulo.SelectedValue);
 

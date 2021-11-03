@@ -12,7 +12,7 @@ namespace Punto_de_venta.Mantenimientos
 {
     public partial class Mantenimiento_Proveedor : Form
     {//conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
@@ -28,7 +28,7 @@ namespace Punto_de_venta.Mantenimientos
         }
         private void Mostrar_datos()
         {
-            var tProductos = from p in entity.Proveedor
+            var tProductos = from p in entity.Proveedors
                              select new
                              {
                                  p.IdProveedor,
@@ -67,7 +67,7 @@ namespace Punto_de_venta.Mantenimientos
                 try
                 {
                     id = Convert.ToInt32(dgDatos.SelectedCells[0].Value);
-                    var tabla = entity.Proveedor.FirstOrDefault(x => x.IdProveedor == id);
+                    var tabla = entity.Proveedors.FirstOrDefault(x => x.IdProveedor == id);
                     txtId.Text = tabla.IdProveedor.ToString();
                     txtNombre.Text = tabla.Vendedor;
                     txtEmpresa.Text = tabla.Empresa;
@@ -120,7 +120,7 @@ namespace Punto_de_venta.Mantenimientos
                     }
                     else
                     {
-                        var tablaP = entity.Proveedor.FirstOrDefault(x => x.IdProveedor == id);
+                        var tablaP = entity.Proveedors.FirstOrDefault(x => x.IdProveedor == id);
                         tablaP.IdProveedor = tablaP.IdProveedor;
                         tablaP.Vendedor = txtNombre.Text;
                         tablaP.Empresa = txtEmpresa.Text;
@@ -147,14 +147,14 @@ namespace Punto_de_venta.Mantenimientos
                     }
                     else
                     {
-                        Punto_de_venta.Bases_de_datos.Proveedor tabla = new Punto_de_venta.Bases_de_datos.Proveedor();
+                        Punto_de_venta.Proveedor tabla = new Punto_de_venta.Proveedor();
                         tabla.IdProveedor = tabla.IdProveedor;
                         tabla.Vendedor = txtNombre.Text;
                         tabla.Empresa = txtEmpresa.Text;
                         tabla.Contacto = txtcelular.Text;
                         tabla.Contacto = txtTelefono.Text;
                         tabla.Descripcion = txtDescripcion.Text;
-                        entity.Proveedor.Add(tabla);
+                        entity.Proveedors.Add(tabla);
                         entity.SaveChanges();
                         MessageBox.Show("¡Registro guardado correctamente!");
                         Limpiar();
@@ -179,8 +179,8 @@ namespace Punto_de_venta.Mantenimientos
             {
                 try
                 {
-                    var tablaP = entity.Proveedor.FirstOrDefault(x => x.IdProveedor == id);
-                    entity.Proveedor.Remove(tablaP);
+                    var tablaP = entity.Proveedors.FirstOrDefault(x => x.IdProveedor == id);
+                    entity.Proveedors.Remove(tablaP);
                     entity.SaveChanges();
                     MessageBox.Show("¡Registro eliminado correctamente!");
                     Limpiar();

@@ -58,3 +58,15 @@ C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Releas
 C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.CopyComplete
 C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.exe
 C:\Users\Wilson Alejandro\Documents\GitHub\CBER-Management\Reporteria\obj\Release\Reporteria.pdb
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\bin\Release\Reporteria.exe.config
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\bin\Release\Reporteria.exe
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\bin\Release\Reporteria.pdb
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.AssemblyReference.cache
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.Form1.resources
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.PresentadordeReportes.resources
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.Properties.Resources.resources
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.GenerateResource.cache
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.CoreCompileInputs.cache
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.csproj.CopyComplete
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.exe
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\CBER-Management\Reporteria\obj\Release\Reporteria.pdb

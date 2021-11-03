@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7fb5d81d09e0417f947a3749488e74d2" Name="Diagram1">
+        <EntityTypeShape EntityType="CyberElIngeModel.Compra" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.CompraDetalle" Width="1.5" PointX="12" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" Width="1.5" PointX="12.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.PC" Width="1.5" PointX="10.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Categoria" Width="1.5" PointX="7.5" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Estante" Width="1.5" PointX="7.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Producto" Width="1.5" PointX="9.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Proveedor" Width="1.5" PointX="7.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.ModuloPrincipal" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Modulo" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Perfile" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.PerfilModulo" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Usuario" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.UsuarioDetalle" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.DetalleVenta" Width="1.5" PointX="14.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Estado" Width="1.5" PointX="9.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Venta" Width="1.5" PointX="12" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Factura" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Imprimir_Facturas" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Vista1" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.VistaProductoMasVendido" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CyberElIngeModel.VistaVentasPorMe" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Compra_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_CompraDetalle_Compra" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_CompraDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Modulos_ModuloPrincipal" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_PerfilModulo_Modulos" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_PerfilModulo_Perfiles" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Usuario_Perfiles" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Estado_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Usuario_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_Ventas_Pertenece_Ventas_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="CyberElIngeModel.PerfilesModulos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

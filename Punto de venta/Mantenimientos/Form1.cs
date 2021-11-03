@@ -16,5 +16,10 @@ namespace Punto_de_venta.Mantenimientos
         {
             InitializeComponent();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

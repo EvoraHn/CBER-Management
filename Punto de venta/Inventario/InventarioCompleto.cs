@@ -66,6 +66,11 @@ namespace Punto_de_venta.Inventario
             }
             this.mifiltro.RowFilter = salida_datos;
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

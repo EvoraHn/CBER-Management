@@ -12,7 +12,7 @@ namespace Punto_de_venta.Menú
 {
     public partial class Menu_estilo_2 : Form
     {
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Punto_de_venta.Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         long idUsuario = 0;
         string modulo = "Tienes Acceso";
         //string modulo =  "" ;
@@ -68,7 +68,7 @@ namespace Punto_de_venta.Menú
 
 
 
-            var tInfoUsuario = from u in entity.Usuario
+            var tInfoUsuario = from u in entity.Usuarios
                                join per in entity.Perfiles on u.FKPerfil equals per.IdPerfil
                                where u.IdUsuario == idUsuario
                                select new
@@ -82,7 +82,7 @@ namespace Punto_de_venta.Menú
             DataTable dtInfoUsuario = tInfoUsuario.CopyAnonymusToDataTable();
             short fkPerfil = Convert.ToInt16(dtInfoUsuario.Rows[0].ItemArray[1]);
 
-            var tPerfilMod = from mods in entity.PerfilModulo
+            var tPerfilMod = from mods in entity.PerfilModuloes
                              where mods.FKPerfilId == fkPerfil
                              select mods;
             //short[] arrMod = new short[] { };
@@ -99,7 +99,7 @@ namespace Punto_de_venta.Menú
 
 
             var tmodulos = from pm in entity.Modulos
-                           join md in entity.ModuloPrincipal on pm.FKModuloPrincipal equals md.IdModuloPrincipal
+                           join md in entity.ModuloPrincipals on pm.FKModuloPrincipal equals md.IdModuloPrincipal
                            where lMod.Contains(pm.IdModulos)
                            & md.EstadoModuloPrin == true
                            & pm.EstadoModulo == true

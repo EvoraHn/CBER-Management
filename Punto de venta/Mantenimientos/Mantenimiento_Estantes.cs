@@ -21,7 +21,7 @@ namespace Punto_de_venta.Mantenimientos
         //    _form = form;
         //}
         //Conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
@@ -38,7 +38,7 @@ namespace Punto_de_venta.Mantenimientos
         }
         private void Mostrar_datos()
         {
-            var tProductos = from p in entity.Estante
+            var tProductos = from p in entity.Estantes
                              select new
                              {
                                  p.IdEstante,
@@ -86,7 +86,7 @@ namespace Punto_de_venta.Mantenimientos
                 try
                 {
                     id = Convert.ToInt32(dgDatos.SelectedCells[0].Value);
-                    var tabla = entity.Estante.FirstOrDefault(x => x.IdEstante == id);
+                    var tabla = entity.Estantes.FirstOrDefault(x => x.IdEstante == id);
                     txtId.Text = tabla.IdEstante.ToString();
                     txtNombre.Text = tabla.NombreEstante;
                     txtDescripcion.Text =tabla.DescripciónEstante;
@@ -141,7 +141,7 @@ namespace Punto_de_venta.Mantenimientos
                     }
                     else
                     {
-                        var tablaP = entity.Estante.FirstOrDefault(x => x.IdEstante == id);
+                        var tablaP = entity.Estantes.FirstOrDefault(x => x.IdEstante == id);
                         tablaP.IdEstante = Convert.ToInt32(txtId.Text);
                         tablaP.NombreEstante = txtNombre.Text;
                         tablaP.DescripciónEstante = txtDescripcion.Text;
@@ -165,11 +165,11 @@ namespace Punto_de_venta.Mantenimientos
                     }
                     else
                     {
-                        Punto_de_venta.Bases_de_datos.Estante tabla = new Punto_de_venta.Bases_de_datos.Estante();
+                        Punto_de_venta.Estante tabla = new Punto_de_venta.Estante();
                         tabla.DescripciónEstante = txtDescripcion.Text;
                         tabla.NombreEstante = txtNombre.Text;
                         tabla.IdEstante = Convert.ToInt32(txtId.Text);
-                        entity.Estante.Add(tabla);
+                        entity.Estantes.Add(tabla);
                         entity.SaveChanges();
                         MessageBox.Show("¡Registro guardado correctamente!");
                         Limpiar();
@@ -195,8 +195,8 @@ namespace Punto_de_venta.Mantenimientos
             {
                 try
                 {
-                    var tablaP = entity.Estante.FirstOrDefault(x => x.IdEstante == id);
-                    entity.Estante.Remove(tablaP);
+                    var tablaP = entity.Estantes.FirstOrDefault(x => x.IdEstante == id);
+                    entity.Estantes.Remove(tablaP);
                     entity.SaveChanges();
                     MessageBox.Show("¡Registro eliminado correctamente!");
                     Limpiar();

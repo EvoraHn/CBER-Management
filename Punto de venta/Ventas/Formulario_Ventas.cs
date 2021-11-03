@@ -15,11 +15,11 @@ namespace Punto_de_venta.Ventas
     public partial class Formulario_Ventas : Form
     {
         //Conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
-        string id = "000000";
+        long id = 0;
         int idDetalle = 0;
         bool errorV = false;
         bool cotizacion = false;
@@ -36,9 +36,9 @@ namespace Punto_de_venta.Ventas
             {
                 try
                 {
-                    id = Convert.ToString(dgProductos.SelectedCells[0].Value);
-                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
-                    txtId.Text = tabla.IdProducto;
+                    id = Convert.ToInt64(dgProductos.SelectedCells[0].Value);
+                    var tabla = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
+                    //txtId.Text = tabla.IdProducto;
                     txtProducto.Text = tabla.Nombre;
                 }
                 catch (Exception)
@@ -241,8 +241,8 @@ namespace Punto_de_venta.Ventas
                 foreach (DataGridViewRow dr in dgFactura.Rows)
                 {
                     decimal cantidad = Convert.ToDecimal((dr.Cells[3].Value).ToString());
-                    string fkid = (dr.Cells[0].Value).ToString(); ;
-                    var pel = entity.Producto.FirstOrDefault(x => x.IdProducto == fkid);
+                    long fkid = Convert.ToInt64(dr.Cells[0].Value);
+                    var pel = entity.Productoes.FirstOrDefault(x => x.IdProducto == fkid);
                     subtot += pel.PrecioVenta * cantidad;
 
                      
@@ -342,7 +342,7 @@ namespace Punto_de_venta.Ventas
         }
         private void AgregarVenta()
         {
-            Punto_de_venta.Bases_de_datos.Venta tabla = new Punto_de_venta.Bases_de_datos.Venta();
+            Punto_de_venta.Venta tabla = new Venta();
             tabla.Importe_Exento = Convert.ToDecimal(txtImporteExento.Text);
             tabla.Importe_Exonerado = Convert.ToDecimal(txtImporteExonerado.Text);
             tabla.Impuesto_Gravado_15_ = Convert.ToDecimal(txtIG15.Text);
@@ -353,7 +353,7 @@ namespace Punto_de_venta.Ventas
             tabla.Total_Venta = Convert.ToDecimal(txtTotal.Text);
             tabla.Fecha_Venta = DateTime.Now;
             tabla.Estado = 1;
-            entity.Venta.Add(tabla);
+            entity.Ventas.Add(tabla);
             entity.SaveChanges();
             lblFactura.Text = tabla.IdVenta.ToString();
         }
@@ -361,10 +361,10 @@ namespace Punto_de_venta.Ventas
         {
             foreach (DataGridViewRow dr in dgFactura.Rows)
             {
-                Punto_de_venta.Bases_de_datos.DetalleVentas tabla = new Punto_de_venta.Bases_de_datos.DetalleVentas();
-                string fkid = (dr.Cells[0].Value).ToString(); ;
-                var Product = entity.Producto.FirstOrDefault(x => x.IdProducto == fkid);
-                tabla.Producto = (dr.Cells[0].Value).ToString(); 
+                Punto_de_venta.DetalleVenta tabla = new Punto_de_venta.DetalleVenta();
+                long fkid = Convert.ToInt64(dr.Cells[0].Value);
+                var Product = entity.Productoes.FirstOrDefault(x => x.IdProducto == fkid);
+                tabla.Producto = Convert.ToInt64(dr.Cells[0].Value); 
                 tabla.Cantidad = Convert.ToInt32(dr.Cells[3].Value);
                 tabla.Venta = Convert.ToInt32(lblFactura.Text);
                 entity.DetalleVentas.Add(tabla);
@@ -376,9 +376,9 @@ namespace Punto_de_venta.Ventas
         {
             foreach (DataGridViewRow dr in dgFactura.Rows)
             {
-                Punto_de_venta.Bases_de_datos.Producto tabla = new Punto_de_venta.Bases_de_datos.Producto();
-                id =(dr.Cells[0].Value).ToString();
-                var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
+                Punto_de_venta.Producto tabla = new Punto_de_venta.Producto();
+                id = Convert.ToInt64(dr.Cells[0].Value);
+                var tablaP = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
                 tablaP.Cantidad = tablaP.Cantidad - Convert.ToInt32(dr.Cells[3].Value);
                 entity.SaveChanges();
 

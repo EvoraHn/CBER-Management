@@ -254,7 +254,8 @@ namespace Punto_de_venta.Inicio
             // 
             // bPBEntities1BindingSource
             // 
-            this.bPBEntities1BindingSource.DataSource = typeof(Punto_de_venta.Bases_de_datos.BPBEntities1);
+           //this.bPBEntities1BindingSource.DataSource = typeof(Punto_de_venta.BBPBEntities1);
+
             // 
             // label6
             // 

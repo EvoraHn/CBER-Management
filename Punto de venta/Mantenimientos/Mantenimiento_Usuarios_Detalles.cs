@@ -12,7 +12,7 @@ namespace Punto_de_venta.Mantenimientos
 {
     public partial class Mantenimiento_Usuarios_Detalles : Form
     {
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         int id = 0;
         bool editar = false;
         public Mantenimiento_Usuarios_Detalles(int _id)
@@ -36,7 +36,7 @@ namespace Punto_de_venta.Mantenimientos
 
             if (editar)
             {
-                var thUser = entity.UsuarioDetalle.FirstOrDefault(x => x.PKUsuario == id);
+                var thUser = entity.UsuarioDetalles.FirstOrDefault(x => x.PKUsuario == id);
 
                 thUser.userNombre = txtNombre.Text;
                 thUser.userApellido = txtApellido.Text;
@@ -46,13 +46,13 @@ namespace Punto_de_venta.Mantenimientos
             }
             else
             {
-                Punto_de_venta.Bases_de_datos.UsuarioDetalles tUD = new Punto_de_venta.Bases_de_datos.UsuarioDetalles();
+                Punto_de_venta.UsuarioDetalle tUD = new Punto_de_venta.UsuarioDetalle();
 
                 tUD.userNombre = txtNombre.Text;
                 tUD.userApellido = txtApellido.Text;
                 tUD.userTelefono = txtTelefono.Text;
 
-                entity.Productos.Add(tUD);
+                entity.UsuarioDetalles.Add(tUD);
 
                 entity.SaveChanges();
             }
@@ -60,14 +60,14 @@ namespace Punto_de_venta.Mantenimientos
 
         private void Mantenimiento_Usuarios_Detalles_Load(object sender, EventArgs e)
         {
-            var texists = entity.UsuarioDetalles.FirstOrDefault(x => x.PKUsuario == id);
+            //var texists = entity.UsuarioDetalles.FirstOrDefault(x => x.PKUsuario == id);
 
-            if (texists)
-            {
-                txtNombre.Text = texists.userNombre;
-                txtApellido.Text = texists.userApellido;
-                txtTelefono.Text = texists.userTelefono;
-            }
+            //if (texists)
+            //{
+            //    txtNombre.Text = texists.userNombre;
+            //    txtApellido.Text = texists.userApellido;
+            //    txtTelefono.Text = texists.userTelefono;
+            //}
         }
     }
 }

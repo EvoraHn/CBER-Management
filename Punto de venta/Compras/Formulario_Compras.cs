@@ -13,11 +13,12 @@ namespace Punto_de_venta.Compras
     public partial class Formulario_Compras : Form
     {
         //conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
+     
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
-        string id = "";
+        long id = 0;
         public Formulario_Compras()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Punto_de_venta.Compras
         }
         private void Mostrar_datos()
         {
-            var tProductos = from p in entity.Producto
+            var tProductos = from p in entity.Productoes
                              select new
                              {
                                  p.IdProducto,
@@ -50,7 +51,7 @@ namespace Punto_de_venta.Compras
                 {
 
                     //Punto_de_venta.Bases_de_datos.Producto tabla = new Punto_de_venta.Bases_de_datos.Producto();
-                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
+                    var tabla = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
                     tabla.Cantidad += cantidad;
                     entity.SaveChanges();
                     Guardar_Compra();
@@ -81,8 +82,8 @@ namespace Punto_de_venta.Compras
             {
                 try
                 {
-                    id = (dgDatos.SelectedCells[0].Value).ToString();
-                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
+                    id = Convert.ToInt64(dgDatos.SelectedCells[0].Value);
+                    var tabla = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
                     txtId.Text = tabla.IdProducto.ToString();
                     txtNombre.Text = tabla.Nombre;
                 }
@@ -149,13 +150,21 @@ namespace Punto_de_venta.Compras
             int indice = dgDatos.CurrentCell.RowIndex;
             decimal precio = Convert.ToDecimal(dgDatos.Rows[indice].Cells[3].Value);
             int cantidad = Convert.ToInt32(txtCantidad.Text);
-            Punto_de_venta.Bases_de_datos.Compra tabla = new Punto_de_venta.Bases_de_datos.Compra();
-            tabla.Producto = txtId.Text;
-            tabla.PrecioUnitario = precio;
-            tabla.Cantidad = cantidad;
-            tabla.Total = cantidad * precio;
-            entity.Compra.Add(tabla);
+            Punto_de_venta.Compra tabla = new Punto_de_venta.Compra();
+            tabla.idUsuario = Convert.ToInt16(txtId.Text);
+            tabla.Total = 0;
+            entity.Compras.Add(tabla);
             entity.SaveChanges();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Punto_de_venta.Inicio
 {
     public partial class Login : Form
     {
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Punto_de_venta.Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         public Login()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace Punto_de_venta.Inicio
                 {
                     string pass = Hash.obtenerHash256(txtContraseña.Text);
 
-                    var tUsuarios = entity.Usuario.FirstOrDefault(x => x.Usr == txtUsuario.Text && x.Pwd == pass);
+                    var tUsuarios = entity.Usuarios.FirstOrDefault(x => x.Usr == txtUsuario.Text && x.Pwd == pass);
 
                     if (tUsuarios == null)
                     {

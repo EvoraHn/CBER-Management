@@ -14,7 +14,7 @@ namespace Punto_de_venta.Mantenimientos
 {
     public partial class Mantenimiento_Usuarios : Form
     {
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Punto_de_venta.Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         public Mantenimiento_Usuarios()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace Punto_de_venta.Mantenimientos
 
             //try
             //{
-                Punto_de_venta.Bases_de_datos.Usuario tUsuarios = new Punto_de_venta.Bases_de_datos.Usuario();
+                Punto_de_venta.Usuario tUsuarios = new Punto_de_venta.Usuario();
                 //tUsuarios.IdUsuario = 2;
                 tUsuarios.Usr = txtUsr.Text;
                 //tUsuarios.Identidad = txtId.Text;
@@ -57,7 +57,7 @@ namespace Punto_de_venta.Mantenimientos
                 //tUsuarios.Pwd = Hash.obtenerHash256(txtPass.Text);
                 //tUsuarios.Pwd = "123";
                 tUsuarios.Pwd = Hash.obtenerHash256(txtPass.Text);
-                entity.Usuario.Add(tUsuarios);
+                entity.Usuarios.Add(tUsuarios);
                 
                 entity.SaveChanges();
                 MessageBox.Show("Datos Guardados Correctamente");

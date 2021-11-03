@@ -165,6 +165,7 @@ namespace Punto_de_venta.Mantenimientos
             this.btnGuardar.TabIndex = 24;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dgProductos
             // 

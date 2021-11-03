@@ -13,9 +13,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace Punto_de_venta.Inicio
 {
     public partial class Inicio : Form
-    {   
-        
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+    {
+
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         DataView mifiltro;
         public Inicio()
         {
@@ -87,7 +87,7 @@ namespace Punto_de_venta.Inicio
                              p.Diciembre
 
                          };
-            var tMeses1 = from p in entity.Producto
+            var tMeses1 = from p in entity.Productoes
                          select new
                          {
                              p.IdProducto,

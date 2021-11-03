@@ -14,11 +14,11 @@ namespace Punto_de_venta.Mantenimientos
 {
     public partial class Mantenimiento_Productos : Form
     {   //Conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
-        string id = "000000";
+        long id = 0;
         bool editar = false;
         //variable para determinar si el individuo tiene o no acceso a modificar
         string Acceso = "";
@@ -129,9 +129,9 @@ namespace Punto_de_venta.Mantenimientos
             {
                 try
                 {
-                    id = Convert.ToString(dgProductos.SelectedCells[0].Value);
-                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
-                    txtId.Text = tabla.IdProducto;
+                    id = Convert.ToInt64(dgProductos.SelectedCells[0].Value);
+                    var tabla = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
+                    //Convert.ToInt64(txtId.Text) = tabla.IdProducto;
                     txtNombre.Text=tabla.Nombre;
                     txtCosto.Text = Convert.ToString(tabla.PrecioCosto);
                     txtVenta.Text = Convert.ToString(tabla.PrecioVenta);
@@ -169,8 +169,8 @@ namespace Punto_de_venta.Mantenimientos
                     else {
                         if (Convert.ToDecimal(txtVenta.Text) > Convert.ToDecimal(txtCosto.Text))
                         {
-                            var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
-                            tablaP.IdProducto = txtId.Text;
+                            var tablaP = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
+                            //tablaP.IdProducto = txtId.Text;
                             tablaP.Nombre = txtNombre.Text;
                             tablaP.Cantidad = tablaP.Cantidad;
                             tablaP.PrecioCosto = Convert.ToDecimal(txtCosto.Text);
@@ -209,8 +209,8 @@ namespace Punto_de_venta.Mantenimientos
                     {
                        if (Convert.ToDecimal(txtVenta.Text) > Convert.ToDecimal(txtCosto.Text))
                         {
-                            Punto_de_venta.Bases_de_datos.Producto tabla = new Punto_de_venta.Bases_de_datos.Producto();
-                            tabla.IdProducto = txtId.Text;
+                            Punto_de_venta.Producto tabla = new Punto_de_venta.Producto();
+                            //tabla.IdProducto = txtId.Text;
                             tabla.Nombre = txtNombre.Text;
                             tabla.Cantidad = 0;
                             tabla.PrecioCosto = Convert.ToDecimal(txtCosto.Text);
@@ -219,7 +219,7 @@ namespace Punto_de_venta.Mantenimientos
                             tabla.Proveedor = Convert.ToInt32(txtProveedor.Text);
                             tabla.Estante = Convert.ToInt32(txtEstante.Text);
                             tabla.Tipo_Impuesto = cmbImpuesto.Text;
-                            entity.Producto.Add(tabla);
+                            entity.Productoes.Add(tabla);
                             entity.SaveChanges();
                             MessageBox.Show("¡Registro guardado correctamente!");
                             Limpiar();
@@ -253,8 +253,8 @@ namespace Punto_de_venta.Mantenimientos
             if (editar || txtId.Text !="")
             {
                 try {
-                    var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
-                    entity.Producto.Remove(tablaP);
+                    var tablaP = entity.Productoes.FirstOrDefault(x => x.IdProducto == id);
+                    entity.Productoes.Remove(tablaP);
                     entity.SaveChanges();
                     MessageBox.Show("¡Registro eliminado correctamente!");
                     Limpiar();

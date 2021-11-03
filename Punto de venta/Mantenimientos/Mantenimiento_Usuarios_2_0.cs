@@ -13,7 +13,7 @@ namespace Punto_de_venta.Mantenimientos
     public partial class Mantenimiento_Usuarios_2_0 : Form
     {
         //Conexión a la base de datos
-        Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Bases_de_datos.BPBEntities1();
+        Punto_de_venta.CyberElIngeEntities entity = new CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
@@ -63,7 +63,7 @@ namespace Punto_de_venta.Mantenimientos
 
         private void Mostrar_datos()
         {
-            var tUsuarios = from p in entity.Usuario
+            var tUsuarios = from p in entity.Usuarios
                             select new
                             {
                                 p.IdUsuario,
@@ -80,7 +80,7 @@ namespace Punto_de_venta.Mantenimientos
                 try
                 {
                     id = Convert.ToInt32(dgProductos.SelectedCells[0].Value);
-                    var tabla = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
+                    var tabla = entity.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
                     txtUsr.Text = tabla.Usr;/*
                     txtCelular.Text = tabla.Contacto;
                     TxtFamiliar.Text = tabla.ContactoFamiliar;
@@ -130,7 +130,7 @@ namespace Punto_de_venta.Mantenimientos
                 }
                 else
                 {
-                    var tUsuarios = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
+                    var tUsuarios = entity.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
                     tUsuarios.Usr = txtUsr.Text;
 
                     //modulo estado
@@ -182,7 +182,7 @@ namespace Punto_de_venta.Mantenimientos
                 }
                 else
                 {
-                    Punto_de_venta.Bases_de_datos.Usuario tUsuarios = new Punto_de_venta.Bases_de_datos.Usuario();
+                    Punto_de_venta.Usuario tUsuarios = new Punto_de_venta.Usuario();
                     tUsuarios.Usr = txtUsr.Text;
 
                     //modulo estado
@@ -211,7 +211,7 @@ namespace Punto_de_venta.Mantenimientos
                     if (txtPwd.Text == txtConfirmacionPwd.Text)
                     {
                         tUsuarios.Pwd = Hash.obtenerHash256(txtPwd.Text);
-                        entity.Usuario.Add(tUsuarios);
+                        entity.Usuarios.Add(tUsuarios);
 
                         entity.SaveChanges();
                         MessageBox.Show("Datos Guardados Correctamente");
@@ -246,8 +246,8 @@ namespace Punto_de_venta.Mantenimientos
             {
                 try
                 {
-                    var tabla = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
-                    entity.Usuario.Remove(tabla);
+                    var tabla = entity.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+                    entity.Usuarios.Remove(tabla);
                     entity.SaveChanges();
                     MessageBox.Show("¡Registro eliminado correctamente!");
                     Limpiar();

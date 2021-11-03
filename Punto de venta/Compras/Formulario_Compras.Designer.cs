@@ -66,6 +66,7 @@ namespace Punto_de_venta.Compras
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1655, 59);
             this.panel2.TabIndex = 33;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnCerrar
             // 
@@ -197,6 +198,7 @@ namespace Punto_de_venta.Compras
             this.dgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgDatos.Size = new System.Drawing.Size(1115, 955);
             this.dgDatos.TabIndex = 0;
+            this.dgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellContentClick);
             this.dgDatos.SelectionChanged += new System.EventHandler(this.dgDatos_SelectionChanged);
             // 
             // txtId
