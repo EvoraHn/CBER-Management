@@ -15,6 +15,7 @@ namespace Punto_de_venta.Inicio
     {
         Punto_de_venta.Bases_de_datos.CyberElIngeEntities entity = new Bases_de_datos.CyberElIngeEntities();
         //Punto_de_venta.Bases_de_datos.BPBEntities1 entity = new Punto_de_venta.Bases_de_datos.BPBEntities1();
+        int userID = 0;
         public Login()
         {
             InitializeComponent();
@@ -82,6 +83,11 @@ namespace Punto_de_venta.Inicio
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

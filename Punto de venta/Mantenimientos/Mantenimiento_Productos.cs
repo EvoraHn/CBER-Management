@@ -18,15 +18,17 @@ namespace Punto_de_venta.Mantenimientos
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
+        long userID = 0;
         string id = "000000";
         bool editar = false;
         //variable para determinar si el individuo tiene o no acceso a modificar
         string Acceso = "";
 
-        public Mantenimiento_Productos(string modulo)
+        public Mantenimiento_Productos(string modulo, long _userID)
         {
             Acceso = modulo;
             InitializeComponent();
+            userID = _userID;
         }
 
         /// <summary>
@@ -269,7 +271,7 @@ namespace Punto_de_venta.Mantenimientos
 
         private void btnEstante_Click(object sender, EventArgs e)
         {
-            Punto_de_venta.Mantenimientos.Mantenimiento_Estantes Formulario = new Punto_de_venta.Mantenimientos.Mantenimiento_Estantes();
+            Punto_de_venta.Mantenimientos.Mantenimiento_Estantes Formulario = new Punto_de_venta.Mantenimientos.Mantenimiento_Estantes(userID);
             
             Formulario.Show();
             
@@ -281,7 +283,7 @@ namespace Punto_de_venta.Mantenimientos
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-            Punto_de_venta.Mantenimientos.Mantenimiento_Categoria Formulario = new Punto_de_venta.Mantenimientos.Mantenimiento_Categoria();
+            Punto_de_venta.Mantenimientos.Mantenimiento_Categoria Formulario = new Punto_de_venta.Mantenimientos.Mantenimiento_Categoria(userID);
 
             Formulario.Show();
 
@@ -294,7 +296,7 @@ namespace Punto_de_venta.Mantenimientos
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-            Punto_de_venta.Mantenimientos.Mantenimiento_Proveedor Formulario = new Punto_de_venta.Mantenimientos.Mantenimiento_Proveedor();
+            Punto_de_venta.Mantenimientos.Mantenimiento_Proveedor Formulario = new Punto_de_venta.Mantenimientos.Mantenimiento_Proveedor(userID);
 
             Formulario.Show();
         }

@@ -16,11 +16,13 @@ namespace Punto_de_venta.Compras
         Punto_de_venta.Bases_de_datos.CyberElIngeEntities entity = new Bases_de_datos.CyberElIngeEntities();
         //filtro para el botón buscar
         DataView mifiltro;
+        long userID = 0;
         //inicializar las variables
         string id = "";
-        public Formulario_Compras()
+        public Formulario_Compras(long _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
 
         private void Formulario_Compras_Load(object sender, EventArgs e)

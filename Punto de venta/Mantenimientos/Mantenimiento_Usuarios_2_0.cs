@@ -18,6 +18,7 @@ namespace Punto_de_venta.Mantenimientos
         DataView mifiltro;
         //inicializar las variables
         int id = 0;
+        int DetallesID = 0;
         bool editar = false;
         public Mantenimiento_Usuarios_2_0()
         {
@@ -80,6 +81,7 @@ namespace Punto_de_venta.Mantenimientos
                 {
                     id = Convert.ToInt32(dgProductos.SelectedCells[0].Value);
                     var tabla = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
+                    DetallesID = tabla.IdUsuario;
                     txtUsr.Text = tabla.Usr;
                     //txtCelular.Text = tabla.Contacto;
                     //TxtFamiliar.Text = tabla.ContactoFamiliar;
@@ -122,9 +124,7 @@ namespace Punto_de_venta.Mantenimientos
         {
             if (editar)
             {
-                if (txtIdentidad.Text.Equals("") | txtPApellido.Text.Equals("") | txtPNombre.Text.Equals("") | txtPwd.Text.Equals("")
-                        | txtConfirmacionPwd.Text.Equals("") | txtSApellido.Text.Equals("") | txtSNombre.Text.Equals("") | txtUsr.Text.Equals("")
-                        | txtCelular.Text.Equals("") | TxtFamiliar.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
+                if (txtPwd.Text.Equals("") | txtConfirmacionPwd.Text.Equals("") | txtUsr.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
                 {
                     MessageBox.Show("Por favor ingresar todos los datos en el formulario");
                     return;
@@ -180,9 +180,7 @@ namespace Punto_de_venta.Mantenimientos
             }
             else
             {
-                if (txtIdentidad.Text.Equals("") | txtPApellido.Text.Equals("") | txtPNombre.Text.Equals("") | txtPwd.Text.Equals("")
-                        | txtConfirmacionPwd.Text.Equals("") | txtSApellido.Text.Equals("") | txtSNombre.Text.Equals("") | txtUsr.Text.Equals("")
-                        | txtCelular.Text.Equals("") | TxtFamiliar.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
+                if (txtPwd.Text.Equals("") | txtConfirmacionPwd.Text.Equals("") | txtUsr.Text.Equals("") | cmbAcceso.Text.Equals("") | cmbEstado.Text.Equals(""))
                 {
                     MessageBox.Show("Por favor ingresar todos los datos en el formulario");
                     return;
@@ -248,8 +246,7 @@ namespace Punto_de_venta.Mantenimientos
 
         private void Limpiar()
         {
-            txtCelular.Text = txtConfirmacionPwd.Text = txtIdentidad.Text = txtPApellido.Text = txtPNombre.Text =
-            txtPwd.Text = txtSApellido.Text = txtSNombre.Text = txtUsr.Text = TxtFamiliar.Text = string.Empty;
+            txtConfirmacionPwd.Text = txtPwd.Text = txtUsr.Text = string.Empty;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -278,6 +275,12 @@ namespace Punto_de_venta.Mantenimientos
         private void dgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            Mantenimiento_Usuarios_Detalles form = new Mantenimiento_Usuarios_Detalles(DetallesID);
+            form.ShowDialog();
         }
     }
 }

@@ -17,9 +17,11 @@ namespace Punto_de_venta.Inicio
 
         Punto_de_venta.Bases_de_datos.CyberElIngeEntities entity = new Bases_de_datos.CyberElIngeEntities();
         DataView mifiltro;
-        public Inicio()
+        long userID = 0;
+        public Inicio(long _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
 
         private void Inicio_Load(object sender, EventArgs e)

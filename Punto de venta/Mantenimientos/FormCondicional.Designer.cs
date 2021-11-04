@@ -29,14 +29,16 @@ namespace Punto_de_venta.Mantenimientos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCondicional));
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(526, 237);
+            this.button1.Location = new System.Drawing.Point(701, 292);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 23);
+            this.button1.Size = new System.Drawing.Size(313, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Mostrar String";
             this.button1.UseVisualStyleBackColor = true;
@@ -44,10 +46,12 @@ namespace Punto_de_venta.Mantenimientos
             // 
             // FormCondicional
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 513);
+            this.ClientSize = new System.Drawing.Size(1716, 631);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCondicional";
             this.Text = "FormCondicional";
             this.Load += new System.EventHandler(this.FormCondicional_Load);

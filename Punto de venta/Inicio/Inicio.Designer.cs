@@ -47,6 +47,7 @@ namespace Punto_de_venta.Inicio
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.ctMeses = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bPBEntities1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@ namespace Punto_de_venta.Inicio
             this.lblFechaCompleta = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bPBEntities1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -68,13 +68,13 @@ namespace Punto_de_venta.Inicio
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(71)))));
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(0, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1241, 48);
+            this.panel2.Size = new System.Drawing.Size(1655, 59);
             this.panel2.TabIndex = 33;
             // 
             // btnCerrar
@@ -88,10 +88,10 @@ namespace Punto_de_venta.Inicio
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(12, 5);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Location = new System.Drawing.Point(16, 6);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(38, 37);
+            this.btnCerrar.Size = new System.Drawing.Size(51, 46);
             this.btnCerrar.TabIndex = 34;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -101,10 +101,9 @@ namespace Punto_de_venta.Inicio
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label9.Location = new System.Drawing.Point(85, 19);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(113, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(189, 24);
+            this.label9.Size = new System.Drawing.Size(244, 29);
             this.label9.TabIndex = 30;
             this.label9.Text = "Sistema de inventario";
             // 
@@ -140,8 +139,8 @@ namespace Punto_de_venta.Inicio
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgProductos.GridColor = System.Drawing.Color.White;
-            this.dgProductos.Location = new System.Drawing.Point(22, 341);
-            this.dgProductos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgProductos.Location = new System.Drawing.Point(29, 420);
+            this.dgProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgProductos.MultiSelect = false;
             this.dgProductos.Name = "dgProductos";
             this.dgProductos.ReadOnly = true;
@@ -159,7 +158,7 @@ namespace Punto_de_venta.Inicio
             this.dgProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgProductos.RowTemplate.Height = 24;
             this.dgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgProductos.Size = new System.Drawing.Size(604, 377);
+            this.dgProductos.Size = new System.Drawing.Size(805, 464);
             this.dgProductos.TabIndex = 0;
             // 
             // label1
@@ -167,10 +166,9 @@ namespace Punto_de_venta.Inicio
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(112, 819);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(149, 1008);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 18);
+            this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 2;
             // 
             // logo
@@ -181,10 +179,10 @@ namespace Punto_de_venta.Inicio
             this.logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo.BackgroundImage")));
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo.InitialImage")));
-            this.logo.Location = new System.Drawing.Point(2, 287);
-            this.logo.Margin = new System.Windows.Forms.Padding(2);
+            this.logo.Location = new System.Drawing.Point(3, 353);
+            this.logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(645, 451);
+            this.logo.Size = new System.Drawing.Size(860, 555);
             this.logo.TabIndex = 17;
             this.logo.TabStop = false;
             // 
@@ -209,10 +207,10 @@ namespace Punto_de_venta.Inicio
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(-1, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1241, 847);
+            this.panel1.Size = new System.Drawing.Size(1655, 1042);
             this.panel1.TabIndex = 0;
             // 
             // linkLabel1
@@ -221,10 +219,9 @@ namespace Punto_de_venta.Inicio
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel1.Location = new System.Drawing.Point(13, 814);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(17, 1002);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(405, 24);
+            this.linkLabel1.Size = new System.Drawing.Size(512, 29);
             this.linkLabel1.TabIndex = 36;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Si necesitas ayuda no dudes en contactarnos...\r\n";
@@ -242,11 +239,11 @@ namespace Punto_de_venta.Inicio
             this.ctMeses.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.bPBEntities1BindingSource, "VistaVentasPorMes", true));
             legend1.Name = "Legend1";
             this.ctMeses.Legends.Add(legend1);
-            this.ctMeses.Location = new System.Drawing.Point(651, 287);
-            this.ctMeses.Margin = new System.Windows.Forms.Padding(2);
+            this.ctMeses.Location = new System.Drawing.Point(868, 353);
+            this.ctMeses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ctMeses.Name = "ctMeses";
             this.ctMeses.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            this.ctMeses.Size = new System.Drawing.Size(580, 451);
+            this.ctMeses.Size = new System.Drawing.Size(773, 555);
             this.ctMeses.TabIndex = 34;
             this.ctMeses.Text = "Gráfico ventas por mes ";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,6 +252,10 @@ namespace Punto_de_venta.Inicio
             title1.Text = "Ventas por mes en este año (En Lempiras)";
             this.ctMeses.Titles.Add(title1);
             // 
+            // bPBEntities1BindingSource
+            // 
+            this.bPBEntities1BindingSource.DataSource = typeof(Punto_de_venta.Bases_de_datos.CyberElIngeEntities);
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -262,10 +263,9 @@ namespace Punto_de_venta.Inicio
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(18, 226);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(24, 278);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 24);
+            this.label6.Size = new System.Drawing.Size(171, 29);
             this.label6.TabIndex = 30;
             this.label6.Text = "Versión 2.0.0.1";
             // 
@@ -276,10 +276,9 @@ namespace Punto_de_venta.Inicio
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(18, 129);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(24, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 24);
+            this.label4.Size = new System.Drawing.Size(392, 29);
             this.label4.TabIndex = 30;
             this.label4.Text = "Bienvenido al sistema de inventario";
             // 
@@ -288,10 +287,9 @@ namespace Punto_de_venta.Inicio
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(180)))));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(18, 305);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(24, 375);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(276, 24);
+            this.label2.Size = new System.Drawing.Size(349, 29);
             this.label2.TabIndex = 30;
             this.label2.Text = "Productos con pocas unidades ";
             // 
@@ -302,13 +300,12 @@ namespace Punto_de_venta.Inicio
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(4, 153);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(71)))));
+            this.label3.Location = new System.Drawing.Point(6, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(561, 73);
+            this.label3.Size = new System.Drawing.Size(486, 91);
             this.label3.TabIndex = 30;
-            this.label3.Text = "BPB Technologies";
+            this.label3.Text = "Ciber el Inge";
             // 
             // lblDía
             // 
@@ -317,10 +314,9 @@ namespace Punto_de_venta.Inicio
             this.lblDía.BackColor = System.Drawing.Color.Transparent;
             this.lblDía.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDía.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblDía.Location = new System.Drawing.Point(752, 122);
-            this.lblDía.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDía.Location = new System.Drawing.Point(1003, 150);
             this.lblDía.Name = "lblDía";
-            this.lblDía.Size = new System.Drawing.Size(265, 31);
+            this.lblDía.Size = new System.Drawing.Size(324, 38);
             this.lblDía.TabIndex = 30;
             this.lblDía.Text = "Día de la semana      ";
             // 
@@ -331,10 +327,9 @@ namespace Punto_de_venta.Inicio
             this.lblFechaCompleta.BackColor = System.Drawing.Color.Transparent;
             this.lblFechaCompleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaCompleta.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFechaCompleta.Location = new System.Drawing.Point(752, 227);
-            this.lblFechaCompleta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFechaCompleta.Location = new System.Drawing.Point(1003, 279);
             this.lblFechaCompleta.Name = "lblFechaCompleta";
-            this.lblFechaCompleta.Size = new System.Drawing.Size(125, 31);
+            this.lblFechaCompleta.Size = new System.Drawing.Size(153, 38);
             this.lblFechaCompleta.TabIndex = 30;
             this.lblFechaCompleta.Text = "Fecha     ";
             // 
@@ -345,10 +340,9 @@ namespace Punto_de_venta.Inicio
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblHora.Location = new System.Drawing.Point(745, 153);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHora.Location = new System.Drawing.Point(993, 188);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(369, 73);
+            this.lblHora.Size = new System.Drawing.Size(454, 91);
             this.lblHora.TabIndex = 30;
             this.lblHora.Text = "Cargando...";
             // 
@@ -356,19 +350,16 @@ namespace Punto_de_venta.Inicio
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // bPBEntities1BindingSource
-            // 
-            this.bPBEntities1BindingSource.DataSource = typeof(Punto_de_venta.Bases_de_datos.CyberElIngeEntities);
-            // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1240, 847);
+            this.ClientSize = new System.Drawing.Size(1653, 1042);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "|";

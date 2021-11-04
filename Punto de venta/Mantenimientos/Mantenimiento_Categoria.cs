@@ -19,9 +19,11 @@ namespace Punto_de_venta.Mantenimientos
         //inicializar las variables
         int id = 0;
         bool editar = false;
-        public Mantenimiento_Categoria()
+        long userID = 0;
+        public Mantenimiento_Categoria(long _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
         private void Mantenimiento_Categoria_Load(object sender, EventArgs e)
         {

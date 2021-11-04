@@ -22,12 +22,14 @@ namespace Punto_de_venta.Ventas
         string id = "000000";
         int idDetalle = 0;
         bool errorV = false;
+        long userID = 0;
         bool cotizacion = false;
         //tabla temporal
         DataTable dtTemporal = new DataTable();
-        public Formulario_Ventas()
+        public Formulario_Ventas(long _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
 
         private void dgProductos_SelectionChanged(object sender, EventArgs e)

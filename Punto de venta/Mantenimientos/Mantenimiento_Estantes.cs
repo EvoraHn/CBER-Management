@@ -25,11 +25,13 @@ namespace Punto_de_venta.Mantenimientos
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
+        long userID = 0;
         int id = 0;
         bool editar = false;
-        public Mantenimiento_Estantes()
+        public Mantenimiento_Estantes(long _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
 
         private void Mantenimiento_Estantes_Load(object sender, EventArgs e)

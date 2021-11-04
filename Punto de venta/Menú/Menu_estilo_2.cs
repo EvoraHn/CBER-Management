@@ -27,7 +27,7 @@ namespace Punto_de_venta.Menú
         //llamado a abrir un nuevo formulario
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Mantenimientos.Mantenimiento_Productos(modulo));
+            abrirFormularioHijo(new Punto_de_venta.Mantenimientos.Mantenimiento_Productos(modulo,idUsuario));
         }
         //proceso para abrir un formulario dentro de un contenedor
         public void abrirFormularioHijo(object formHijo)
@@ -48,17 +48,17 @@ namespace Punto_de_venta.Menú
 
         private void logo_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio());
+            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(idUsuario));
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Ventas.Formulario_Ventas());
+            abrirFormularioHijo(new Punto_de_venta.Ventas.Formulario_Ventas(idUsuario));
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Compras.Formulario_Compras());
+            abrirFormularioHijo(new Punto_de_venta.Compras.Formulario_Compras(idUsuario));
         }
 
         private void Menu_estilo_1_Load(object sender, EventArgs e)

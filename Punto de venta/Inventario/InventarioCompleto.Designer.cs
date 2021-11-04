@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventarioCompleto));
             this.gvInventario = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.gvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.gvInventario.BackgroundColor = System.Drawing.Color.FloralWhite;
             this.gvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvInventario.GridColor = System.Drawing.Color.MediumAquamarine;
+            this.gvInventario.GridColor = System.Drawing.Color.Silver;
             this.gvInventario.Location = new System.Drawing.Point(12, 92);
             this.gvInventario.Name = "gvInventario";
             this.gvInventario.RowHeadersWidth = 51;
@@ -96,7 +97,7 @@
             // InventarioCompleto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(163)))), ((int)(((byte)(130)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(1062, 653);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -104,6 +105,7 @@
             this.Controls.Add(this.gvInventario);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InventarioCompleto";
             this.RightToLeftLayout = true;
             this.ShowInTaskbar = false;

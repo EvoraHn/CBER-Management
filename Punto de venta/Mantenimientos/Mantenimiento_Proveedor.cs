@@ -18,10 +18,12 @@ namespace Punto_de_venta.Mantenimientos
         DataView mifiltro;
         //inicializar las variables
         int id = 0;
+        long userID = 0;
         bool editar = false;
-        public Mantenimiento_Proveedor()
+        public Mantenimiento_Proveedor(long _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
         private void Mantenimiento_Proveedor_Load(object sender, EventArgs e)
         {
