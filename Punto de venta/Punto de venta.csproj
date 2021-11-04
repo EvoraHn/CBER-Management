@@ -292,6 +292,12 @@
     <Compile Include="Mantenimientos\Mantenimiento_Usuarios_2_0.Designer.cs">
       <DependentUpon>Mantenimiento_Usuarios_2_0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\Mantenimiento_Usuarios_Detalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Mantenimiento_Usuarios_Detalles.Designer.cs">
+      <DependentUpon>Mantenimiento_Usuarios_Detalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menú\Menu_estilo_2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </Compile>
     <EmbeddedResource Include="Compras\Formulario_Compras.resx">
       <DependentUpon>Formulario_Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control de tiempo\Frm_Control_Tiempo.resx">
+      <DependentUpon>Frm_Control_Tiempo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -362,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Mantenimiento_Usuarios_2_0.resx">
       <DependentUpon>Mantenimiento_Usuarios_2_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Mantenimiento_Usuarios_Detalles.resx">
+      <DependentUpon>Mantenimiento_Usuarios_Detalles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menú\Menu_estilo_1.resx">
       <DependentUpon>Menu_estilo_1.cs</DependentUpon>
@@ -423,6 +435,8 @@
     </Content>
     <Content Include="Imagenes\casa %281%29.png" />
     <Content Include="Imagenes\casa.png" />
+    <None Include="Resources\Ciber El Inge.gif" />
+    <None Include="Resources\Ciber El Inge.png" />
     <None Include="Resources\escritura.png" />
     <None Include="Resources\disco-flexible 1.png" />
     <None Include="Resources\nuevo.png" />
