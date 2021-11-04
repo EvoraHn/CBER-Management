@@ -220,3 +220,115 @@ F:\CBER EL ING SOLO\Punto de venta\bin\Release\ru\Microsoft.ReportViewer.WinForm
 F:\CBER EL ING SOLO\Punto de venta\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 F:\CBER EL ING SOLO\Punto de venta\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 F:\CBER EL ING SOLO\Punto de venta\obj\Release\Punto de venta.csproj.CopyComplete
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto de venta.csproj.AssemblyReference.cache
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Compras.Formulario_Compras.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_tiempo.Frm_Control_Tiempo.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inicio.Inicio.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inicio.Login.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inventario.Inventario.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inventario.InventarioCompleto.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.FormCondicional.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Categoria.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Estantes.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Perfiles.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Productos.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Plantilla.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Proveedor.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Usuarios.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Usuarios_2_0.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Mantenimiento_Usuarios_Detalles.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Menú.Menu_estilo_1.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Menú.Menu_estilo_2.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Properties.Resources.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Ventas.Formulario_Cancelar_Factura.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Ventas.Formulario_Ventas.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto de venta.csproj.GenerateResource.cache
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto de venta.csproj.CoreCompileInputs.cache
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto de venta.exe
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto de venta.pdb
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Punto de venta.exe.config
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Punto de venta.exe
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Punto de venta.pdb
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\AxShockwaveFlashObjects.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportSource.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.Shared.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.Windows.Forms.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\EntityFramework.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.ReportViewer.Common.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.ReportViewer.Design.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.ReportViewer.WinForms.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.SqlServer.Types.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Configuration.ConfigurationManager.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Security.AccessControl.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Security.Permissions.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Security.Principal.Windows.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ShockwaveFlashObjects.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\EnvDTE.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.VisualStudio.Shell.Interop.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\stdole.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.VisualStudio.OLE.Interop.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\Microsoft.MSXML.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\EntityFramework.xml
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Configuration.ConfigurationManager.xml
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Security.AccessControl.xml
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Security.Permissions.xml
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\System.Security.Principal.Windows.xml
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\de\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\es\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\it\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\de\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\es\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\it\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\bin\Release\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto de venta.csproj.CopyComplete

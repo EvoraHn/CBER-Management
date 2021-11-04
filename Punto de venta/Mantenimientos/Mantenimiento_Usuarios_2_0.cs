@@ -133,12 +133,7 @@ namespace Punto_de_venta.Mantenimientos
                 {
                     var tUsuarios = entity.Usuario.FirstOrDefault(x => x.IdUsuario == id);
                     tUsuarios.Usr = txtUsr.Text;
-                    //tUsuarios.Identidad = txtIdentidad.Text;
-                    //tUsuarios.PrimerNombre = txtPNombre.Text;
-                    //tUsuarios.SegundoNombre = txtSNombre.Text;
-                    //tUsuarios.PrimerApellido = txtPApellido.Text;
-                    //tUsuarios.SegundoApellido = txtSApellido.Text;
-                    //modulo estado
+         
                     if (cmbEstado.Text == "Activo")
                     {
                         tUsuarios.Estado = true;
@@ -161,8 +156,7 @@ namespace Punto_de_venta.Mantenimientos
                     {
                         tUsuarios.FKPerfil = 3;
                     }
-                    //tUsuarios.Contacto = txtCelular.Text;
-                    //tUsuarios.ContactoFamiliar = TxtFamiliar.Text;
+                    
 
                     if (txtPwd.Text == txtConfirmacionPwd.Text)
                     {
@@ -189,11 +183,7 @@ namespace Punto_de_venta.Mantenimientos
                 {
                     Punto_de_venta.Bases_de_datos.Usuario tUsuarios = new Punto_de_venta.Bases_de_datos.Usuario();
                     tUsuarios.Usr = txtUsr.Text;
-                    //tUsuarios. = txtIdentidad.Text;
-                    //tUsuarios.PrimerNombre = txtPNombre.Text;
-                    //tUsuarios.SegundoNombre = txtSNombre.Text;
-                    //tUsuarios.PrimerApellido = txtPApellido.Text;
-                    //tUsuarios.SegundoApellido = txtSApellido.Text;
+                
                     //modulo estado
                     if (cmbEstado.Text == "Activo")
                     {

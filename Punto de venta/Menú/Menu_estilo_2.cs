@@ -63,7 +63,7 @@ namespace Punto_de_venta.Menú
 
         private void Menu_estilo_1_Load(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio());
+            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(idUsuario));
             this.KeyPreview = true;
 
 
@@ -183,7 +183,7 @@ namespace Punto_de_venta.Menú
             }
             if (e.Control == true && e.KeyCode == Keys.NumPad5)
             {
-                abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio());
+                abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(idUsuario));
             }
         }
 

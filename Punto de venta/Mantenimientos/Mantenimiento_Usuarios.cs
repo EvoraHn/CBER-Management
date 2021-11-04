@@ -40,40 +40,23 @@ namespace Punto_de_venta.Mantenimientos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
+            try
+            {
                 Punto_de_venta.Bases_de_datos.Usuario tUsuarios = new Punto_de_venta.Bases_de_datos.Usuario();
-                //tUsuarios.IdUsuario = 2;
+
                 tUsuarios.Usr = txtUsr.Text;
-                //tUsuarios.Identidad = txtId.Text;
-                //tUsuarios.PrimerNombre = txtNombre.Text;
-                //tUsuarios.SegundoNombre = txtnombre2.Text;
-                //tUsuarios.PrimerApellido = txtApellido.Text;
-                //tUsuarios.SegundoApellido = txtApellido2.Text;
-                //tUsuarios.Estado = Convert.ToInt32(txtEstado.Text);
-                //tUsuarios.Acceso = Convert.ToInt32(txtAcceso.Text);
-                //tUsuarios.Contacto = txtContacto.Text;
-                //tUsuarios.ContactoFamiliar = txtContacto2.Text;
-                //Procedimiento Especial para contraseña
-                //tUsuarios.Pwd = Hash.obtenerHash256(txtPass.Text);
-                //tUsuarios.Pwd = "123";
+                MessageBox.Show("previo");
                 tUsuarios.Pwd = Hash.obtenerHash256(txtPass.Text);
                 entity.Usuario.Add(tUsuarios);
-                
+
                 entity.SaveChanges();
                 MessageBox.Show("Datos Guardados Correctamente");
-                
-                //txtPass.Text = txtUsr.Text = txtNombre.Text = txtnombre2.Text = string.Empty;
-
-                //chkEstado.Checked = false;
-                //dpFechaNac.Value = DateTime.Today;
-
-            //}
-            //catch (DbEntityValidationException f)
-            //{
-            //    Console.WriteLine(f);
-                        
-            //}
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error en proceso");
+            }
+             
                
             }
 

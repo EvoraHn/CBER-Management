@@ -13,14 +13,16 @@ namespace Punto_de_venta.Menú
     public partial class Menu_estilo_1 : Form
     {
         string modulo = "";
+        long userID = 0;
         public Menu_estilo_1()
         {
+
             InitializeComponent();  
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Mantenimientos.Mantenimiento_Productos(modulo));
+            abrirFormularioHijo(new Punto_de_venta.Mantenimientos.Mantenimiento_Productos(modulo,userID));
         }
         public void abrirFormularioHijo(object formHijo)
         {
@@ -41,7 +43,7 @@ namespace Punto_de_venta.Menú
 
         private void logo_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio());
+            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
             //if (panelBotones.Width == 273)
             //{
             //    panelBotones.Width = 100;
@@ -57,17 +59,17 @@ namespace Punto_de_venta.Menú
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Ventas.Formulario_Ventas());
+            abrirFormularioHijo(new Punto_de_venta.Ventas.Formulario_Ventas(userID));
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Compras.Formulario_Compras());
+            abrirFormularioHijo(new Punto_de_venta.Compras.Formulario_Compras(userID));
         }
 
         private void Menu_estilo_1_Load(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio());
+            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
             this.KeyPreview = true;
         }
 
@@ -93,7 +95,7 @@ namespace Punto_de_venta.Menú
             }
             if (e.Control == true && e.KeyCode == Keys.NumPad5)
             {
-                abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio());
+                abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
             }
         }
 

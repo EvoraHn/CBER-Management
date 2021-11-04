@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="78c6116aa64740f295374362ea4f60b3" Name="Diagram1">
+      <Diagram DiagramId="78c6116aa64740f295374362ea4f60b3" Name="Diagram1" ZoomLevel="97">
         <EntityTypeShape EntityType="CyberElIngeModel.Compra" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CyberElIngeModel.CompraDetalle" Width="1.5" PointX="12" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" Width="1.5" PointX="12.75" PointY="8.5" IsExpanded="true" />

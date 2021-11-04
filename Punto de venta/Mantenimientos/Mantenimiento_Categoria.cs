@@ -17,6 +17,7 @@ namespace Punto_de_venta.Mantenimientos
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
+        string usr = "";
         int id = 0;
         bool editar = false;
         long userID = 0;
@@ -28,7 +29,17 @@ namespace Punto_de_venta.Mantenimientos
         private void Mantenimiento_Categoria_Load(object sender, EventArgs e)
         {
             Mostrar_datos();
+            var usuario = entity.Usuario.FirstOrDefault(x => x.IdUsuario == userID);
+            if (usuario != null)
+            {
+                usr = usuario.Usr;
+                //MessageBox.Show(usr);
+                //Punto_de_venta.Mantenimientos.Mantenimiento_Categoria.
+            }
         }
+
+
+
         private void Mostrar_datos()
         {
             var tProductos = from p in entity.Categoria

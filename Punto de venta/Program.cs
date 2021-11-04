@@ -20,7 +20,8 @@ namespace Punto_de_venta
             //Application.Run(new Punto_de_venta.Menú.Menu_estilo_1());
             //Application.Run(new Punto_de_venta.Informes.Form1());
             Application.Run(new Punto_de_venta.Mantenimientos.Mantenimiento_Usuarios_2_0());
-            //Application.Run(new Punto_de_venta.Ventas.Formulario_Ventas());
+            //long userid = 0;
+            //Application.Run(new Punto_de_venta.Ventas.Formulario_Ventas(userid));
             
         }
     }
