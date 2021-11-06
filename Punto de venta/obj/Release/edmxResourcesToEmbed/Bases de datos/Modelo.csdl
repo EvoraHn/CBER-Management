@@ -1,214 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CyberElIngeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Compra">
-    <Key>
-      <PropertyRef Name="IdCompra" />
-    </Key>
-    <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idUsuario" Type="Int16" Nullable="false" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Total" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_Compra_Usuario" FromRole="Compra" ToRole="Usuario" />
-    <NavigationProperty Name="CompraDetalle" Relationship="Self.FK_CompraDetalle_Compra" FromRole="Compra" ToRole="CompraDetalle" />
-  </EntityType>
-  <EntityType Name="CompraDetalle">
-    <Key>
-      <PropertyRef Name="IdCompra" />
-    </Key>
-    <Property Name="IdCompra" Type="Int32" Nullable="false" />
-    <Property Name="IdProducto" Type="Int64" Nullable="false" />
-    <Property Name="PrecioUnidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Cantidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Total" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Compra" Relationship="Self.FK_CompraDetalle_Compra" FromRole="CompraDetalle" ToRole="Compra" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK_CompraDetalle_Producto" FromRole="CompraDetalle" ToRole="Producto" />
-  </EntityType>
-  <EntityType Name="Detalle_Venta_Tiempo">
-    <Key>
-      <PropertyRef Name="IdVenta" />
-    </Key>
-    <Property Name="IdVenta" Type="Int64" Nullable="false" />
-    <Property Name="Fk_Pc" Type="Int64" Nullable="false" />
-    <Property Name="Fk_Usuario" Type="Int16" Nullable="false" />
-    <Property Name="Hora_Inicio" Type="Time" Precision="7" />
-    <Property Name="Hora_fin" Type="Time" Precision="7" />
-    <NavigationProperty Name="PC" Relationship="Self.FK_Detalle_Venta_Tiempo_PC" FromRole="Detalle_Venta_Tiempo" ToRole="PC" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_Detalle_Venta_Tiempo_Usuario" FromRole="Detalle_Venta_Tiempo" ToRole="Usuario" />
-  </EntityType>
-  <EntityType Name="PC">
-    <Key>
-      <PropertyRef Name="IdPC" />
-    </Key>
-    <Property Name="IdPC" Type="Int64" Nullable="false" />
-    <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Fila" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-    <Property Name="Columna" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-    <Property Name="Estado" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Detalle_Venta_Tiempo" Relationship="Self.FK_Detalle_Venta_Tiempo_PC" FromRole="PC" ToRole="Detalle_Venta_Tiempo" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="Categoria">
-    <Key>
-      <PropertyRef Name="IdCategoria" />
-    </Key>
-    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK_Productos_Producto_Tiene_una_Productos_Categoria" FromRole="Categoria" ToRole="Producto" />
-  </EntityType>
-  <EntityType Name="Estante">
-    <Key>
-      <PropertyRef Name="IdEstante" />
-    </Key>
-    <Property Name="IdEstante" Type="Int32" Nullable="false" />
-    <Property Name="NombreEstante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DescripciónEstante" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Producto_Pertenece_Producto_Estante" FromRole="Estante" ToRole="Producto" />
-  </EntityType>
-  <EntityType Name="Producto">
-    <Key>
-      <PropertyRef Name="IdProducto" />
-    </Key>
-    <Property Name="IdProducto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Cantidad" Type="Int32" Nullable="false" />
-    <Property Name="PrecioVenta" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="PrecioCosto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="Categoria" Type="Int32" Nullable="false" />
-    <Property Name="Proveedor" Type="Int32" Nullable="false" />
-    <Property Name="Estante" Type="Int32" />
-    <Property Name="Tipo_Impuesto" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="CompraDetalle" Relationship="Self.FK_CompraDetalle_Producto" FromRole="Producto" ToRole="CompraDetalle" />
-    <NavigationProperty Name="Categoria1" Relationship="Self.FK_Productos_Producto_Tiene_una_Productos_Categoria" FromRole="Producto" ToRole="Categoria" />
-    <NavigationProperty Name="Estante1" Relationship="Self.FK_Producto_Producto_Pertenece_Producto_Estante" FromRole="Producto" ToRole="Estante" />
-    <NavigationProperty Name="Proveedor1" Relationship="Self.FK_Productos_Producto_Tiene_un_Productos_Proveedor" FromRole="Producto" ToRole="Proveedor" />
-    <NavigationProperty Name="DetalleVentas" Relationship="Self.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" FromRole="Producto" ToRole="DetalleVentas" />
-  </EntityType>
-  <EntityType Name="Proveedor">
-    <Key>
-      <PropertyRef Name="IdProveedor" />
-    </Key>
-    <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Empresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Vendedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Contacto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Contacto1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK_Productos_Producto_Tiene_un_Productos_Proveedor" FromRole="Proveedor" ToRole="Producto" />
-  </EntityType>
-  <EntityType Name="ModuloPrincipal">
-    <Key>
-      <PropertyRef Name="IdModuloPrincipal" />
-    </Key>
-    <Property Name="IdModuloPrincipal" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DescripcionModuloPrin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="EstadoModuloPrin" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Modulos" Relationship="Self.FK_Modulos_ModuloPrincipal" FromRole="ModuloPrincipal" ToRole="Modulos" />
-  </EntityType>
-  <EntityType Name="Modulos">
-    <Key>
-      <PropertyRef Name="IdModulos" />
-    </Key>
-    <Property Name="IdModulos" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DescripcionModulo" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="EstadoModulo" Type="Boolean" Nullable="false" />
-    <Property Name="FKModuloPrincipal" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="ModuloPrincipal" Relationship="Self.FK_Modulos_ModuloPrincipal" FromRole="Modulos" ToRole="ModuloPrincipal" />
-    <NavigationProperty Name="PerfilModulo" Relationship="Self.FK_PerfilModulo_Modulos" FromRole="Modulos" ToRole="PerfilModulo" />
-    <NavigationProperty Name="Perfiles" Relationship="Self.PerfilesModulos" FromRole="Modulos" ToRole="Perfiles" />
-  </EntityType>
-  <EntityType Name="Perfiles">
-    <Key>
-      <PropertyRef Name="IdPerfil" />
-    </Key>
-    <Property Name="IdPerfil" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DescripcionPerfil" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="EstadoPerfil" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="PerfilModulo" Relationship="Self.FK_PerfilModulo_Perfiles" FromRole="Perfiles" ToRole="PerfilModulo" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Perfiles" FromRole="Perfiles" ToRole="Usuario" />
-    <NavigationProperty Name="Modulos" Relationship="Self.PerfilesModulos" FromRole="Perfiles" ToRole="Modulos" />
-  </EntityType>
-  <EntityType Name="PerfilModulo">
-    <Key>
-      <PropertyRef Name="IdPerfilModulo" />
-    </Key>
-    <Property Name="FKPerfilId" Type="Int16" Nullable="false" />
-    <Property Name="FKModuloId" Type="Int16" Nullable="false" />
-    <Property Name="IdPerfilModulo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="Modulos" Relationship="Self.FK_PerfilModulo_Modulos" FromRole="PerfilModulo" ToRole="Modulos" />
-    <NavigationProperty Name="Perfiles" Relationship="Self.FK_PerfilModulo_Perfiles" FromRole="PerfilModulo" ToRole="Perfiles" />
-  </EntityType>
-  <EntityType Name="Usuario">
-    <Key>
-      <PropertyRef Name="IdUsuario" />
-    </Key>
-    <Property Name="IdUsuario" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Usr" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="Pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Estado" Type="Boolean" Nullable="false" />
-    <Property Name="FKPerfil" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Usuario" FromRole="Usuario" ToRole="Compra" />
-    <NavigationProperty Name="Detalle_Venta_Tiempo" Relationship="Self.FK_Detalle_Venta_Tiempo_Usuario" FromRole="Usuario" ToRole="Detalle_Venta_Tiempo" />
-    <NavigationProperty Name="Perfiles" Relationship="Self.FK_Usuario_Perfiles" FromRole="Usuario" ToRole="Perfiles" />
-    <NavigationProperty Name="Estado1" Relationship="Self.FK_Estado_Usuario" FromRole="Usuario" ToRole="Estado" />
-    <NavigationProperty Name="Usuario1" Relationship="Self.FK_Usuario_Usuario" FromRole="Usuario" ToRole="Usuario1" />
-    <NavigationProperty Name="Usuario2" Relationship="Self.FK_Usuario_Usuario" FromRole="Usuario1" ToRole="Usuario" />
-    <NavigationProperty Name="UsuarioDetalles" Relationship="Self.FK_UsuarioDetalles_UsuarioDetalles" FromRole="Usuario" ToRole="UsuarioDetalles" />
-  </EntityType>
-  <EntityType Name="UsuarioDetalles">
-    <Key>
-      <PropertyRef Name="PKUsuario" />
-    </Key>
-    <Property Name="PKUsuario" Type="Int16" Nullable="false" />
-    <Property Name="userNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="userApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="userTelefono" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_UsuarioDetalles_UsuarioDetalles" FromRole="UsuarioDetalles" ToRole="Usuario" />
-  </EntityType>
-  <EntityType Name="DetalleVentas">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdProducto" Type="Int64" Nullable="false" />
-    <Property Name="Venta" Type="Int32" Nullable="false" />
-    <Property Name="PrecioUnidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Total" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" FromRole="DetalleVentas" ToRole="Producto" />
-    <NavigationProperty Name="Venta1" Relationship="Self.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="DetalleVentas" ToRole="Venta" />
-  </EntityType>
-  <EntityType Name="Estado">
-    <Key>
-      <PropertyRef Name="IdEstado" />
-    </Key>
-    <Property Name="IdEstado" Type="Int32" Nullable="false" />
-    <Property Name="Estado1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Descripción_estado" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="FKUsuario" Type="Int16" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK_Estado_Usuario" FromRole="Estado" ToRole="Usuario" />
-    <NavigationProperty Name="Venta" Relationship="Self.FK_Ventas_Ventas_Pertenece_Ventas_Estado" FromRole="Estado" ToRole="Venta" />
-  </EntityType>
-  <EntityType Name="Venta">
-    <Key>
-      <PropertyRef Name="IdVenta" />
-    </Key>
-    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdUsuario" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Fecha" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="Total" Type="Int32" />
-    <NavigationProperty Name="DetalleVentas" Relationship="Self.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="Venta" ToRole="DetalleVentas" />
-    <NavigationProperty Name="Estado" Relationship="Self.FK_Ventas_Ventas_Pertenece_Ventas_Estado" FromRole="Venta" ToRole="Estado" />
-  </EntityType>
   <EntityType Name="Facturas">
     <Key>
       <PropertyRef Name="Factura" />
@@ -278,326 +69,12 @@
     <Property Name="Noviembre" Type="Decimal" Precision="38" Scale="2" />
     <Property Name="Diciembre" Type="Decimal" Precision="38" Scale="2" />
   </EntityType>
-  <Association Name="FK_Compra_Usuario">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="Compra">
-        <PropertyRef Name="idUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CompraDetalle_Compra">
-    <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
-    <End Role="CompraDetalle" Type="Self.CompraDetalle" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Compra">
-        <PropertyRef Name="IdCompra" />
-      </Principal>
-      <Dependent Role="CompraDetalle">
-        <PropertyRef Name="IdCompra" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CompraDetalle_Producto">
-    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
-    <End Role="CompraDetalle" Type="Self.CompraDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Producto">
-        <PropertyRef Name="IdProducto" />
-      </Principal>
-      <Dependent Role="CompraDetalle">
-        <PropertyRef Name="IdProducto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Detalle_Venta_Tiempo_PC">
-    <End Role="PC" Type="Self.PC" Multiplicity="1" />
-    <End Role="Detalle_Venta_Tiempo" Type="Self.Detalle_Venta_Tiempo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PC">
-        <PropertyRef Name="IdPC" />
-      </Principal>
-      <Dependent Role="Detalle_Venta_Tiempo">
-        <PropertyRef Name="Fk_Pc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Detalle_Venta_Tiempo_Usuario">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="Detalle_Venta_Tiempo" Type="Self.Detalle_Venta_Tiempo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="Detalle_Venta_Tiempo">
-        <PropertyRef Name="Fk_Usuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Productos_Producto_Tiene_una_Productos_Categoria">
-    <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
-    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Categoria">
-        <PropertyRef Name="IdCategoria" />
-      </Principal>
-      <Dependent Role="Producto">
-        <PropertyRef Name="Categoria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Producto_Producto_Pertenece_Producto_Estante">
-    <End Role="Estante" Type="Self.Estante" Multiplicity="0..1" />
-    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Estante">
-        <PropertyRef Name="IdEstante" />
-      </Principal>
-      <Dependent Role="Producto">
-        <PropertyRef Name="Estante" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Productos_Producto_Tiene_un_Productos_Proveedor">
-    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
-    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Proveedor">
-        <PropertyRef Name="IdProveedor" />
-      </Principal>
-      <Dependent Role="Producto">
-        <PropertyRef Name="Proveedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Ventas_DetalleVentas_Contiene_Productos_Producto">
-    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
-    <End Role="DetalleVentas" Type="Self.DetalleVentas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Producto">
-        <PropertyRef Name="IdProducto" />
-      </Principal>
-      <Dependent Role="DetalleVentas">
-        <PropertyRef Name="IdProducto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Modulos_ModuloPrincipal">
-    <End Role="ModuloPrincipal" Type="Self.ModuloPrincipal" Multiplicity="1" />
-    <End Role="Modulos" Type="Self.Modulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ModuloPrincipal">
-        <PropertyRef Name="IdModuloPrincipal" />
-      </Principal>
-      <Dependent Role="Modulos">
-        <PropertyRef Name="FKModuloPrincipal" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PerfilModulo_Modulos">
-    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1" />
-    <End Role="PerfilModulo" Type="Self.PerfilModulo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Modulos">
-        <PropertyRef Name="IdModulos" />
-      </Principal>
-      <Dependent Role="PerfilModulo">
-        <PropertyRef Name="FKModuloId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PerfilModulo_Perfiles">
-    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
-    <End Role="PerfilModulo" Type="Self.PerfilModulo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Perfiles">
-        <PropertyRef Name="IdPerfil" />
-      </Principal>
-      <Dependent Role="PerfilModulo">
-        <PropertyRef Name="FKPerfilId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Usuario_Perfiles">
-    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Perfiles">
-        <PropertyRef Name="IdPerfil" />
-      </Principal>
-      <Dependent Role="Usuario">
-        <PropertyRef Name="FKPerfil" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Estado_Usuario">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
-    <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="Estado">
-        <PropertyRef Name="FKUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Usuario_Usuario">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="Usuario1" Type="Self.Usuario" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="Usuario1">
-        <PropertyRef Name="IdUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UsuarioDetalles_UsuarioDetalles">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="UsuarioDetalles" Type="Self.UsuarioDetalles" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="UsuarioDetalles">
-        <PropertyRef Name="PKUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
-    <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
-    <End Role="DetalleVentas" Type="Self.DetalleVentas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Venta">
-        <PropertyRef Name="IdVenta" />
-      </Principal>
-      <Dependent Role="DetalleVentas">
-        <PropertyRef Name="Venta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Ventas_Ventas_Pertenece_Ventas_Estado">
-    <End Role="Estado" Type="Self.Estado" Multiplicity="0..1" />
-    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Estado">
-        <PropertyRef Name="IdEstado" />
-      </Principal>
-      <Dependent Role="Venta">
-        <PropertyRef Name="Total" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PerfilesModulos">
-    <End Role="Modulos" Type="Self.Modulos" Multiplicity="*" />
-    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
-  </Association>
   <EntityContainer Name="CyberElIngeEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Compra" EntityType="Self.Compra" />
-    <EntitySet Name="CompraDetalle" EntityType="Self.CompraDetalle" />
-    <EntitySet Name="Detalle_Venta_Tiempo" EntityType="Self.Detalle_Venta_Tiempo" />
-    <EntitySet Name="PC" EntityType="Self.PC" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="Categoria" EntityType="Self.Categoria" />
-    <EntitySet Name="Estante" EntityType="Self.Estante" />
-    <EntitySet Name="Producto" EntityType="Self.Producto" />
-    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
-    <EntitySet Name="ModuloPrincipal" EntityType="Self.ModuloPrincipal" />
-    <EntitySet Name="Modulos" EntityType="Self.Modulos" />
-    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" />
-    <EntitySet Name="PerfilModulo" EntityType="Self.PerfilModulo" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-    <EntitySet Name="UsuarioDetalles" EntityType="Self.UsuarioDetalles" />
-    <EntitySet Name="DetalleVentas" EntityType="Self.DetalleVentas" />
-    <EntitySet Name="Estado" EntityType="Self.Estado" />
-    <EntitySet Name="Venta" EntityType="Self.Venta" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" />
     <EntitySet Name="Imprimir_Facturas" EntityType="Self.Imprimir_Facturas" />
     <EntitySet Name="Vista1" EntityType="Self.Vista1" />
     <EntitySet Name="VistaProductoMasVendido" EntityType="Self.VistaProductoMasVendido" />
     <EntitySet Name="VistaVentasPorMes" EntityType="Self.VistaVentasPorMes" />
-    <AssociationSet Name="FK_Compra_Usuario" Association="Self.FK_Compra_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Compra" EntitySet="Compra" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CompraDetalle_Compra" Association="Self.FK_CompraDetalle_Compra">
-      <End Role="Compra" EntitySet="Compra" />
-      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CompraDetalle_Producto" Association="Self.FK_CompraDetalle_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Detalle_Venta_Tiempo_PC" Association="Self.FK_Detalle_Venta_Tiempo_PC">
-      <End Role="PC" EntitySet="PC" />
-      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Detalle_Venta_Tiempo_Usuario" Association="Self.FK_Detalle_Venta_Tiempo_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Producto_Tiene_una_Productos_Categoria" Association="Self.FK_Productos_Producto_Tiene_una_Productos_Categoria">
-      <End Role="Categoria" EntitySet="Categoria" />
-      <End Role="Producto" EntitySet="Producto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Producto_Producto_Pertenece_Producto_Estante" Association="Self.FK_Producto_Producto_Pertenece_Producto_Estante">
-      <End Role="Estante" EntitySet="Estante" />
-      <End Role="Producto" EntitySet="Producto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Producto_Tiene_un_Productos_Proveedor" Association="Self.FK_Productos_Producto_Tiene_un_Productos_Proveedor">
-      <End Role="Proveedor" EntitySet="Proveedor" />
-      <End Role="Producto" EntitySet="Producto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ventas_DetalleVentas_Contiene_Productos_Producto" Association="Self.FK_Ventas_DetalleVentas_Contiene_Productos_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Modulos_ModuloPrincipal" Association="Self.FK_Modulos_ModuloPrincipal">
-      <End Role="ModuloPrincipal" EntitySet="ModuloPrincipal" />
-      <End Role="Modulos" EntitySet="Modulos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PerfilModulo_Modulos" Association="Self.FK_PerfilModulo_Modulos">
-      <End Role="Modulos" EntitySet="Modulos" />
-      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PerfilModulo_Perfiles" Association="Self.FK_PerfilModulo_Perfiles">
-      <End Role="Perfiles" EntitySet="Perfiles" />
-      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Usuario_Perfiles" Association="Self.FK_Usuario_Perfiles">
-      <End Role="Perfiles" EntitySet="Perfiles" />
-      <End Role="Usuario" EntitySet="Usuario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Estado_Usuario" Association="Self.FK_Estado_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Estado" EntitySet="Estado" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Usuario_Usuario" Association="Self.FK_Usuario_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Usuario1" EntitySet="Usuario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UsuarioDetalles_UsuarioDetalles" Association="Self.FK_UsuarioDetalles_UsuarioDetalles">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="UsuarioDetalles" EntitySet="UsuarioDetalles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" Association="Self.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
-      <End Role="Venta" EntitySet="Venta" />
-      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ventas_Ventas_Pertenece_Ventas_Estado" Association="Self.FK_Ventas_Ventas_Pertenece_Ventas_Estado">
-      <End Role="Estado" EntitySet="Estado" />
-      <End Role="Venta" EntitySet="Venta" />
-    </AssociationSet>
-    <AssociationSet Name="PerfilesModulos" Association="Self.PerfilesModulos">
-      <End Role="Modulos" EntitySet="Modulos" />
-      <End Role="Perfiles" EntitySet="Perfiles" />
-    </AssociationSet>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -628,6 +105,100 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Compra" EntityType="CyberElIngeModel.Compra" />
+    <EntitySet Name="CompraDetalle" EntityType="CyberElIngeModel.CompraDetalle" />
+    <EntitySet Name="Detalle_Venta_Tiempo" EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" />
+    <EntitySet Name="sysdiagrams" EntityType="CyberElIngeModel.sysdiagrams" />
+    <EntitySet Name="Categoria" EntityType="CyberElIngeModel.Categoria" />
+    <EntitySet Name="Estante" EntityType="CyberElIngeModel.Estante" />
+    <EntitySet Name="Producto" EntityType="CyberElIngeModel.Producto" />
+    <EntitySet Name="Proveedor" EntityType="CyberElIngeModel.Proveedor" />
+    <EntitySet Name="ModuloPrincipal" EntityType="CyberElIngeModel.ModuloPrincipal" />
+    <EntitySet Name="Modulos" EntityType="CyberElIngeModel.Modulos" />
+    <EntitySet Name="Perfiles" EntityType="CyberElIngeModel.Perfiles" />
+    <EntitySet Name="PerfilModulo" EntityType="CyberElIngeModel.PerfilModulo" />
+    <EntitySet Name="Usuario" EntityType="CyberElIngeModel.Usuario" />
+    <EntitySet Name="UsuarioDetalles" EntityType="CyberElIngeModel.UsuarioDetalles" />
+    <EntitySet Name="DetalleVentas" EntityType="CyberElIngeModel.DetalleVentas" />
+    <EntitySet Name="Estado" EntityType="CyberElIngeModel.Estado" />
+    <EntitySet Name="Venta" EntityType="CyberElIngeModel.Venta" />
+    <AssociationSet Name="FK_Compra_Usuario" Association="CyberElIngeModel.FK_Compra_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompraDetalle_Compra" Association="CyberElIngeModel.FK_CompraDetalle_Compra">
+      <End Role="Compra" EntitySet="Compra" />
+      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompraDetalle_Producto" Association="CyberElIngeModel.FK_CompraDetalle_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Venta_Tiempo_Usuario" Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Producto_Tiene_una_Productos_Categoria" Association="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Producto_Pertenece_Producto_Estante" Association="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante">
+      <End Role="Estante" EntitySet="Estante" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Producto_Tiene_un_Productos_Proveedor" Association="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_DetalleVentas_Contiene_Productos_Producto" Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modulos_ModuloPrincipal" Association="CyberElIngeModel.FK_Modulos_ModuloPrincipal">
+      <End Role="ModuloPrincipal" EntitySet="ModuloPrincipal" />
+      <End Role="Modulos" EntitySet="Modulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilModulo_Modulos" Association="CyberElIngeModel.FK_PerfilModulo_Modulos">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilModulo_Perfiles" Association="CyberElIngeModel.FK_PerfilModulo_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Perfiles" Association="CyberElIngeModel.FK_Usuario_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Usuario" Association="CyberElIngeModel.FK_Estado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Usuario" Association="CyberElIngeModel.FK_Usuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario1" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioDetalles_UsuarioDetalles" Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioDetalles" EntitySet="UsuarioDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
+      <End Role="Venta" EntitySet="Venta" />
+      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_Ventas_Pertenece_Ventas_Estado" Association="CyberElIngeModel.FK_Ventas_Ventas_Pertenece_Ventas_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+    <AssociationSet Name="PerfilesModulos" Association="CyberElIngeModel.PerfilesModulos">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="Perfiles" EntitySet="Perfiles" />
+    </AssociationSet>
+    <EntitySet Name="PC" EntityType="CyberElIngeModel.PC" />
+    <AssociationSet Name="FK_Detalle_Venta_Tiempo_PC" Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC">
+      <End Role="PC" EntitySet="PC" />
+      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -640,4 +211,433 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int16" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Total" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Compra_Usuario" FromRole="Compra" ToRole="Usuario" />
+    <NavigationProperty Name="CompraDetalle" Relationship="CyberElIngeModel.FK_CompraDetalle_Compra" FromRole="Compra" ToRole="CompraDetalle" />
+  </EntityType>
+  <EntityType Name="CompraDetalle">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="Int32" Nullable="false" />
+    <Property Name="IdProducto" Type="Int64" Nullable="false" />
+    <Property Name="PrecioUnidad" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Cantidad" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Total" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Compra" Relationship="CyberElIngeModel.FK_CompraDetalle_Compra" FromRole="CompraDetalle" ToRole="Compra" />
+    <NavigationProperty Name="Producto" Relationship="CyberElIngeModel.FK_CompraDetalle_Producto" FromRole="CompraDetalle" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Detalle_Venta_Tiempo">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="Int64" Nullable="false" />
+    <Property Name="Fk_Pc" Type="Int64" Nullable="false" />
+    <Property Name="Fk_Usuario" Type="Int16" Nullable="false" />
+    <Property Name="Hora_Inicio" Type="Time" Precision="7" />
+    <Property Name="Hora_fin" Type="Time" Precision="7" />
+    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario" FromRole="Detalle_Venta_Tiempo" ToRole="Usuario" />
+    <NavigationProperty Name="PC" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" FromRole="Detalle_Venta_Tiempo" ToRole="PC" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Producto" Relationship="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria" FromRole="Categoria" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Estante">
+    <Key>
+      <PropertyRef Name="IdEstante" />
+    </Key>
+    <Property Name="IdEstante" Type="Int32" Nullable="false" />
+    <Property Name="NombreEstante" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DescripciónEstante" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Producto" Relationship="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante" FromRole="Estante" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="PrecioVenta" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="PrecioCosto" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Categoria" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor" Type="Int32" Nullable="false" />
+    <Property Name="Estante" Type="Int32" />
+    <Property Name="Tipo_Impuesto" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="CompraDetalle" Relationship="CyberElIngeModel.FK_CompraDetalle_Producto" FromRole="Producto" ToRole="CompraDetalle" />
+    <NavigationProperty Name="Categoria1" Relationship="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria" FromRole="Producto" ToRole="Categoria" />
+    <NavigationProperty Name="Estante1" Relationship="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante" FromRole="Producto" ToRole="Estante" />
+    <NavigationProperty Name="Proveedor1" Relationship="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor" FromRole="Producto" ToRole="Proveedor" />
+    <NavigationProperty Name="DetalleVentas" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" FromRole="Producto" ToRole="DetalleVentas" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empresa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Vendedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Contacto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Contacto1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Producto" Relationship="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor" FromRole="Proveedor" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="ModuloPrincipal">
+    <Key>
+      <PropertyRef Name="IdModuloPrincipal" />
+    </Key>
+    <Property Name="IdModuloPrincipal" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescripcionModuloPrin" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EstadoModuloPrin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Modulos" Relationship="CyberElIngeModel.FK_Modulos_ModuloPrincipal" FromRole="ModuloPrincipal" ToRole="Modulos" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulos" />
+    </Key>
+    <Property Name="IdModulos" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescripcionModulo" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="EstadoModulo" Type="Boolean" Nullable="false" />
+    <Property Name="FKModuloPrincipal" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="ModuloPrincipal" Relationship="CyberElIngeModel.FK_Modulos_ModuloPrincipal" FromRole="Modulos" ToRole="ModuloPrincipal" />
+    <NavigationProperty Name="PerfilModulo" Relationship="CyberElIngeModel.FK_PerfilModulo_Modulos" FromRole="Modulos" ToRole="PerfilModulo" />
+    <NavigationProperty Name="Perfiles" Relationship="CyberElIngeModel.PerfilesModulos" FromRole="Modulos" ToRole="Perfiles" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescripcionPerfil" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="EstadoPerfil" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PerfilModulo" Relationship="CyberElIngeModel.FK_PerfilModulo_Perfiles" FromRole="Perfiles" ToRole="PerfilModulo" />
+    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Usuario_Perfiles" FromRole="Perfiles" ToRole="Usuario" />
+    <NavigationProperty Name="Modulos" Relationship="CyberElIngeModel.PerfilesModulos" FromRole="Perfiles" ToRole="Modulos" />
+  </EntityType>
+  <EntityType Name="PerfilModulo">
+    <Key>
+      <PropertyRef Name="IdPerfilModulo" />
+    </Key>
+    <Property Name="FKPerfilId" Type="Int16" Nullable="false" />
+    <Property Name="FKModuloId" Type="Int16" Nullable="false" />
+    <Property Name="IdPerfilModulo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Modulos" Relationship="CyberElIngeModel.FK_PerfilModulo_Modulos" FromRole="PerfilModulo" ToRole="Modulos" />
+    <NavigationProperty Name="Perfiles" Relationship="CyberElIngeModel.FK_PerfilModulo_Perfiles" FromRole="PerfilModulo" ToRole="Perfiles" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usr" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Pwd" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <Property Name="FKPerfil" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Compra" Relationship="CyberElIngeModel.FK_Compra_Usuario" FromRole="Usuario" ToRole="Compra" />
+    <NavigationProperty Name="Detalle_Venta_Tiempo" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario" FromRole="Usuario" ToRole="Detalle_Venta_Tiempo" />
+    <NavigationProperty Name="Perfiles" Relationship="CyberElIngeModel.FK_Usuario_Perfiles" FromRole="Usuario" ToRole="Perfiles" />
+    <NavigationProperty Name="Estado1" Relationship="CyberElIngeModel.FK_Estado_Usuario" FromRole="Usuario" ToRole="Estado" />
+    <NavigationProperty Name="Usuario1" Relationship="CyberElIngeModel.FK_Usuario_Usuario" FromRole="Usuario" ToRole="Usuario1" />
+    <NavigationProperty Name="Usuario2" Relationship="CyberElIngeModel.FK_Usuario_Usuario" FromRole="Usuario1" ToRole="Usuario" />
+    <NavigationProperty Name="UsuarioDetalles" Relationship="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles" FromRole="Usuario" ToRole="UsuarioDetalles" />
+  </EntityType>
+  <EntityType Name="UsuarioDetalles">
+    <Key>
+      <PropertyRef Name="PKUsuario" />
+    </Key>
+    <Property Name="PKUsuario" Type="Int16" Nullable="false" />
+    <Property Name="userNombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userApellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userTelefono" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles" FromRole="UsuarioDetalles" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="DetalleVentas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int64" Nullable="false" />
+    <Property Name="Venta" Type="Int32" Nullable="false" />
+    <Property Name="PrecioUnidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Total" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <NavigationProperty Name="Producto" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" FromRole="DetalleVentas" ToRole="Producto" />
+    <NavigationProperty Name="Venta1" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="DetalleVentas" ToRole="Venta" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="Int32" Nullable="false" />
+    <Property Name="Estado1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripción_estado" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FKUsuario" Type="Int16" />
+    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Estado_Usuario" FromRole="Estado" ToRole="Usuario" />
+    <NavigationProperty Name="Venta" Relationship="CyberElIngeModel.FK_Ventas_Ventas_Pertenece_Ventas_Estado" FromRole="Estado" ToRole="Venta" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fecha" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="Total" Type="Int32" />
+    <NavigationProperty Name="DetalleVentas" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="Venta" ToRole="DetalleVentas" />
+    <NavigationProperty Name="Estado" Relationship="CyberElIngeModel.FK_Ventas_Ventas_Pertenece_Ventas_Estado" FromRole="Venta" ToRole="Estado" />
+  </EntityType>
+  <Association Name="FK_Compra_Usuario">
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Compra" Role="Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompraDetalle_Compra">
+    <End Type="CyberElIngeModel.Compra" Role="Compra" Multiplicity="1" />
+    <End Type="CyberElIngeModel.CompraDetalle" Role="CompraDetalle" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Compra">
+        <PropertyRef Name="IdCompra" />
+      </Principal>
+      <Dependent Role="CompraDetalle">
+        <PropertyRef Name="IdCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompraDetalle_Producto">
+    <End Type="CyberElIngeModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="CyberElIngeModel.CompraDetalle" Role="CompraDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="CompraDetalle">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Venta_Tiempo_Usuario">
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Detalle_Venta_Tiempo" Role="Detalle_Venta_Tiempo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Detalle_Venta_Tiempo">
+        <PropertyRef Name="Fk_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Producto_Tiene_una_Productos_Categoria">
+    <End Type="CyberElIngeModel.Categoria" Role="Categoria" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Producto_Pertenece_Producto_Estante">
+    <End Type="CyberElIngeModel.Estante" Role="Estante" Multiplicity="0..1" />
+    <End Type="CyberElIngeModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estante">
+        <PropertyRef Name="IdEstante" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Estante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Producto_Tiene_un_Productos_Proveedor">
+    <End Type="CyberElIngeModel.Proveedor" Role="Proveedor" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="IdProveedor" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="Proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_DetalleVentas_Contiene_Productos_Producto">
+    <End Type="CyberElIngeModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="CyberElIngeModel.DetalleVentas" Role="DetalleVentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="DetalleVentas">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modulos_ModuloPrincipal">
+    <End Type="CyberElIngeModel.ModuloPrincipal" Role="ModuloPrincipal" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Modulos" Role="Modulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModuloPrincipal">
+        <PropertyRef Name="IdModuloPrincipal" />
+      </Principal>
+      <Dependent Role="Modulos">
+        <PropertyRef Name="FKModuloPrincipal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilModulo_Modulos">
+    <End Type="CyberElIngeModel.Modulos" Role="Modulos" Multiplicity="1" />
+    <End Type="CyberElIngeModel.PerfilModulo" Role="PerfilModulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="IdModulos" />
+      </Principal>
+      <Dependent Role="PerfilModulo">
+        <PropertyRef Name="FKModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerfilModulo_Perfiles">
+    <End Type="CyberElIngeModel.Perfiles" Role="Perfiles" Multiplicity="1" />
+    <End Type="CyberElIngeModel.PerfilModulo" Role="PerfilModulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfiles">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="PerfilModulo">
+        <PropertyRef Name="FKPerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Perfiles">
+    <End Type="CyberElIngeModel.Perfiles" Role="Perfiles" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfiles">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="FKPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_Usuario">
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+    <End Type="CyberElIngeModel.Estado" Role="Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="FKUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Usuario">
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Usuario1">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioDetalles_UsuarioDetalles">
+    <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CyberElIngeModel.UsuarioDetalles" Role="UsuarioDetalles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="UsuarioDetalles">
+        <PropertyRef Name="PKUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
+    <End Type="CyberElIngeModel.Venta" Role="Venta" Multiplicity="1" />
+    <End Type="CyberElIngeModel.DetalleVentas" Role="DetalleVentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta">
+        <PropertyRef Name="IdVenta" />
+      </Principal>
+      <Dependent Role="DetalleVentas">
+        <PropertyRef Name="Venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ventas_Ventas_Pertenece_Ventas_Estado">
+    <End Type="CyberElIngeModel.Estado" Role="Estado" Multiplicity="0..1" />
+    <End Type="CyberElIngeModel.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="Total" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PerfilesModulos">
+    <End Type="CyberElIngeModel.Modulos" Role="Modulos" Multiplicity="*" />
+    <End Type="CyberElIngeModel.Perfiles" Role="Perfiles" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PC">
+    <Key>
+      <PropertyRef Name="IdPC" />
+    </Key>
+    <Property Name="IdPC" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IP" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fila" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Columna" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Detalle_Venta_Tiempo" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" FromRole="PC" ToRole="Detalle_Venta_Tiempo" />
+  </EntityType>
+  <Association Name="FK_Detalle_Venta_Tiempo_PC">
+    <End Type="CyberElIngeModel.PC" Role="PC" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Detalle_Venta_Tiempo" Role="Detalle_Venta_Tiempo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PC">
+        <PropertyRef Name="IdPC" />
+      </Principal>
+      <Dependent Role="Detalle_Venta_Tiempo">
+        <PropertyRef Name="Fk_Pc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

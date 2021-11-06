@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -201,6 +216,25 @@
     <Compile Include="Compras\Formulario_Compras2-0.Designer.cs">
       <DependentUpon>Formulario_Compras2-0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control de Ordenadores\Admin Pcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control de Ordenadores\Admin Pcs.designer.cs">
+      <DependentUpon>Admin Pcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control de Ordenadores\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control de Ordenadores\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control de Ordenadores\PC_Tiempo.cs" />
+    <Compile Include="Control de Ordenadores\UserControls\Computadora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control de Ordenadores\UserControls\Computadora.designer.cs">
+      <DependentUpon>Computadora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control de tiempo\Frm_Control_Tiempo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +364,15 @@
     <EmbeddedResource Include="Compras\Formulario_Compras.resx">
       <DependentUpon>Formulario_Compras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control de Ordenadores\Admin Pcs.resx">
+      <DependentUpon>Admin Pcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control de Ordenadores\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control de Ordenadores\UserControls\Computadora.resx">
+      <DependentUpon>Computadora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control de tiempo\Frm_Control_Tiempo.resx">
       <DependentUpon>Frm_Control_Tiempo.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\InventarioCompleto.resx">
       <DependentUpon>InventarioCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\FormCondicional.resx">
       <DependentUpon>FormCondicional.cs</DependentUpon>
@@ -435,6 +481,8 @@
     </Content>
     <Content Include="Imagenes\casa %281%29.png" />
     <Content Include="Imagenes\casa.png" />
+    <None Include="Resources\goback.png" />
+    <None Include="Resources\pc2.png" />
     <None Include="Resources\Ciber El Inge.gif" />
     <None Include="Resources\Ciber El Inge.png" />
     <None Include="Resources\escritura.png" />
@@ -483,6 +531,21 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Menu2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,7 +20,7 @@ namespace Punto_de_venta.Bases_de_datos
         }
     
         public long IdPC { get; set; }
-        public string Nombre { get; set; }
+        public string IP { get; set; }
         public string Fila { get; set; }
         public string Columna { get; set; }
         public bool Estado { get; set; }

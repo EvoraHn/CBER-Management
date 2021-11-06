@@ -28,10 +28,14 @@ namespace Punto_de_venta.Bases_de_datos
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Facturas> Facturas { get; set; }
+        public DbSet<Imprimir_Facturas> Imprimir_Facturas { get; set; }
+        public DbSet<Vista1> Vista1 { get; set; }
+        public DbSet<VistaProductoMasVendido> VistaProductoMasVendido { get; set; }
+        public DbSet<VistaVentasPorMes> VistaVentasPorMes { get; set; }
         public DbSet<Compra> Compra { get; set; }
         public DbSet<CompraDetalle> CompraDetalle { get; set; }
         public DbSet<Detalle_Venta_Tiempo> Detalle_Venta_Tiempo { get; set; }
-        public DbSet<PC> PC { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Estante> Estante { get; set; }
@@ -46,11 +50,7 @@ namespace Punto_de_venta.Bases_de_datos
         public DbSet<DetalleVentas> DetalleVentas { get; set; }
         public DbSet<Estado> Estado { get; set; }
         public DbSet<Venta> Venta { get; set; }
-        public DbSet<Facturas> Facturas { get; set; }
-        public DbSet<Imprimir_Facturas> Imprimir_Facturas { get; set; }
-        public DbSet<Vista1> Vista1 { get; set; }
-        public DbSet<VistaProductoMasVendido> VistaProductoMasVendido { get; set; }
-        public DbSet<VistaVentasPorMes> VistaVentasPorMes { get; set; }
+        public DbSet<PC> PC { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

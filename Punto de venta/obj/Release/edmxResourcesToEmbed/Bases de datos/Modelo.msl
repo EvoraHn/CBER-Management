@@ -1,195 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CyberElIngeModelStoreContainer" CdmEntityContainer="CyberElIngeEntities">
-    <EntitySetMapping Name="Compra">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Compra">
-        <MappingFragment StoreEntitySet="Compra">
-          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
-          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CompraDetalle">
-      <EntityTypeMapping TypeName="CyberElIngeModel.CompraDetalle">
-        <MappingFragment StoreEntitySet="CompraDetalle">
-          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
-          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Detalle_Venta_Tiempo">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Detalle_Venta_Tiempo">
-        <MappingFragment StoreEntitySet="Detalle_Venta_Tiempo">
-          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-          <ScalarProperty Name="Fk_Pc" ColumnName="Fk_Pc" />
-          <ScalarProperty Name="Fk_Usuario" ColumnName="Fk_Usuario" />
-          <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
-          <ScalarProperty Name="Hora_fin" ColumnName="Hora_fin" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PC">
-      <EntityTypeMapping TypeName="CyberElIngeModel.PC">
-        <MappingFragment StoreEntitySet="PC">
-          <ScalarProperty Name="IdPC" ColumnName="IdPC" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Fila" ColumnName="Fila" />
-          <ScalarProperty Name="Columna" ColumnName="Columna" />
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="CyberElIngeModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Categoria">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Categoria">
-        <MappingFragment StoreEntitySet="Categoria">
-          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Estante">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Estante">
-        <MappingFragment StoreEntitySet="Estante">
-          <ScalarProperty Name="IdEstante" ColumnName="IdEstante" />
-          <ScalarProperty Name="NombreEstante" ColumnName="NombreEstante" />
-          <ScalarProperty Name="DescripciónEstante" ColumnName="DescripciónEstante" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Producto">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Producto">
-        <MappingFragment StoreEntitySet="Producto">
-          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
-          <ScalarProperty Name="PrecioCosto" ColumnName="PrecioCosto" />
-          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
-          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
-          <ScalarProperty Name="Estante" ColumnName="Estante" />
-          <ScalarProperty Name="Tipo_Impuesto" ColumnName="Tipo_Impuesto" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Proveedor">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Proveedor">
-        <MappingFragment StoreEntitySet="Proveedor">
-          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
-          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-          <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
-          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
-          <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ModuloPrincipal">
-      <EntityTypeMapping TypeName="CyberElIngeModel.ModuloPrincipal">
-        <MappingFragment StoreEntitySet="ModuloPrincipal">
-          <ScalarProperty Name="IdModuloPrincipal" ColumnName="IdModuloPrincipal" />
-          <ScalarProperty Name="DescripcionModuloPrin" ColumnName="DescripcionModuloPrin" />
-          <ScalarProperty Name="EstadoModuloPrin" ColumnName="EstadoModuloPrin" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Modulos">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Modulos">
-        <MappingFragment StoreEntitySet="Modulos">
-          <ScalarProperty Name="IdModulos" ColumnName="IdModulos" />
-          <ScalarProperty Name="DescripcionModulo" ColumnName="DescripcionModulo" />
-          <ScalarProperty Name="EstadoModulo" ColumnName="EstadoModulo" />
-          <ScalarProperty Name="FKModuloPrincipal" ColumnName="FKModuloPrincipal" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Perfiles">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Perfiles">
-        <MappingFragment StoreEntitySet="Perfiles">
-          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
-          <ScalarProperty Name="DescripcionPerfil" ColumnName="DescripcionPerfil" />
-          <ScalarProperty Name="EstadoPerfil" ColumnName="EstadoPerfil" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PerfilModulo">
-      <EntityTypeMapping TypeName="CyberElIngeModel.PerfilModulo">
-        <MappingFragment StoreEntitySet="PerfilModulo">
-          <ScalarProperty Name="FKPerfilId" ColumnName="FKPerfilId" />
-          <ScalarProperty Name="FKModuloId" ColumnName="FKModuloId" />
-          <ScalarProperty Name="IdPerfilModulo" ColumnName="IdPerfilModulo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Usuario">
-        <MappingFragment StoreEntitySet="Usuario">
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="Usr" ColumnName="Usr" />
-          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-          <ScalarProperty Name="FKPerfil" ColumnName="FKPerfil" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UsuarioDetalles">
-      <EntityTypeMapping TypeName="CyberElIngeModel.UsuarioDetalles">
-        <MappingFragment StoreEntitySet="UsuarioDetalles">
-          <ScalarProperty Name="PKUsuario" ColumnName="PKUsuario" />
-          <ScalarProperty Name="userNombre" ColumnName="userNombre" />
-          <ScalarProperty Name="userApellido" ColumnName="userApellido" />
-          <ScalarProperty Name="userTelefono" ColumnName="userTelefono" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DetalleVentas">
-      <EntityTypeMapping TypeName="CyberElIngeModel.DetalleVentas">
-        <MappingFragment StoreEntitySet="DetalleVentas">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="Venta" ColumnName="Venta" />
-          <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Estado">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Estado">
-        <MappingFragment StoreEntitySet="Estado">
-          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
-          <ScalarProperty Name="Estado1" ColumnName="Estado" />
-          <ScalarProperty Name="Descripción_estado" ColumnName="Descripción estado" />
-          <ScalarProperty Name="FKUsuario" ColumnName="FKUsuario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Venta">
-      <EntityTypeMapping TypeName="CyberElIngeModel.Venta">
-        <MappingFragment StoreEntitySet="Venta">
-          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Facturas">
       <EntityTypeMapping TypeName="CyberElIngeModel.Facturas">
         <MappingFragment StoreEntitySet="Facturas">
@@ -252,37 +63,202 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompraDetalle">
+      <EntityTypeMapping TypeName="CyberElIngeModel.CompraDetalle">
+        <MappingFragment StoreEntitySet="CompraDetalle">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_Venta_Tiempo">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Detalle_Venta_Tiempo">
+        <MappingFragment StoreEntitySet="Detalle_Venta_Tiempo">
+          <ScalarProperty Name="Hora_fin" ColumnName="Hora_fin" />
+          <ScalarProperty Name="Hora_Inicio" ColumnName="Hora_Inicio" />
+          <ScalarProperty Name="Fk_Usuario" ColumnName="Fk_Usuario" />
+          <ScalarProperty Name="Fk_Pc" ColumnName="Fk_Pc" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CyberElIngeModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estante">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Estante">
+        <MappingFragment StoreEntitySet="Estante">
+          <ScalarProperty Name="DescripciónEstante" ColumnName="DescripciónEstante" />
+          <ScalarProperty Name="NombreEstante" ColumnName="NombreEstante" />
+          <ScalarProperty Name="IdEstante" ColumnName="IdEstante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="Tipo_Impuesto" ColumnName="Tipo_Impuesto" />
+          <ScalarProperty Name="Estante" ColumnName="Estante" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="PrecioCosto" ColumnName="PrecioCosto" />
+          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Contacto1" ColumnName="Contacto1" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuloPrincipal">
+      <EntityTypeMapping TypeName="CyberElIngeModel.ModuloPrincipal">
+        <MappingFragment StoreEntitySet="ModuloPrincipal">
+          <ScalarProperty Name="EstadoModuloPrin" ColumnName="EstadoModuloPrin" />
+          <ScalarProperty Name="DescripcionModuloPrin" ColumnName="DescripcionModuloPrin" />
+          <ScalarProperty Name="IdModuloPrincipal" ColumnName="IdModuloPrincipal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulos">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Modulos">
+        <MappingFragment StoreEntitySet="Modulos">
+          <ScalarProperty Name="FKModuloPrincipal" ColumnName="FKModuloPrincipal" />
+          <ScalarProperty Name="EstadoModulo" ColumnName="EstadoModulo" />
+          <ScalarProperty Name="DescripcionModulo" ColumnName="DescripcionModulo" />
+          <ScalarProperty Name="IdModulos" ColumnName="IdModulos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfiles">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Perfiles">
+        <MappingFragment StoreEntitySet="Perfiles">
+          <ScalarProperty Name="EstadoPerfil" ColumnName="EstadoPerfil" />
+          <ScalarProperty Name="DescripcionPerfil" ColumnName="DescripcionPerfil" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerfilModulo">
+      <EntityTypeMapping TypeName="CyberElIngeModel.PerfilModulo">
+        <MappingFragment StoreEntitySet="PerfilModulo">
+          <ScalarProperty Name="IdPerfilModulo" ColumnName="IdPerfilModulo" />
+          <ScalarProperty Name="FKModuloId" ColumnName="FKModuloId" />
+          <ScalarProperty Name="FKPerfilId" ColumnName="FKPerfilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="FKPerfil" ColumnName="FKPerfil" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Usr" ColumnName="Usr" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioDetalles">
+      <EntityTypeMapping TypeName="CyberElIngeModel.UsuarioDetalles">
+        <MappingFragment StoreEntitySet="UsuarioDetalles">
+          <ScalarProperty Name="userTelefono" ColumnName="userTelefono" />
+          <ScalarProperty Name="userApellido" ColumnName="userApellido" />
+          <ScalarProperty Name="userNombre" ColumnName="userNombre" />
+          <ScalarProperty Name="PKUsuario" ColumnName="PKUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVentas">
+      <EntityTypeMapping TypeName="CyberElIngeModel.DetalleVentas">
+        <MappingFragment StoreEntitySet="DetalleVentas">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
+          <ScalarProperty Name="Venta" ColumnName="Venta" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="FKUsuario" ColumnName="FKUsuario" />
+          <ScalarProperty Name="Descripción_estado" ColumnName="Descripción estado" />
+          <ScalarProperty Name="Estado1" ColumnName="Estado" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PerfilesModulos" TypeName="CyberElIngeModel.PerfilesModulos" StoreEntitySet="PerfilesModulos">
-      <EndProperty Name="Modulos">
-        <ScalarProperty Name="IdModulos" ColumnName="FKModuloId" />
-      </EndProperty>
       <EndProperty Name="Perfiles">
         <ScalarProperty Name="IdPerfil" ColumnName="FKPerfilId" />
       </EndProperty>
+      <EndProperty Name="Modulos">
+        <ScalarProperty Name="IdModulos" ColumnName="FKModuloId" />
+      </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CyberElIngeModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CyberElIngeModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CyberElIngeModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CyberElIngeModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CyberElIngeModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CyberElIngeModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CyberElIngeModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CyberElIngeModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CyberElIngeModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="PC">
+      <EntityTypeMapping TypeName="CyberElIngeModel.PC">
+        <MappingFragment StoreEntitySet="PC">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Columna" ColumnName="Columna" />
+          <ScalarProperty Name="Fila" ColumnName="Fila" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="IdPC" ColumnName="IdPC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

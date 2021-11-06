@@ -20,7 +20,7 @@ namespace Punto_de_venta.Bases_de_datos
         public Nullable<System.TimeSpan> Hora_Inicio { get; set; }
         public Nullable<System.TimeSpan> Hora_fin { get; set; }
     
-        public virtual PC PC { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual PC PC { get; set; }
     }
 }

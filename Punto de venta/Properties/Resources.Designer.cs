@@ -183,6 +183,16 @@ namespace Punto_de_venta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goback {
+            get {
+                object obj = ResourceManager.GetObject("goback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hogar {
             get {
                 object obj = ResourceManager.GetObject("hogar", resourceCulture);
@@ -346,6 +356,16 @@ namespace Punto_de_venta.Properties {
         internal static System.Drawing.Bitmap panel_grande1 {
             get {
                 object obj = ResourceManager.GetObject("panel grande1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pc2 {
+            get {
+                object obj = ResourceManager.GetObject("pc2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
