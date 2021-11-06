@@ -560,3 +560,7 @@ C:\Users\germa\Desktop\CBER-Management\Punto de venta\obj\Release\Punto_de_venta
 C:\Users\germa\Desktop\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Admin_Pcs.resources
 C:\Users\germa\Desktop\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Form1.resources
 C:\Users\germa\Desktop\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Form1.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Admin_Pcs.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Form1.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Computadora.resources
+E:\PROYECTO GESTION CBER EL ING\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Form1.resources

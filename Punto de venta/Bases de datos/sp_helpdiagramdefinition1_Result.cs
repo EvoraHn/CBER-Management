@@ -10,20 +10,10 @@
 namespace Punto_de_venta.Bases_de_datos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Venta
+    public partial class sp_helpdiagramdefinition1_Result
     {
-        public Venta()
-        {
-            this.DetalleVentas = new HashSet<DetalleVentas>();
-        }
-    
-        public int IdVenta { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public Nullable<int> Total { get; set; }
-        public Nullable<short> idUsuario { get; set; }
-    
-        public virtual ICollection<DetalleVentas> DetalleVentas { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

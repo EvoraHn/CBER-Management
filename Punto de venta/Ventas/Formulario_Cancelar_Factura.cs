@@ -43,7 +43,7 @@ namespace Punto_de_venta.Ventas
                              {
                                  p.IdVenta,
                                
-                                 p.Estado
+                                 //p.Estado
                              };
 
             this.mifiltro = (tFacturas.CopyAnonymusToDataTable()).DefaultView;

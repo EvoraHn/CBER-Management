@@ -14,17 +14,11 @@ namespace Punto_de_venta.Bases_de_datos
     
     public partial class Estado
     {
-        public Estado()
-        {
-            this.Venta = new HashSet<Venta>();
-        }
-    
         public int IdEstado { get; set; }
         public int Estado1 { get; set; }
         public string Descripción_estado { get; set; }
         public Nullable<short> FKUsuario { get; set; }
     
         public virtual Usuario Usuario { get; set; }
-        public virtual ICollection<Venta> Venta { get; set; }
     }
 }

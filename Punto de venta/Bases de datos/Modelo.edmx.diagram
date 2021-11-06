@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="78c6116aa64740f295374362ea4f60b3" Name="Diagram1" ZoomLevel="72">
+      <Diagram DiagramId="78c6116aa64740f295374362ea4f60b3" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="CyberElIngeModel.Compra" Width="1.5" PointX="9.75" PointY="13.375" />
         <EntityTypeShape EntityType="CyberElIngeModel.CompraDetalle" Width="1.5" PointX="12" PointY="12.25" />
         <EntityTypeShape EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" Width="1.5" PointX="9.75" PointY="10.25" />
@@ -21,7 +21,6 @@
         <EntityTypeShape EntityType="CyberElIngeModel.UsuarioDetalles" Width="1.5" PointX="9.75" PointY="7.5" />
         <EntityTypeShape EntityType="CyberElIngeModel.DetalleVentas" Width="1.5" PointX="14.25" PointY="16" />
         <EntityTypeShape EntityType="CyberElIngeModel.Estado" Width="1.5" PointX="9.75" PointY="16.25" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Venta" Width="1.5" PointX="12" PointY="16.25" />
         <AssociationConnector Association="CyberElIngeModel.FK_Compra_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_CompraDetalle_Compra" />
         <AssociationConnector Association="CyberElIngeModel.FK_CompraDetalle_Producto" />
@@ -37,10 +36,10 @@
         <AssociationConnector Association="CyberElIngeModel.FK_Estado_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_Usuario_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles" />
-        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" />
-        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_Ventas_Pertenece_Ventas_Estado" />
         <AssociationConnector Association="CyberElIngeModel.PerfilesModulos" />
-        <EntityTypeShape EntityType="CyberElIngeModel.PC" Width="1.5" PointX="9.125" PointY="3.5" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Venta" Width="1.5" PointX="3.375" PointY="0.875" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" />
+        <EntityTypeShape EntityType="CyberElIngeModel.PC" Width="1.5" PointX="0.75" PointY="3.875" />
         <AssociationConnector Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" />
       </Diagram>
     </edmx:Diagrams>

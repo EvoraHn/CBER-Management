@@ -19,7 +19,7 @@ namespace Punto_de_venta.Ventas
         //filtro para el botón buscar
         DataView mifiltro;
         //inicializar las variables
-        string id = "000000";
+        long id = 0;
         int idDetalle = 0;
         bool errorV = false;
         long userID = 0;
@@ -38,10 +38,11 @@ namespace Punto_de_venta.Ventas
             {
                 try
                 {
-                    id = Convert.ToString(dgProductos.SelectedCells[0].Value);
-                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToInt32(id));
+                    id = Convert.ToInt64(dgProductos.SelectedCells[0].Value);
+                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
                     txtId.Text = (tabla.IdProducto).ToString();
                     txtProducto.Text = tabla.Nombre;
+                    txtPrecio.Text = (tabla.PrecioVenta).ToString();
                 }
                 catch (Exception)
                 { }
@@ -107,22 +108,23 @@ namespace Punto_de_venta.Ventas
         }
         private void Limpiar()
         {
-            txtBuscar.Text = txtId.Text = txtProducto.Text =  string.Empty;
+            txtBuscar.Text = txtId.Text = txtProducto.Text /*= txtPrecio.Text*/ = string.Empty;
             txtCantidad.Text = "1" ;
             txtBuscar.Focus();
         }
         private void LimpiarTodo()
         {
             txtId.Text = txtProducto.Text = txtCliente.Text = txtRTN.Text =
-            txtDescuentos.Text= txtImporteExonerado.Text
+            txtDescuentos.Text= txtImpuesto.Text
             = txtTotal.Text =
             txtSubtotal.Text=txtBuscar.Text= string.Empty;
             txtDescuentos.Text = "0";
-            txtImporteExonerado.Text = "0";
+            txtImpuesto.Text = "0";
             dgFactura.Rows.Clear();
             dgFactura.RowCount = 0;
             txtCantidad.Text = "1";
             lblFactura.Text = "00000";
+            txtPrecio.Text = "";
             txtBuscar.Focus();
             
         }
@@ -144,7 +146,8 @@ namespace Punto_de_venta.Ventas
 
             string codigo = dgProductos.Rows[indice].Cells[0].Value.ToString();
             string producto = dgProductos.Rows[indice].Cells[1].Value.ToString();
-            string precio = dgProductos.Rows[indice].Cells[2].Value.ToString();
+            //string precio = dgProductos.Rows[indice].Cells[2].Value.ToString();
+            string precio = txtPrecio.Text;
             string cantidad = dgFactura.RowCount == 0 ? "1" : dgFactura.Rows[indiceF].Cells[3].Value.ToString();
             
             foreach (DataGridViewRow dr in dgFactura.Rows)
@@ -235,65 +238,69 @@ namespace Punto_de_venta.Ventas
             decimal exento = 0;
             decimal iG15 = 0;
             decimal iG18 = 0;
-            decimal descuento = txtDescuentos.Text == string.Empty ? 0 : Convert.ToDecimal(txtDescuentos.Text);
-            decimal exonerado = txtImporteExonerado.Text == string.Empty ? 0 : Convert.ToDecimal(txtImporteExonerado.Text);
-            try { 
+            decimal exonerado = 0;
+            decimal descuento = 0;
+            //decimal descuento = txtDescuentos.Text == string.Empty ? 0 : Convert.ToDecimal(txtDescuentos.Text);
+            //decimal exonerado = txtImpuesto.Text == string.Empty ? 0 : Convert.ToDecimal(txtImpuesto.Text);
+            //try
             //{
-            //    foreach (DataGridViewRow dr in dgFactura.Rows)
             //    {
-            //        decimal cantidad = Convert.ToDecimal((dr.Cells[3].Value).ToString());
-            //        string fkid = (dr.Cells[0].Value).ToString(); ;
-            //        var pel = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToDecimal(fkid));
-            //        subtot += pel.PrecioVenta * cantidad;
+            //        foreach (DataGridViewRow dr in dgFactura.Rows)
+            //        {
+            //            decimal cantidad = Convert.ToDecimal((dr.Cells[3].Value).ToString());
+            //            string fkid = (dr.Cells[0].Value).ToString(); ;
+            //            var pel = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToDecimal(fkid));
+            //            subtot += pel.PrecioVenta * cantidad;
 
-                     
-            //        //if (pel.Tipo_Impuesto != null)
-            //        //{
-            //        //    isv15 += pel.Tipo_Impuesto.Equals(null) ? 0 : pel.Tipo_Impuesto.Equals("15%") ? (pel.PrecioVenta * cantidad) * (Convert.ToDecimal(pel.Tipo_Impuesto.Substring(0, 2)) / 100)
-            //        //      : 0;
-            //        //    iG15 += pel.Tipo_Impuesto.Equals("15%") ? (pel.PrecioVenta * cantidad)
-            //        //        : 0;
 
-            //        //    isv18 += pel.Tipo_Impuesto.Equals("18%") ? pel.PrecioVenta * (Convert.ToDecimal(pel.Tipo_Impuesto.Substring(0, 2)) / 100)
-            //        //        : 0;
+            //            if (pel.Tipo_Impuesto != null)
+            //            {
+            //                isv15 += pel.Tipo_Impuesto.Equals(null) ? 0 : pel.Tipo_Impuesto.Equals("15%") ? (pel.PrecioVenta * cantidad) * (Convert.ToDecimal(pel.Tipo_Impuesto.Substring(0, 2)) / 100)
+            //                  : 0;
+            //                iG15 += pel.Tipo_Impuesto.Equals("15%") ? (pel.PrecioVenta * cantidad)
+            //                    : 0;
 
-            //        //    iG18 += pel.Tipo_Impuesto.Equals("18%") ? pel.PrecioVenta
-            //        //        : 0;
+            //                isv18 += pel.Tipo_Impuesto.Equals("18%") ? pel.PrecioVenta * (Convert.ToDecimal(pel.Tipo_Impuesto.Substring(0, 2)) / 100)
+            //                    : 0;
 
-            //        //    exento += pel.Tipo_Impuesto.Equals("E  ") ? pel.PrecioVenta
-            //        //        : 0;
+            //                iG18 += pel.Tipo_Impuesto.Equals("18%") ? pel.PrecioVenta
+            //                    : 0;
 
-            //        //}
-            //        //else
-            //        //{
-            //        //    //MessageBox.Show("sin impuesto");
-            //        //}
+            //                exento += pel.Tipo_Impuesto.Equals("E  ") ? pel.PrecioVenta
+            //                    : 0;
+
+            //            }
+            //            else
+            //            {
+            //                //MessageBox.Show("sin impuesto");
+            //            }
+            //        }
+            //        txtSubtotal.Text = subtot.ToString("N2");
+            //        //txtISV18.Text = isv18.ToString("N2");
+            //        //txtISV15.Text = isv15.ToString("N2");
+            //        //txtIG15.Text = iG15.ToString("N2");
+            //        //txtIG18.Text = iG18.ToString("N2");
+            //        //txtImporteExento.Text = exento.ToString("N2");
+            //        txtTotal.Text = (subtot + isv15 + isv18 - (descuento + exonerado)).ToString("N2");
+            //        txtTotal.Text = txtSubtotal.Text;
+            //        if ((descuento + exonerado) < subtot)
+            //        {
+            //            txtTotal.Text = (subtot + isv15 + isv18 - (descuento + exonerado)).ToString("N2");
+            //        }
+            //        else
+            //        {
+            //            //MessageBox.Show("Error en descuentos y exonerados",
+            //            //"No puede dar más descuentos de lo que suman los productos,¡Revise!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            //return;
+            //        }
+
             //    }
-            //    txtSubtotal.Text = subtot.ToString("N2");
-            //    //txtISV18.Text = isv18.ToString("N2");
-            //    //txtISV15.Text = isv15.ToString("N2");
-            //    //txtIG15.Text = iG15.ToString("N2");
-            //    //txtIG18.Text = iG18.ToString("N2");
-            //    //txtImporteExento.Text = exento.ToString("N2");
-            //    txtTotal.Text = (subtot + isv15 + isv18 - (descuento + exonerado)).ToString("N2");
-            //    //txtTotal.Text = txtSubtotal.Text;
-            //    //if ( (descuento+exonerado) < subtot)
-            //    //{
-            //    //    txtTotal.Text = (subtot + isv15 + isv18 - (descuento + exonerado)).ToString("N2");
-            //    //}
-            //    //else
-            //    //{
-            //    //    //MessageBox.Show("Error en descuentos y exonerados",
-            //    //    //"No puede dar más descuentos de lo que suman los productos,¡Revise!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    //    //return;
-            //    //}
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al agregar factura",
-                "Contacte con el administrador", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error al agregar factura",
+            //    "Contacte con el administrador", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+            //}
         }
 
         private void verificarIntegridad()
@@ -306,7 +313,7 @@ namespace Punto_de_venta.Ventas
             {
                  descuento = txtDescuentos.Text == " " ? 0 : Convert.ToDouble(txtDescuentos.Text);
                  total = txtTotal.Text == " " ? 0 : Convert.ToDouble(txtTotal.Text);
-                 exonerado = txtImporteExonerado.Text == " " ? 0 : Convert.ToDouble(txtImporteExonerado.Text);
+                 exonerado = txtImpuesto.Text == " " ? 0 : Convert.ToDouble(txtImpuesto.Text);
             }
             catch { };
 
@@ -353,8 +360,11 @@ namespace Punto_de_venta.Ventas
             //tabla.ISV15_ = Convert.ToDecimal(txtISV15.Text);
             //tabla.ISV18_ = Convert.ToDecimal(txtISV18.Text);
             //tabla.Total_Venta = Convert.ToDecimal(txtTotal.Text);
-            //tabla.Fecha_Venta = DateTime.Now;
-            //tabla.Estado = 1;
+
+            tabla.Fecha = DateTime.Now;
+            tabla.idUsuario = Convert.ToInt16(userID);
+            tabla.Total = Convert.ToInt32(txtTotal.Text);
+
             entity.Venta.Add(tabla);
             entity.SaveChanges();
             lblFactura.Text = tabla.IdVenta.ToString();
@@ -364,8 +374,8 @@ namespace Punto_de_venta.Ventas
             foreach (DataGridViewRow dr in dgFactura.Rows)
             {
                 Punto_de_venta.Bases_de_datos.DetalleVentas tabla = new Punto_de_venta.Bases_de_datos.DetalleVentas();
-                string fkid = (dr.Cells[0].Value).ToString(); ;
-                var Product = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToInt64(fkid));
+                long fkid = Convert.ToInt64(dr.Cells[0].Value); 
+                var Product = entity.Producto.FirstOrDefault(x => x.IdProducto == fkid);
                 //tabla.Producto = "o";//(dr.Cells[0].Value); 
                 tabla.Cantidad = Convert.ToInt32(dr.Cells[3].Value);
                 tabla.Venta = Convert.ToInt32(lblFactura.Text);
@@ -379,12 +389,10 @@ namespace Punto_de_venta.Ventas
             foreach (DataGridViewRow dr in dgFactura.Rows)
             {
                 Punto_de_venta.Bases_de_datos.Producto tabla = new Punto_de_venta.Bases_de_datos.Producto();
-                id =(dr.Cells[0].Value).ToString();
-                var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToInt64(id));
+                id = Convert.ToInt64(dr.Cells[0].Value);
+                var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
                 tablaP.Cantidad = tablaP.Cantidad - Convert.ToInt32(dr.Cells[3].Value);
                 entity.SaveChanges();
-
-
             }
         }
         private void Formulario_Ventas_Load(object sender, EventArgs e)
@@ -397,6 +405,7 @@ namespace Punto_de_venta.Ventas
         {
             QuitarProducto();
             HacerCuentas();
+            
             
         }
 
@@ -536,14 +545,14 @@ namespace Punto_de_venta.Ventas
             }
             //-------------------------- Pie de Factura --------------------------------------------------------
             e.Graphics.DrawString("Subtotal: " + txtSubtotal.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
-            e.Graphics.DrawString("Importe Exonerado: " + txtImporteExonerado.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
+            e.Graphics.DrawString("Importe Exonerado: " + txtImpuesto.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
             e.Graphics.DrawString("Descuento: " + txtDescuentos.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
             //e.Graphics.DrawString("Importe Exento: " + txtImporteExento.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
             //e.Graphics.DrawString("Importe Grabado 18%: " + txtIG18.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
            // e.Graphics.DrawString("I.S.V 18%: " + txtISV18.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
             //e.Graphics.DrawString("Importe Grabado 15%: " + txtIG15.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
             //e.Graphics.DrawString("I.S.V 15%: " + txtISV15.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
-            e.Graphics.DrawString("Total: " + (Convert.ToDecimal(txtTotal.Text)- Convert.ToDecimal(txtDescuentos.Text)- Convert.ToDecimal(txtImporteExonerado.Text)).ToString() + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
+            e.Graphics.DrawString("Total: " + (Convert.ToDecimal(txtTotal.Text)- Convert.ToDecimal(txtDescuentos.Text)- Convert.ToDecimal(txtImpuesto.Text)).ToString() + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
         }
 
         private void imprimirFactura()
@@ -666,6 +675,11 @@ namespace Punto_de_venta.Ventas
         }
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
