@@ -58,7 +58,7 @@ namespace Punto_de_venta.Ventas
                             
                             select new
                             {
-                                p.Producto,
+                                //p.Producto,
                                 p.Venta,
                                 p.Cantidad
                             };

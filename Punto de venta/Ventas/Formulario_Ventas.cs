@@ -101,7 +101,7 @@ namespace Punto_de_venta.Ventas
                            select new
                                 {
                                     p.id,
-                                    p.Producto,
+                                    //p.Producto,
                                     p.Cantidad,
                                 };
             dgFactura.DataSource = tFactura.CopyAnonymusToDataTable();
@@ -137,6 +137,7 @@ namespace Punto_de_venta.Ventas
             }
             AgregarProducto();
             Limpiar();
+            actualizarTotales();
         }
 
         private void AgregarProducto()
@@ -170,6 +171,7 @@ namespace Punto_de_venta.Ventas
             }
             dgFactura.Rows.Add(codigo, producto, precio, cantidad);
             HacerCuentas();
+            actualizarTotales();
         }
 
         private void QuitarProducto()
@@ -228,6 +230,7 @@ namespace Punto_de_venta.Ventas
                 MessageBox.Show("Selecciona un producto de la factura para eliminarlo",
                  "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
             }
+            actualizarTotales();
         }
 
         private void HacerCuentas()
@@ -405,8 +408,7 @@ namespace Punto_de_venta.Ventas
         {
             QuitarProducto();
             HacerCuentas();
-            
-            
+            actualizarTotales();
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -582,6 +584,7 @@ namespace Punto_de_venta.Ventas
         private void BtnNuevaFactura_Click(object sender, EventArgs e)
         {
             LimpiarTodo();
+            actualizarTotales();
         }
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -620,8 +623,8 @@ namespace Punto_de_venta.Ventas
                 MessageBox.Show("Selecciona un producto de la factura para eliminarlo",
                  "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
             }
-        
-    }
+            actualizarTotales();
+        }
 
         private void btnSoloGuardar_Click(object sender, EventArgs e)
         {
@@ -656,6 +659,25 @@ namespace Punto_de_venta.Ventas
 
             }
         }
+        private void actualizarTotales()
+        {
+            double subtotal = 0.00;
+
+            foreach (DataGridViewRow dr in dgFactura.Rows)
+            {
+                double precio = Convert.ToDouble(dr.Cells[2].Value);
+                int cantidad = Convert.ToInt32(dr.Cells[3].Value);
+                double total2 = precio * cantidad;
+                subtotal += total2;
+            }
+
+            txtSubtotal.Text = subtotal.ToString("0.00");
+            double descuentos = txtDescuentos.Text == "" ? 0.00 : Convert.ToDouble(txtDescuentos.Text);
+            double impuestos = txtImpuesto.Text == "" ? 0.00 : Convert.ToDouble(txtImpuesto.Text);
+            subtotal = subtotal - descuentos;
+            double total = subtotal + impuestos;
+            txtTotal.Text = total.ToString("0.00");
+        }
 
         private void txtImporteExonerado_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -679,9 +701,14 @@ namespace Punto_de_venta.Ventas
 
         }
 
-        private void dgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtImpuesto_TextChanged(object sender, EventArgs e)
         {
+            actualizarTotales();
+        }
 
+        private void txtDescuentos_TextChanged(object sender, EventArgs e)
+        {
+            actualizarTotales();
         }
     }
 }

@@ -11,8 +11,9 @@
   </EntityType>
   <EntityType Name="CompraDetalle">
     <Key>
-      <PropertyRef Name="IdCompra" />
+      <PropertyRef Name="id" />
     </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdCompra" Type="int" Nullable="false" />
     <Property Name="IdProducto" Type="bigint" Nullable="false" />
     <Property Name="PrecioUnidad" Type="nchar" MaxLength="10" Nullable="false" />
@@ -179,8 +180,8 @@
     <Property Name="Total" Type="int" />
     <Property Name="idUsuario" Type="smallint" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'CyberElInge.dbo.Facturas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.Facturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Facturas">
     <Key>
       <PropertyRef Name="Factura" />
@@ -194,8 +195,8 @@ advertencia 6002: La tabla o vista 'CyberElInge.dbo.Facturas' no tiene definida 
     <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Monto" Type="decimal" Precision="21" Scale="4" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'CyberElInge.dbo.Imprimir_Facturas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.Imprimir_Facturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Imprimir_Facturas">
     <Key>
       <PropertyRef Name="Factura" />
@@ -209,8 +210,8 @@ advertencia 6002: La tabla o vista 'CyberElInge.dbo.Imprimir_Facturas' no tiene 
     <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Monto" Type="decimal" Precision="21" Scale="4" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'CyberElInge.dbo.Vista1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.Vista1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Vista1">
     <Key>
       <PropertyRef Name="Codigo" />
@@ -229,8 +230,8 @@ advertencia 6002: La tabla o vista 'CyberElInge.dbo.Vista1' no tiene definida ni
     <Property Name="Categoria" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Proveedor" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'CyberElInge.dbo.VistaProductoMasVendido' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.VistaProductoMasVendido' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VistaProductoMasVendido">
     <Key>
       <PropertyRef Name="Producto" />
@@ -238,8 +239,8 @@ advertencia 6002: La tabla o vista 'CyberElInge.dbo.VistaProductoMasVendido' no 
     <Property Name="Producto" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Vendidos" Type="decimal" Precision="38" Scale="2" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'CyberElInge.dbo.VistaVentasPorMes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CyberElInge.dbo.VistaVentasPorMes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VistaVentasPorMes">
     <Key>
       <PropertyRef Name="IdVenta" />
@@ -258,22 +259,6 @@ advertencia 6002: La tabla o vista 'CyberElInge.dbo.VistaVentasPorMes' no tiene 
     <Property Name="Noviembre" Type="decimal" Precision="38" Scale="2" />
     <Property Name="Diciembre" Type="decimal" Precision="38" Scale="2" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'CyberElInge.dbo.VistaVentasPorMesSinOrdenar' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="VistaVentasPorMesSinOrdenar">
-          <Property Name="Enero" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Febrero" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Marzo" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Abril" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Mayo" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Junio" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Julio" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Agosto" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Septiembre" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Octubre" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Noviembre" Type="decimal" Precision="38" Scale="2" />
-          <Property Name="Diciembre" Type="decimal" Precision="38" Scale="2" />
-        </EntityType>-->
   <Association Name="FK_Compra_Usuario">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
     <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
@@ -288,7 +273,7 @@ advertencia 6013: La tabla o vista 'CyberElInge.dbo.VistaVentasPorMesSinOrdenar'
   </Association>
   <Association Name="FK_CompraDetalle_Compra">
     <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
-    <End Role="CompraDetalle" Type="Self.CompraDetalle" Multiplicity="0..1" />
+    <End Role="CompraDetalle" Type="Self.CompraDetalle" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Compra">
         <PropertyRef Name="IdCompra" />

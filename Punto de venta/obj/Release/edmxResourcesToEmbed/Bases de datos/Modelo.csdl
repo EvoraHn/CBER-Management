@@ -105,91 +105,6 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <EntitySet Name="Compra" EntityType="CyberElIngeModel.Compra" />
-    <EntitySet Name="CompraDetalle" EntityType="CyberElIngeModel.CompraDetalle" />
-    <EntitySet Name="Detalle_Venta_Tiempo" EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" />
-    <EntitySet Name="sysdiagrams" EntityType="CyberElIngeModel.sysdiagrams" />
-    <EntitySet Name="Categoria" EntityType="CyberElIngeModel.Categoria" />
-    <EntitySet Name="Estante" EntityType="CyberElIngeModel.Estante" />
-    <EntitySet Name="Producto" EntityType="CyberElIngeModel.Producto" />
-    <EntitySet Name="Proveedor" EntityType="CyberElIngeModel.Proveedor" />
-    <EntitySet Name="ModuloPrincipal" EntityType="CyberElIngeModel.ModuloPrincipal" />
-    <EntitySet Name="Modulos" EntityType="CyberElIngeModel.Modulos" />
-    <EntitySet Name="Perfiles" EntityType="CyberElIngeModel.Perfiles" />
-    <EntitySet Name="PerfilModulo" EntityType="CyberElIngeModel.PerfilModulo" />
-    <EntitySet Name="Usuario" EntityType="CyberElIngeModel.Usuario" />
-    <EntitySet Name="UsuarioDetalles" EntityType="CyberElIngeModel.UsuarioDetalles" />
-    <EntitySet Name="DetalleVentas" EntityType="CyberElIngeModel.DetalleVentas" />
-    <EntitySet Name="Estado" EntityType="CyberElIngeModel.Estado" />
-    <AssociationSet Name="FK_Compra_Usuario" Association="CyberElIngeModel.FK_Compra_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Compra" EntitySet="Compra" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CompraDetalle_Compra" Association="CyberElIngeModel.FK_CompraDetalle_Compra">
-      <End Role="Compra" EntitySet="Compra" />
-      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CompraDetalle_Producto" Association="CyberElIngeModel.FK_CompraDetalle_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Detalle_Venta_Tiempo_Usuario" Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Producto_Tiene_una_Productos_Categoria" Association="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria">
-      <End Role="Categoria" EntitySet="Categoria" />
-      <End Role="Producto" EntitySet="Producto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Producto_Producto_Pertenece_Producto_Estante" Association="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante">
-      <End Role="Estante" EntitySet="Estante" />
-      <End Role="Producto" EntitySet="Producto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Productos_Producto_Tiene_un_Productos_Proveedor" Association="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor">
-      <End Role="Proveedor" EntitySet="Proveedor" />
-      <End Role="Producto" EntitySet="Producto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ventas_DetalleVentas_Contiene_Productos_Producto" Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Modulos_ModuloPrincipal" Association="CyberElIngeModel.FK_Modulos_ModuloPrincipal">
-      <End Role="ModuloPrincipal" EntitySet="ModuloPrincipal" />
-      <End Role="Modulos" EntitySet="Modulos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PerfilModulo_Modulos" Association="CyberElIngeModel.FK_PerfilModulo_Modulos">
-      <End Role="Modulos" EntitySet="Modulos" />
-      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PerfilModulo_Perfiles" Association="CyberElIngeModel.FK_PerfilModulo_Perfiles">
-      <End Role="Perfiles" EntitySet="Perfiles" />
-      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Usuario_Perfiles" Association="CyberElIngeModel.FK_Usuario_Perfiles">
-      <End Role="Perfiles" EntitySet="Perfiles" />
-      <End Role="Usuario" EntitySet="Usuario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Estado_Usuario" Association="CyberElIngeModel.FK_Estado_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Estado" EntitySet="Estado" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Usuario_Usuario" Association="CyberElIngeModel.FK_Usuario_Usuario">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Usuario1" EntitySet="Usuario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UsuarioDetalles_UsuarioDetalles" Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles">
-      <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="UsuarioDetalles" EntitySet="UsuarioDetalles" />
-    </AssociationSet>
-    <AssociationSet Name="PerfilesModulos" Association="CyberElIngeModel.PerfilesModulos">
-      <End Role="Modulos" EntitySet="Modulos" />
-      <End Role="Perfiles" EntitySet="Perfiles" />
-    </AssociationSet>
-    <EntitySet Name="Venta" EntityType="CyberElIngeModel.Venta" />
-    <AssociationSet Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
-      <End Role="Venta" EntitySet="Venta" />
-      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
-    </AssociationSet>
     <FunctionImport Name="sp_alterdiagram1">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -220,10 +135,91 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams1" />
+    <EntitySet Name="Compra" EntityType="CyberElIngeModel.Compra" />
+    <EntitySet Name="CompraDetalle" EntityType="CyberElIngeModel.CompraDetalle" />
+    <EntitySet Name="Detalle_Venta_Tiempo" EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" />
     <EntitySet Name="PC" EntityType="CyberElIngeModel.PC" />
+    <EntitySet Name="sysdiagrams" EntityType="CyberElIngeModel.sysdiagrams" />
+    <EntitySet Name="Categoria" EntityType="CyberElIngeModel.Categoria" />
+    <EntitySet Name="Estante" EntityType="CyberElIngeModel.Estante" />
+    <EntitySet Name="Producto" EntityType="CyberElIngeModel.Producto" />
+    <EntitySet Name="Proveedor" EntityType="CyberElIngeModel.Proveedor" />
+    <EntitySet Name="ModuloPrincipal" EntityType="CyberElIngeModel.ModuloPrincipal" />
+    <EntitySet Name="Modulos" EntityType="CyberElIngeModel.Modulos" />
+    <EntitySet Name="Perfiles" EntityType="CyberElIngeModel.Perfiles" />
+    <EntitySet Name="PerfilModulo" EntityType="CyberElIngeModel.PerfilModulo" />
+    <EntitySet Name="Usuario" EntityType="CyberElIngeModel.Usuario" />
+    <EntitySet Name="UsuarioDetalles" EntityType="CyberElIngeModel.UsuarioDetalles" />
+    <EntitySet Name="DetalleVentas" EntityType="CyberElIngeModel.DetalleVentas" />
+    <EntitySet Name="Estado" EntityType="CyberElIngeModel.Estado" />
+    <EntitySet Name="Venta" EntityType="CyberElIngeModel.Venta" />
+    <AssociationSet Name="FK_Compra_Usuario" Association="CyberElIngeModel.FK_Compra_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompraDetalle_Compra" Association="CyberElIngeModel.FK_CompraDetalle_Compra">
+      <End Role="Compra" EntitySet="Compra" />
+      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompraDetalle_Producto" Association="CyberElIngeModel.FK_CompraDetalle_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="CompraDetalle" EntitySet="CompraDetalle" />
+    </AssociationSet>
     <AssociationSet Name="FK_Detalle_Venta_Tiempo_PC" Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC">
       <End Role="PC" EntitySet="PC" />
       <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Venta_Tiempo_Usuario" Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Detalle_Venta_Tiempo" EntitySet="Detalle_Venta_Tiempo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Producto_Tiene_una_Productos_Categoria" Association="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Producto_Pertenece_Producto_Estante" Association="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante">
+      <End Role="Estante" EntitySet="Estante" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Producto_Tiene_un_Productos_Proveedor" Association="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modulos_ModuloPrincipal" Association="CyberElIngeModel.FK_Modulos_ModuloPrincipal">
+      <End Role="ModuloPrincipal" EntitySet="ModuloPrincipal" />
+      <End Role="Modulos" EntitySet="Modulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilModulo_Modulos" Association="CyberElIngeModel.FK_PerfilModulo_Modulos">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerfilModulo_Perfiles" Association="CyberElIngeModel.FK_PerfilModulo_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="PerfilModulo" EntitySet="PerfilModulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Perfiles" Association="CyberElIngeModel.FK_Usuario_Perfiles">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Usuario" Association="CyberElIngeModel.FK_Estado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Usuario" Association="CyberElIngeModel.FK_Usuario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Usuario1" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioDetalles_UsuarioDetalles" Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioDetalles" EntitySet="UsuarioDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
+      <End Role="Venta" EntitySet="Venta" />
+      <End Role="DetalleVentas" EntitySet="DetalleVentas" />
+    </AssociationSet>
+    <AssociationSet Name="PerfilesModulos" Association="CyberElIngeModel.PerfilesModulos">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="Perfiles" EntitySet="Perfiles" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -231,6 +227,17 @@
     <Property Type="Binary" Name="definition" Nullable="true" />
   </ComplexType>
   <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition1_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams1_Result">
     <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -250,8 +257,9 @@
   </EntityType>
   <EntityType Name="CompraDetalle">
     <Key>
-      <PropertyRef Name="IdCompra" />
+      <PropertyRef Name="id" />
     </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="IdCompra" Type="Int32" Nullable="false" />
     <Property Name="IdProducto" Type="Int64" Nullable="false" />
     <Property Name="PrecioUnidad" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -269,8 +277,19 @@
     <Property Name="Fk_Usuario" Type="Int16" Nullable="false" />
     <Property Name="Hora_Inicio" Type="Time" Precision="7" />
     <Property Name="Hora_fin" Type="Time" Precision="7" />
-    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario" FromRole="Detalle_Venta_Tiempo" ToRole="Usuario" />
     <NavigationProperty Name="PC" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" FromRole="Detalle_Venta_Tiempo" ToRole="PC" />
+    <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario" FromRole="Detalle_Venta_Tiempo" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="PC">
+    <Key>
+      <PropertyRef Name="IdPC" />
+    </Key>
+    <Property Name="IdPC" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fila" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Columna" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Detalle_Venta_Tiempo" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" FromRole="PC" ToRole="Detalle_Venta_Tiempo" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -317,7 +336,6 @@
     <NavigationProperty Name="Categoria1" Relationship="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria" FromRole="Producto" ToRole="Categoria" />
     <NavigationProperty Name="Estante1" Relationship="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante" FromRole="Producto" ToRole="Estante" />
     <NavigationProperty Name="Proveedor1" Relationship="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor" FromRole="Producto" ToRole="Proveedor" />
-    <NavigationProperty Name="DetalleVentas" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" FromRole="Producto" ToRole="DetalleVentas" />
   </EntityType>
   <EntityType Name="Proveedor">
     <Key>
@@ -410,18 +428,27 @@
     <Property Name="PrecioUnidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Total" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-    <NavigationProperty Name="Producto" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" FromRole="DetalleVentas" ToRole="Producto" />
     <NavigationProperty Name="Venta1" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="DetalleVentas" ToRole="Venta" />
   </EntityType>
   <EntityType Name="Estado">
     <Key>
       <PropertyRef Name="IdEstado" />
     </Key>
-    <Property Name="IdEstado" Type="Int32" Nullable="false" />
+    <Property Name="IdEstado" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
     <Property Name="Estado1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripción_estado" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="FKUsuario" Type="Int16" />
     <NavigationProperty Name="Usuario" Relationship="CyberElIngeModel.FK_Estado_Usuario" FromRole="Estado" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="idUsuario" Type="Int16" />
+    <NavigationProperty Name="DetalleVentas" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="Venta" ToRole="DetalleVentas" />
   </EntityType>
   <Association Name="FK_Compra_Usuario">
     <End Type="CyberElIngeModel.Usuario" Role="Usuario" Multiplicity="1" />
@@ -437,7 +464,7 @@
   </Association>
   <Association Name="FK_CompraDetalle_Compra">
     <End Type="CyberElIngeModel.Compra" Role="Compra" Multiplicity="1" />
-    <End Type="CyberElIngeModel.CompraDetalle" Role="CompraDetalle" Multiplicity="0..1" />
+    <End Type="CyberElIngeModel.CompraDetalle" Role="CompraDetalle" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Compra">
         <PropertyRef Name="IdCompra" />
@@ -456,6 +483,18 @@
       </Principal>
       <Dependent Role="CompraDetalle">
         <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Venta_Tiempo_PC">
+    <End Type="CyberElIngeModel.PC" Role="PC" Multiplicity="1" />
+    <End Type="CyberElIngeModel.Detalle_Venta_Tiempo" Role="Detalle_Venta_Tiempo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PC">
+        <PropertyRef Name="IdPC" />
+      </Principal>
+      <Dependent Role="Detalle_Venta_Tiempo">
+        <PropertyRef Name="Fk_Pc" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -504,18 +543,6 @@
       </Principal>
       <Dependent Role="Producto">
         <PropertyRef Name="Proveedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Ventas_DetalleVentas_Contiene_Productos_Producto">
-    <End Type="CyberElIngeModel.Producto" Role="Producto" Multiplicity="1" />
-    <End Type="CyberElIngeModel.DetalleVentas" Role="DetalleVentas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Producto">
-        <PropertyRef Name="IdProducto" />
-      </Principal>
-      <Dependent Role="DetalleVentas">
-        <PropertyRef Name="IdProducto" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -603,20 +630,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PerfilesModulos">
-    <End Type="CyberElIngeModel.Modulos" Role="Modulos" Multiplicity="*" />
-    <End Type="CyberElIngeModel.Perfiles" Role="Perfiles" Multiplicity="*" />
-  </Association>
-  <EntityType Name="Venta">
-    <Key>
-      <PropertyRef Name="IdVenta" />
-    </Key>
-    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Total" Type="Int32" />
-    <Property Name="idUsuario" Type="Int16" />
-    <NavigationProperty Name="DetalleVentas" Relationship="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" FromRole="Venta" ToRole="DetalleVentas" />
-  </EntityType>
   <Association Name="FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas">
     <End Type="CyberElIngeModel.Venta" Role="Venta" Multiplicity="1" />
     <End Type="CyberElIngeModel.DetalleVentas" Role="DetalleVentas" Multiplicity="*" />
@@ -629,38 +642,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="sp_helpdiagramdefinition1_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams1_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <EntityType Name="PC">
-    <Key>
-      <PropertyRef Name="IdPC" />
-    </Key>
-    <Property Name="IdPC" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Fila" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-    <Property Name="Columna" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-    <Property Name="Estado" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Detalle_Venta_Tiempo" Relationship="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" FromRole="PC" ToRole="Detalle_Venta_Tiempo" />
-  </EntityType>
-  <Association Name="FK_Detalle_Venta_Tiempo_PC">
-    <End Type="CyberElIngeModel.PC" Role="PC" Multiplicity="1" />
-    <End Type="CyberElIngeModel.Detalle_Venta_Tiempo" Role="Detalle_Venta_Tiempo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PC">
-        <PropertyRef Name="IdPC" />
-      </Principal>
-      <Dependent Role="Detalle_Venta_Tiempo">
-        <PropertyRef Name="Fk_Pc" />
-      </Dependent>
-    </ReferentialConstraint>
+  <Association Name="PerfilesModulos">
+    <End Type="CyberElIngeModel.Modulos" Role="Modulos" Multiplicity="*" />
+    <End Type="CyberElIngeModel.Perfiles" Role="Perfiles" Multiplicity="*" />
   </Association>
 </Schema>

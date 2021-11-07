@@ -4,31 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="78c6116aa64740f295374362ea4f60b3" Name="Diagram1" ZoomLevel="81">
-        <EntityTypeShape EntityType="CyberElIngeModel.Compra" Width="1.5" PointX="9.75" PointY="13.375" />
-        <EntityTypeShape EntityType="CyberElIngeModel.CompraDetalle" Width="1.5" PointX="12" PointY="12.25" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" Width="1.5" PointX="9.75" PointY="10.25" />
-        <EntityTypeShape EntityType="CyberElIngeModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Categoria" Width="1.5" PointX="7.5" PointY="22.75" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Estante" Width="1.5" PointX="7.5" PointY="25.375" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Producto" Width="1.5" PointX="9.75" PointY="21.5" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Proveedor" Width="1.5" PointX="7.5" PointY="19.75" />
-        <EntityTypeShape EntityType="CyberElIngeModel.ModuloPrincipal" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Modulos" Width="1.5" PointX="3" PointY="7.5" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Perfiles" Width="1.5" PointX="5.25" PointY="10.25" />
-        <EntityTypeShape EntityType="CyberElIngeModel.PerfilModulo" Width="1.5" PointX="7.5" PointY="7" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Usuario" Width="1.5" PointX="7.5" PointY="9.75" />
-        <EntityTypeShape EntityType="CyberElIngeModel.UsuarioDetalles" Width="1.5" PointX="9.75" PointY="7.5" />
-        <EntityTypeShape EntityType="CyberElIngeModel.DetalleVentas" Width="1.5" PointX="14.25" PointY="16" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Estado" Width="1.5" PointX="9.75" PointY="16.25" />
+      <Diagram DiagramId="78c6116aa64740f295374362ea4f60b3" Name="Diagram1" ZoomLevel="18">
+        <EntityTypeShape EntityType="CyberElIngeModel.Compra" Width="1.5" PointX="9.75" PointY="16" />
+        <EntityTypeShape EntityType="CyberElIngeModel.CompraDetalle" Width="1.5" PointX="12" PointY="15.75" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Detalle_Venta_Tiempo" Width="1.5" PointX="12.75" PointY="10" />
+        <EntityTypeShape EntityType="CyberElIngeModel.PC" Width="1.5" PointX="10.5" PointY="10.125" />
+        <EntityTypeShape EntityType="CyberElIngeModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Categoria" Width="1.5" PointX="7.5" PointY="22.375" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Estante" Width="1.5" PointX="7.5" PointY="25" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Producto" Width="1.5" PointX="9.75" PointY="21.25" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Proveedor" Width="1.5" PointX="7.5" PointY="19.25" />
+        <EntityTypeShape EntityType="CyberElIngeModel.ModuloPrincipal" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Modulos" Width="1.5" PointX="3" PointY="7.25" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Perfiles" Width="1.5" PointX="5.25" PointY="10.125" />
+        <EntityTypeShape EntityType="CyberElIngeModel.PerfilModulo" Width="1.5" PointX="7.5" PointY="6.75" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Usuario" Width="1.5" PointX="7.5" PointY="9.5" />
+        <EntityTypeShape EntityType="CyberElIngeModel.UsuarioDetalles" Width="1.5" PointX="9.75" PointY="13.25" />
+        <EntityTypeShape EntityType="CyberElIngeModel.DetalleVentas" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Estado" Width="1.5" PointX="9.75" PointY="7.375" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Venta" Width="1.5" PointX="0.75" PointY="1.125" />
         <AssociationConnector Association="CyberElIngeModel.FK_Compra_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_CompraDetalle_Compra" />
         <AssociationConnector Association="CyberElIngeModel.FK_CompraDetalle_Producto" />
+        <AssociationConnector Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" />
         <AssociationConnector Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_Productos_Producto_Tiene_una_Productos_Categoria" />
         <AssociationConnector Association="CyberElIngeModel.FK_Producto_Producto_Pertenece_Producto_Estante" />
         <AssociationConnector Association="CyberElIngeModel.FK_Productos_Producto_Tiene_un_Productos_Proveedor" />
-        <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Contiene_Productos_Producto" />
         <AssociationConnector Association="CyberElIngeModel.FK_Modulos_ModuloPrincipal" />
         <AssociationConnector Association="CyberElIngeModel.FK_PerfilModulo_Modulos" />
         <AssociationConnector Association="CyberElIngeModel.FK_PerfilModulo_Perfiles" />
@@ -36,11 +38,8 @@
         <AssociationConnector Association="CyberElIngeModel.FK_Estado_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_Usuario_Usuario" />
         <AssociationConnector Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles" />
-        <AssociationConnector Association="CyberElIngeModel.PerfilesModulos" />
-        <EntityTypeShape EntityType="CyberElIngeModel.Venta" Width="1.5" PointX="3.375" PointY="0.875" />
         <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" />
-        <EntityTypeShape EntityType="CyberElIngeModel.PC" Width="1.5" PointX="0.75" PointY="3.875" />
-        <AssociationConnector Association="CyberElIngeModel.FK_Detalle_Venta_Tiempo_PC" />
+        <AssociationConnector Association="CyberElIngeModel.PerfilesModulos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

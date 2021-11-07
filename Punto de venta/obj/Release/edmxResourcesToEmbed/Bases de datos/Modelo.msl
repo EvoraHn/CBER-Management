@@ -63,6 +63,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram1" FunctionName="CyberElIngeModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram1" FunctionName="CyberElIngeModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram1" FunctionName="CyberElIngeModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition1" FunctionName="CyberElIngeModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CyberElIngeModel.sp_helpdiagramdefinition1_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams1" FunctionName="CyberElIngeModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CyberElIngeModel.sp_helpdiagrams1_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram1" FunctionName="CyberElIngeModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams1" FunctionName="CyberElIngeModel.Store.sp_upgraddiagrams" />
     <EntitySetMapping Name="Compra">
       <EntityTypeMapping TypeName="CyberElIngeModel.Compra">
         <MappingFragment StoreEntitySet="Compra">
@@ -81,6 +105,7 @@
           <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
           <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
           <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,6 +117,17 @@
           <ScalarProperty Name="Fk_Usuario" ColumnName="Fk_Usuario" />
           <ScalarProperty Name="Fk_Pc" ColumnName="Fk_Pc" />
           <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PC">
+      <EntityTypeMapping TypeName="CyberElIngeModel.PC">
+        <MappingFragment StoreEntitySet="PC">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Columna" ColumnName="Columna" />
+          <ScalarProperty Name="Fila" ColumnName="Fila" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="IdPC" ColumnName="IdPC" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -231,14 +267,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PerfilesModulos" TypeName="CyberElIngeModel.PerfilesModulos" StoreEntitySet="PerfilesModulos">
-      <EndProperty Name="Perfiles">
-        <ScalarProperty Name="IdPerfil" ColumnName="FKPerfilId" />
-      </EndProperty>
-      <EndProperty Name="Modulos">
-        <ScalarProperty Name="IdModulos" ColumnName="FKModuloId" />
-      </EndProperty>
-    </AssociationSetMapping>
     <EntitySetMapping Name="Venta">
       <EntityTypeMapping TypeName="CyberElIngeModel.Venta">
         <MappingFragment StoreEntitySet="Venta">
@@ -249,40 +277,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram1" FunctionName="CyberElIngeModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram1" FunctionName="CyberElIngeModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram1" FunctionName="CyberElIngeModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition1" FunctionName="CyberElIngeModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CyberElIngeModel.sp_helpdiagramdefinition1_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams1" FunctionName="CyberElIngeModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CyberElIngeModel.sp_helpdiagrams1_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram1" FunctionName="CyberElIngeModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams1" FunctionName="CyberElIngeModel.Store.sp_upgraddiagrams" />
-    <EntitySetMapping Name="PC">
-      <EntityTypeMapping TypeName="CyberElIngeModel.PC">
-        <MappingFragment StoreEntitySet="PC">
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-          <ScalarProperty Name="Columna" ColumnName="Columna" />
-          <ScalarProperty Name="Fila" ColumnName="Fila" />
-          <ScalarProperty Name="IP" ColumnName="IP" />
-          <ScalarProperty Name="IdPC" ColumnName="IdPC" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+    <AssociationSetMapping Name="PerfilesModulos" TypeName="CyberElIngeModel.PerfilesModulos" StoreEntitySet="PerfilesModulos">
+      <EndProperty Name="Perfiles">
+        <ScalarProperty Name="IdPerfil" ColumnName="FKPerfilId" />
+      </EndProperty>
+      <EndProperty Name="Modulos">
+        <ScalarProperty Name="IdModulos" ColumnName="FKModuloId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>
