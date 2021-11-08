@@ -16,7 +16,7 @@ namespace Punto_de_venta.Bases_de_datos
     {
         public int PkBitacora { get; set; }
         public string Formulario { get; set; }
-        public short Usuario { get; set; }
+        public string Usuario { get; set; }
         public System.DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
     }

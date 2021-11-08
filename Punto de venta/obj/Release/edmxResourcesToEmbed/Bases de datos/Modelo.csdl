@@ -653,7 +653,7 @@
     </Key>
     <Property Name="PkBitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Formulario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="Usuario" Type="Int16" Nullable="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
   </EntityType>

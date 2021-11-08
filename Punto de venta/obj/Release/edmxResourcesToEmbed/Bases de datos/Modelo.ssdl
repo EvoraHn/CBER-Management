@@ -26,7 +26,7 @@
     </Key>
     <Property Name="PkBitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Formulario" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="Usuario" Type="smallint" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Fecha" Type="date" Nullable="false" />
     <Property Name="Descripcion" Type="varchar" MaxLength="60" />
   </EntityType>
