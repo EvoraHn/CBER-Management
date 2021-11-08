@@ -650,7 +650,6 @@ H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto 
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Form1.resources
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Computadora.resources
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_tiempo.Frm_Control_Tiempo.resources
-H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inicio.Inicio.resources
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inicio.Login.resources
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inventario.Inventario.resources
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inventario.InventarioCompleto.resources
@@ -675,3 +674,4 @@ H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto 
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto de venta.csproj.CopyComplete
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto de venta.exe
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto de venta.pdb
+H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Bitacora.Formulario_Bitacora.resources

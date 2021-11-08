@@ -21,6 +21,8 @@ namespace Punto_de_venta.Ventas
         //inicializar las variables
         long id = 0;
         int idDetalle = 0;
+
+        int idventa = 0;
         bool errorV = false;
         long userID = 0;
         bool cotizacion = false;
@@ -366,10 +368,12 @@ namespace Punto_de_venta.Ventas
 
             tabla.Fecha = DateTime.Now;
             tabla.idUsuario = Convert.ToInt16(userID);
-            tabla.Total = Convert.ToInt32(txtTotal.Text);
+            double total = Convert.ToDouble(txtTotal.Text);
+            tabla.Total = Convert.ToInt32(total);
 
             entity.Venta.Add(tabla);
             entity.SaveChanges();
+            idventa = tabla.IdVenta;
             lblFactura.Text = tabla.IdVenta.ToString();
         }
         private void AgregarDetalleDeVenta()
@@ -380,6 +384,7 @@ namespace Punto_de_venta.Ventas
                 long fkid = Convert.ToInt64(dr.Cells[0].Value); 
                 var Product = entity.Producto.FirstOrDefault(x => x.IdProducto == fkid);
                 //tabla.Producto = "o";//(dr.Cells[0].Value); 
+                //tabla.Venta = idventa;
                 tabla.Cantidad = Convert.ToInt32(dr.Cells[3].Value);
                 tabla.Venta = Convert.ToInt32(lblFactura.Text);
                 entity.DetalleVentas.Add(tabla);

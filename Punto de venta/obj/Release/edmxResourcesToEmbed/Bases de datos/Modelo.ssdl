@@ -20,6 +20,16 @@
     <Property Name="Cantidad" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Total" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="PkBitacora" />
+    </Key>
+    <Property Name="PkBitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Formulario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Usuario" Type="smallint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="60" />
+  </EntityType>
   <EntityType Name="Detalle_Venta_Tiempo">
     <Key>
       <PropertyRef Name="IdVenta" />
@@ -509,6 +519,7 @@ warning 6002: The table/view 'CyberElInge.dbo.VistaVentasPorMes' does not have a
   <EntityContainer Name="CyberElIngeModelStoreContainer">
     <EntitySet Name="Compra" EntityType="Self.Compra" Schema="Compras" store:Type="Tables" />
     <EntitySet Name="CompraDetalle" EntityType="Self.CompraDetalle" Schema="Compras" store:Type="Tables" />
+    <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Detalle_Venta_Tiempo" EntityType="Self.Detalle_Venta_Tiempo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PC" EntityType="Self.PC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />

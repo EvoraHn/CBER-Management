@@ -40,6 +40,7 @@
         <AssociationConnector Association="CyberElIngeModel.FK_UsuarioDetalles_UsuarioDetalles" />
         <AssociationConnector Association="CyberElIngeModel.FK_Ventas_DetalleVentas_Pertenece_Ventas_Ventas" />
         <AssociationConnector Association="CyberElIngeModel.PerfilesModulos" />
+        <EntityTypeShape EntityType="CyberElIngeModel.Bitacora" Width="1.5" PointX="5.375" PointY="3.75" IsExpanded="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

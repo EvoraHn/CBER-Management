@@ -43,7 +43,7 @@ namespace Punto_de_venta.Menú
 
         private void logo_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
+            //abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
             //if (panelBotones.Width == 273)
             //{
             //    panelBotones.Width = 100;
@@ -69,13 +69,13 @@ namespace Punto_de_venta.Menú
 
         private void Menu_estilo_1_Load(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
-            this.KeyPreview = true;
+            //abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
+            //this.KeyPreview = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //abrirFormularioHijo(new Reporteria.PresentadordeReportes());
+            abrirFormularioHijo(new Bitacora.Formulario_Bitacora());
             
         }
 
@@ -95,13 +95,19 @@ namespace Punto_de_venta.Menú
             }
             if (e.Control == true && e.KeyCode == Keys.NumPad5)
             {
-                abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
+                //abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
             }
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Punto_de_venta.Control_de_Ordenadores.Form1 form = new Punto_de_venta.Control_de_Ordenadores.Form1();
+            form.Show();
         }
     }
 }

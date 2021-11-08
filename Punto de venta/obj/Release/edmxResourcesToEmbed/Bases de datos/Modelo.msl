@@ -285,5 +285,16 @@
         <ScalarProperty Name="IdModulos" ColumnName="FKModuloId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Bitacora">
+      <EntityTypeMapping TypeName="CyberElIngeModel.Bitacora">
+        <MappingFragment StoreEntitySet="Bitacora">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Formulario" ColumnName="Formulario" />
+          <ScalarProperty Name="PkBitacora" ColumnName="PkBitacora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

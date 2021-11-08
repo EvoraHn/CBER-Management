@@ -51,6 +51,7 @@ namespace Punto_de_venta.Bases_de_datos
         public DbSet<DetalleVentas> DetalleVentas { get; set; }
         public DbSet<Estado> Estado { get; set; }
         public DbSet<Venta> Venta { get; set; }
+        public DbSet<Bitacora> Bitacora { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

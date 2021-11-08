@@ -169,14 +169,20 @@
   <data name="inventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pc2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ciber El Inge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ciber El Inge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BITACORA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BITACORA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hogar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carrito-de-compras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carrito-de-compras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="negocios-y-finanzas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\negocios-y-finanzas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Venta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Venta1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +199,9 @@
   <data name="hombre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hombre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="goback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hombre1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hombre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,6 +217,12 @@
   <data name="disco-flexible 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disco-flexible 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ciber El Inge1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ciber El Inge.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pequeño alargado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pequeño alargado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Producto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Producto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,19 +232,10 @@
   <data name="Cotizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cotizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pequeño alargado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pequeño alargado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="negocios-y-finanzas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\negocios-y-finanzas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ciber El Inge" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ciber El Inge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ciber El Inge1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ciber El Inge.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="goback" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\goback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pc2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pcs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pcs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -221,6 +221,7 @@
       <End Role="Modulos" EntitySet="Modulos" />
       <End Role="Perfiles" EntitySet="Perfiles" />
     </AssociationSet>
+    <EntitySet Name="Bitacora" EntityType="CyberElIngeModel.Bitacora" />
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -646,4 +647,14 @@
     <End Type="CyberElIngeModel.Modulos" Role="Modulos" Multiplicity="*" />
     <End Type="CyberElIngeModel.Perfiles" Role="Perfiles" Multiplicity="*" />
   </Association>
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="PkBitacora" />
+    </Key>
+    <Property Name="PkBitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Formulario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="Int16" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

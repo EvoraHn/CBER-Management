@@ -112,6 +112,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bases de datos\Bitacora.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bases de datos\Categoria.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -208,6 +211,12 @@
     <Compile Include="Bases de datos\VistaVentasPorMes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bitacora\Formulario_Bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora\Formulario_Bitacora.Designer.cs">
+      <DependentUpon>Formulario_Bitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\almacen_de_datos.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Compras\Formulario_Compras.cs">
@@ -246,12 +255,6 @@
     </Compile>
     <Compile Include="Control de tiempo\Frm_Control_Tiempo.Designer.cs">
       <DependentUpon>Frm_Control_Tiempo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio\Inicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inicio\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio\Login.cs">
       <SubType>Form</SubType>
@@ -367,6 +370,9 @@
     <Compile Include="Ventas\printDocument.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Bitacora\Formulario_Bitacora.resx">
+      <DependentUpon>Formulario_Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\Formulario_Compras.resx">
       <DependentUpon>Formulario_Compras.cs</DependentUpon>
     </EmbeddedResource>
@@ -381,9 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control de tiempo\Frm_Control_Tiempo.resx">
       <DependentUpon>Frm_Control_Tiempo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inicio\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -487,6 +490,8 @@
     </Content>
     <Content Include="Imagenes\casa %281%29.png" />
     <Content Include="Imagenes\casa.png" />
+    <None Include="Resources\pcs.png" />
+    <None Include="Resources\BITACORA.png" />
     <None Include="Resources\goback.png" />
     <None Include="Resources\pc2.png" />
     <None Include="Resources\Ciber El Inge.gif" />
