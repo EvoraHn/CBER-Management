@@ -357,6 +357,7 @@ namespace Punto_de_venta.Ventas
         private void AgregarVenta()
         {
             Punto_de_venta.Bases_de_datos.Venta tabla = new Punto_de_venta.Bases_de_datos.Venta();
+            Bases_de_datos.Detalle_Venta_Tiempo dt = new Bases_de_datos.Detalle_Venta_Tiempo();
             //tabla.Importe_Exento = Convert.ToDecimal(txtImporteExento.Text);
             //tabla.Importe_Exonerado = Convert.ToDecimal(txtImporteExonerado.Text);
             //tabla.Impuesto_Gravado_15_ = Convert.ToDecimal(txtIG15.Text);
@@ -375,6 +376,18 @@ namespace Punto_de_venta.Ventas
             entity.SaveChanges();
             idventa = tabla.IdVenta;
             lblFactura.Text = tabla.IdVenta.ToString();
+
+            TimeSpan horaInicio = Convert.ToDateTime(Clases.PC_Factura.HoraInicio.ToLongTimeString()).TimeOfDay;
+            TimeSpan horaFin = Convert.ToDateTime(Clases.PC_Factura.HoraFin.ToLongTimeString()).TimeOfDay;
+            dt.Fk_Pc = Clases.PC_Factura.PCactual;
+            dt.Fk_Usuario = Clases.Usuario.idUsuario;
+
+            dt.Hora_Inicio = horaInicio;
+            dt.Hora_fin = horaFin;
+            entity.Detalle_Venta_Tiempo.Add(dt);
+            entity.SaveChanges();
+
+
         }
         private void AgregarDetalleDeVenta()
         {
@@ -407,6 +420,14 @@ namespace Punto_de_venta.Ventas
         {
             this.KeyPreview = true;
             Mostrar_datos();
+            if (Clases.PC_Factura.PCactual != 0)
+            {
+                var ttiempo = Clases.PC_Factura.HoraFin - Clases.PC_Factura.HoraInicio;
+                var hrs = ttiempo.TotalHours;
+                var Product = entity.Producto.FirstOrDefault(x => x.Nombre == "Internet");
+                dgFactura.Rows.Add(Product.IdProducto,"Internet",Product.PrecioVenta,hrs);
+                actualizarTotales();
+            }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)

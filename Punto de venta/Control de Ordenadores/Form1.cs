@@ -348,8 +348,18 @@ namespace Punto_de_venta.Control_de_Ordenadores
                 var pc = arreglopcs.FirstOrDefault(x => x.IP == ORDENADOR.ToString());
                 var ttotal = pc.HoraLimite - pc.HoraInicio;
                 var hrs = ttotal.TotalHours;
-                var mins = ttotal.TotalMinutes;
-                var secs = ttotal.TotalSeconds;
+                //var mins = ttotal.TotalMinutes;
+                //var secs = ttotal.TotalSeconds;
+
+                Clases.PC_Factura.PCactual = System.Convert.ToInt32(pc.ID);
+                Clases.PC_Factura.HoraInicio = pc.HoraInicio;
+                Clases.PC_Factura.HoraFin = pc.HoraLimite;
+                Clases.PC_Factura.HorasAcumuladas = hrs.ToString();
+
+                Ventas.Formulario_Ventas form = new Ventas.Formulario_Ventas(Clases.Usuario.idUsuario);
+                form.Show();
+
+
                 //Pendiente enviar al grid de ventas
             }
         }

@@ -420,7 +420,6 @@ C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\bin\Release\zh-CH
 C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto de venta.csproj.AssemblyReference.cache
 C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Compras.Formulario_Compras.resources
 C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_tiempo.Frm_Control_Tiempo.resources
-C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inicio.Inicio.resources
 C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inicio.Login.resources
 C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inventario.Inventario.resources
 C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Inventario.InventarioCompleto.resources
@@ -675,3 +674,8 @@ H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto 
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto de venta.exe
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto de venta.pdb
 H:\PRO\UNIVERSIDAD\Gestión de proyectos informáticos\Or\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Bitacora.Formulario_Bitacora.resources
+C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Bitacora.Formulario_Bitacora.resources
+C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Admin_Pcs.resources
+C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Control_de_Ordenadores.Form1.resources
+C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Computadora.resources
+C:\Users\germa\Documents\GitHub\CBER-Management\Punto de venta\obj\Release\Punto_de_venta.Mantenimientos.Form1.resources

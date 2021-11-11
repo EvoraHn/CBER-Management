@@ -31,7 +31,7 @@
           </Key>
           <Property Name="PkBitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Formulario" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Usuario" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="100" />
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="60" />
         </EntityType>
@@ -195,8 +195,8 @@
           <Property Name="Total" Type="int" />
           <Property Name="idUsuario" Type="smallint" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CyberElInge.dbo.Facturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CyberElInge.dbo.Facturas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Facturas">
           <Key>
             <PropertyRef Name="Factura" />
@@ -210,8 +210,8 @@ warning 6002: The table/view 'CyberElInge.dbo.Facturas' does not have a primary 
           <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Monto" Type="decimal" Precision="21" Scale="4" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CyberElInge.dbo.Imprimir_Facturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CyberElInge.dbo.Imprimir_Facturas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Imprimir_Facturas">
           <Key>
             <PropertyRef Name="Factura" />
@@ -225,8 +225,8 @@ warning 6002: The table/view 'CyberElInge.dbo.Imprimir_Facturas' does not have a
           <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Monto" Type="decimal" Precision="21" Scale="4" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CyberElInge.dbo.Vista1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CyberElInge.dbo.Vista1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Vista1">
           <Key>
             <PropertyRef Name="Codigo" />
@@ -245,8 +245,8 @@ warning 6002: The table/view 'CyberElInge.dbo.Vista1' does not have a primary ke
           <Property Name="Categoria" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Proveedor" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CyberElInge.dbo.VistaProductoMasVendido' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CyberElInge.dbo.VistaProductoMasVendido' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VistaProductoMasVendido">
           <Key>
             <PropertyRef Name="Producto" />
@@ -254,8 +254,8 @@ warning 6002: The table/view 'CyberElInge.dbo.VistaProductoMasVendido' does not 
           <Property Name="Producto" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Vendidos" Type="decimal" Precision="38" Scale="2" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CyberElInge.dbo.VistaVentasPorMes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CyberElInge.dbo.VistaVentasPorMes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VistaVentasPorMes">
           <Key>
             <PropertyRef Name="IdVenta" />
@@ -1324,7 +1324,7 @@ FROM [dbo].[VistaVentasPorMes] AS [VistaVentasPorMes]</DefiningQuery>
           </Key>
           <Property Name="PkBitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Formulario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Usuario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
         </EntityType>

@@ -19,6 +19,15 @@ namespace Punto_de_venta.Clases
         public string Usr { get; set; }
         public string Pwd { get; set; }
 
+        private static short _idUsuario;
+
+        public static short idUsuario
+        {
+            get { return _idUsuario; }
+            set { _idUsuario = value; }
+        }
+
+
 
     }
 }

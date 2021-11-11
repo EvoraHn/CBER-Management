@@ -43,7 +43,7 @@ namespace Punto_de_venta.Inicio
             DateTime fechaLimite = new DateTime(2023, 10, 18, 1, 1, 1);
             DateTime fechaActual = DateTime.Now;
             if ((DateTime.Compare(fechaActual, fechaLimite)) < 0)
-            { 
+            {
                 if ((txtUsuario.Text == string.Empty) | (txtContraseña.Text == string.Empty))
                 {
                     MessageBox.Show("Favor llenar los campos de usuario y contraseña antes de iniciar sesión");
@@ -65,7 +65,8 @@ namespace Punto_de_venta.Inicio
                         //this.Hide();
                         //fMenu.Show();
 
-                        Punto_de_venta.Menú.Menu_estilo_2 Formulario = new Punto_de_venta.Menú.Menu_estilo_2(tUsuarios.IdUsuario);
+                        Punto_de_venta.Menú.Menu_estilo_1 Formulario = new Punto_de_venta.Menú.Menu_estilo_1();
+                        Clases.Usuario.idUsuario = tUsuarios.IdUsuario;
                         this.Hide();
                         Formulario.ShowDialog();
                         limpiar();

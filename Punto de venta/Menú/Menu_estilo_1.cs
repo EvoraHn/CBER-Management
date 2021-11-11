@@ -13,7 +13,7 @@ namespace Punto_de_venta.Menú
     public partial class Menu_estilo_1 : Form
     {
         string modulo = "";
-        long userID = 0;
+        int userID = Clases.Usuario.idUsuario;
         public Menu_estilo_1()
         {
 

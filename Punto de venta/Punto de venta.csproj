@@ -218,6 +218,7 @@
       <DependentUpon>Formulario_Bitacora.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\almacen_de_datos.cs" />
+    <Compile Include="Clases\PC_Factura.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Compras\Formulario_Compras.cs">
       <SubType>Form</SubType>
