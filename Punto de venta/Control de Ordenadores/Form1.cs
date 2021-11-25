@@ -37,6 +37,17 @@ namespace Punto_de_venta.Control_de_Ordenadores
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            var usuario = from u in entity.Usuario
+                          where u.IdUsuario == Clases.Usuario.idUsuario
+                          select new
+                          {
+                              u.FKPerfil
+                          };
+            DataTable usr = usuario.CopyAnonymusToDataTable();
+            //if (usr.Rows[0].ItemArray[0].ToString() != "1")
+            //{
+            //    button1.Visible = false;
+            //}
             MaximizeBox = false;
             ComboBox1.Focus();
             populate();

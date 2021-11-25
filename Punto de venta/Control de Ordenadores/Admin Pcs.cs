@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Net;
 
 namespace Punto_de_venta.Control_de_Ordenadores
 {
     public partial class Admin_Pcs : Form
     {
+       
 
         Bases_de_datos.CyberElIngeEntities entity = new Bases_de_datos.CyberElIngeEntities();
         bool editar = false;
@@ -78,6 +80,16 @@ namespace Punto_de_venta.Control_de_Ordenadores
             
             if (agregar && (textCol.Text != "" && textFila.Text != "" && textIP.Text != ""))
             {
+                try
+                {
+                    IPAddress.Parse(textIP.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ingrese una IP valida");
+                    textIP.Text = "";
+                    return;
+                }
                 Bases_de_datos.PC pc = new Bases_de_datos.PC();
                 pc.IP = textIP.Text;
                 pc.Fila = textFila.Text;
@@ -85,8 +97,10 @@ namespace Punto_de_venta.Control_de_Ordenadores
                 pc.Estado = estadoCheck.Checked;
                 entity.PC.Add(pc);
                 entity.SaveChanges();
+                MessageBox.Show("Datos guardados exitosamente.");
                 agregar = false;
 
+                
             }
             else if (editar && (textCol.Text != "" && textFila.Text != "" && textIP.Text != ""))
             {
@@ -96,7 +110,10 @@ namespace Punto_de_venta.Control_de_Ordenadores
                 pc.Columna = textCol.Text;
                 pc.Estado = estadoCheck.Checked;
                 entity.SaveChanges();
+                MessageBox.Show("Datos guardados exitosamente.");
                 editar = false;
+
+                
             }
             else if (agregar && !(textCol.Text != "" && textFila.Text != "" && textIP.Text != ""))
             {
@@ -109,7 +126,7 @@ namespace Punto_de_venta.Control_de_Ordenadores
 
             if (btnNuevoGuardar.Text == "Nuevo" && !agregar && !editar)
             {
-                
+
                 trigger(true);
                 agregar = true;
                 textIP.Text = "";
@@ -141,7 +158,7 @@ namespace Punto_de_venta.Control_de_Ordenadores
                     textFila.Text = pc.Fila;
                     textCol.Text = pc.Columna;
                     estadoCheck.Checked = pc.Estado;
-                    editar = true;
+                    //editar = true;
 
                 }
                 catch (Exception)
@@ -162,6 +179,12 @@ namespace Punto_de_venta.Control_de_Ordenadores
                 return;
             }
 
+            idPC = Convert.ToInt64(dgPCs.SelectedCells[0].Value);
+            var pc = entity.PC.FirstOrDefault(x => x.IdPC == idPC);
+            textIP.Text = pc.IP;
+            textFila.Text = pc.Fila;
+            textCol.Text = pc.Columna;
+            estadoCheck.Checked = pc.Estado;
             editar = false;
             agregar = false;
             trigger(false);
@@ -171,6 +194,40 @@ namespace Punto_de_venta.Control_de_Ordenadores
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textIP_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                IPAddress.Parse(textIP.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ingrese una IP Valida");
+                textIP.Text = "";
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que quiere eliminar esta PC?", "Eliminar PC", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    var pc = entity.PC.FirstOrDefault(x => x.IdPC == idPC);
+                    entity.PC.Remove(pc);
+                    entity.SaveChanges();
+                    MessageBox.Show("PC eliminada exitosamente");
+                    populate();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un error al eliminar.");
+
+                }
+            }
         }
     }
 }

@@ -67,10 +67,10 @@ namespace Punto_de_venta.Inicio
 
                         Punto_de_venta.Menú.Menu_estilo_1 Formulario = new Punto_de_venta.Menú.Menu_estilo_1();
                         Clases.Usuario.idUsuario = tUsuarios.IdUsuario;
-                        this.Hide();
                         Formulario.ShowDialog();
+                        this.Close();
                         limpiar();
-                        this.Show();
+                        //this.Show();
                         //this.Close();
                         //this.Dispose();
                     }

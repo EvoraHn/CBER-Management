@@ -344,7 +344,7 @@ namespace Punto_de_venta.Control_de_Ordenadores
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(297, 127);
+            this.button2.Location = new System.Drawing.Point(297, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 43);
             this.button2.TabIndex = 46;
@@ -380,7 +380,7 @@ namespace Punto_de_venta.Control_de_Ordenadores
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(297, 72);
+            this.button1.Location = new System.Drawing.Point(297, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 43);
             this.button1.TabIndex = 45;
