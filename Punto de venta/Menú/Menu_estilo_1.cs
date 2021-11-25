@@ -22,7 +22,9 @@ namespace Punto_de_venta.Menú
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            abrirFormularioHijo(new Punto_de_venta.Mantenimientos.Mantenimiento_Productos(modulo,userID));
+       
+            abrirFormularioHijo(new Punto_de_venta.Mantenimientos.Mantenimiento_Productos(modulo,userID));//Manda a llamar el formulario de inventario y lo abre
+
         }
         public void abrirFormularioHijo(object formHijo)
         {
