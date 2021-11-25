@@ -38,8 +38,6 @@ namespace Punto_de_venta.Mantenimientos
             }
         }
 
-
-
         private void Mostrar_datos()
         {
             var tProductos = from p in entity.Categoria
