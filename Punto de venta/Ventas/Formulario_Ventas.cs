@@ -116,7 +116,7 @@ namespace Punto_de_venta.Ventas
         }
         private void LimpiarTodo()
         {
-            txtId.Text = txtProducto.Text = txtCliente.Text = txtRTN.Text =
+            txtId.Text = txtProducto.Text =
             txtDescuentos.Text= txtImpuesto.Text
             = txtTotal.Text =
             txtSubtotal.Text=txtBuscar.Text= string.Empty;
@@ -559,8 +559,8 @@ namespace Punto_de_venta.Ventas
                 //e.Graphics.DrawString("CAI: " + txtCAI.Text + " ", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 40), stringFormatLeft);
                 //e.Graphics.DrawString("Fecha Límite: " + txtFechaLimite.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 40), stringFormatLeft);
                 e.Graphics.DrawString("Factura: #" + lblFactura.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20), stringFormatLeft);
-                e.Graphics.DrawString("Cliente: " + txtCliente.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20), stringFormatLeft);
-                e.Graphics.DrawString("RTN: " + txtRTN.Text + " ", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20), stringFormatLeft);
+                //e.Graphics.DrawString("Cliente: " + txtCliente.Text + " ", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20), stringFormatLeft);
+                //e.Graphics.DrawString("RTN: " + txtRTN.Text + " ", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20), stringFormatLeft);
 
             }
 
