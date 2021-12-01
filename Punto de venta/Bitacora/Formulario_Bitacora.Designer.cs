@@ -58,7 +58,7 @@ namespace Punto_de_venta.Bitacora
             this.panel2.Controls.Add(this.label9);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1240, 48);
             this.panel2.TabIndex = 34;
@@ -74,7 +74,7 @@ namespace Punto_de_venta.Bitacora
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Location = new System.Drawing.Point(12, 5);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(38, 37);
             this.btnCerrar.TabIndex = 26;
@@ -106,7 +106,7 @@ namespace Punto_de_venta.Bitacora
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(-2, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1243, 845);
             this.panel1.TabIndex = 35;
@@ -136,7 +136,7 @@ namespace Punto_de_venta.Bitacora
             this.btnSoloGuardar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSoloGuardar1.ForeColor = System.Drawing.Color.Gray;
             this.btnSoloGuardar1.Location = new System.Drawing.Point(49, 2);
-            this.btnSoloGuardar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSoloGuardar1.Margin = new System.Windows.Forms.Padding(2);
             this.btnSoloGuardar1.Name = "btnSoloGuardar1";
             this.btnSoloGuardar1.Size = new System.Drawing.Size(44, 37);
             this.btnSoloGuardar1.TabIndex = 20;
@@ -156,7 +156,7 @@ namespace Punto_de_venta.Bitacora
             this.BtnNuevaFactura1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNuevaFactura1.ForeColor = System.Drawing.Color.Gray;
             this.BtnNuevaFactura1.Location = new System.Drawing.Point(3, 2);
-            this.BtnNuevaFactura1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnNuevaFactura1.Margin = new System.Windows.Forms.Padding(2);
             this.BtnNuevaFactura1.Name = "BtnNuevaFactura1";
             this.BtnNuevaFactura1.Size = new System.Drawing.Size(44, 37);
             this.BtnNuevaFactura1.TabIndex = 21;
@@ -219,7 +219,7 @@ namespace Punto_de_venta.Bitacora
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgBitacora.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgBitacora.Location = new System.Drawing.Point(10, 79);
-            this.dgBitacora.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgBitacora.Margin = new System.Windows.Forms.Padding(2);
             this.dgBitacora.Name = "dgBitacora";
             this.dgBitacora.ReadOnly = true;
             this.dgBitacora.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -229,6 +229,7 @@ namespace Punto_de_venta.Bitacora
             this.dgBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgBitacora.Size = new System.Drawing.Size(1226, 714);
             this.dgBitacora.TabIndex = 0;
+            this.dgBitacora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBitacora_CellContentClick);
             // 
             // panel5
             // 
@@ -238,7 +239,7 @@ namespace Punto_de_venta.Bitacora
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(0, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1243, 48);
             this.panel5.TabIndex = 33;
@@ -255,7 +256,7 @@ namespace Punto_de_venta.Bitacora
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(12, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(38, 37);
             this.button1.TabIndex = 26;
@@ -282,7 +283,7 @@ namespace Punto_de_venta.Bitacora
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Formulario_Bitacora";
             this.Text = "Formulario_Bitacora";
             this.Load += new System.EventHandler(this.Formulario_Bitacora_Load);

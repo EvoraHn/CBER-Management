@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Punto de venta", "Punto de venta.csproj", "{68856241-F475-4835-B691-4D2A45BA5BAD}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Ciber_STP", "..\Ciber_STP\Ciber_STP.vdproj", "{E1AF8651-924A-4DDB-A867-2D4DACF2A999}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Stup CBR el ING", "..\Stup CBR el ING\Stup CBR el ING.vdproj", "{C8AEB355-A6F3-4073-AAFB-77BF7F21C16C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{68856241-F475-4835-B691-4D2A45BA5BAD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68856241-F475-4835-B691-4D2A45BA5BAD}.Release|x86.ActiveCfg = Release|Any CPU
 		{68856241-F475-4835-B691-4D2A45BA5BAD}.Release|x86.Build.0 = Release|Any CPU
+		{E1AF8651-924A-4DDB-A867-2D4DACF2A999}.Debug|Any CPU.ActiveCfg = Debug
+		{E1AF8651-924A-4DDB-A867-2D4DACF2A999}.Debug|x86.ActiveCfg = Debug
+		{E1AF8651-924A-4DDB-A867-2D4DACF2A999}.Release|Any CPU.ActiveCfg = Release
+		{E1AF8651-924A-4DDB-A867-2D4DACF2A999}.Release|x86.ActiveCfg = Release
+		{C8AEB355-A6F3-4073-AAFB-77BF7F21C16C}.Debug|Any CPU.ActiveCfg = Debug
+		{C8AEB355-A6F3-4073-AAFB-77BF7F21C16C}.Debug|x86.ActiveCfg = Debug
+		{C8AEB355-A6F3-4073-AAFB-77BF7F21C16C}.Release|Any CPU.ActiveCfg = Release
+		{C8AEB355-A6F3-4073-AAFB-77BF7F21C16C}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

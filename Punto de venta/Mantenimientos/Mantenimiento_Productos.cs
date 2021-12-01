@@ -19,7 +19,7 @@ namespace Punto_de_venta.Mantenimientos
         DataView mifiltro;
         //inicializar las variables
         long userID = 0;
-        string id = "000000";
+        long id = 0;
         bool editar = false;
         //variable para determinar si el individuo tiene o no acceso a modificar
         string Acceso = "";
@@ -66,7 +66,7 @@ namespace Punto_de_venta.Mantenimientos
                         "18%", "E  "};
 
             cmbImpuesto.DataSource = Tipo_Impuesto;
-            Restricción();
+            //Restricción();
         }
         private void Restricción()
         {
@@ -77,8 +77,8 @@ namespace Punto_de_venta.Mantenimientos
             }
             else
             {
-                btnEliminar.Enabled = false;
-                btnGuardar.Enabled = false;
+                //btnEliminar.Enabled = false;
+                //btnGuardar.Enabled = false;
             }
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -131,8 +131,8 @@ namespace Punto_de_venta.Mantenimientos
             {
                 try
                 {
-                    id = Convert.ToString(dgProductos.SelectedCells[0].Value);
-                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToInt32(id));
+                    id = Convert.ToInt64(dgProductos.SelectedCells[0].Value);
+                    var tabla = entity.Producto.FirstOrDefault(x => x.IdProducto == id);
                     txtId.Text = tabla.IdProducto.ToString();
                     txtNombre.Text=tabla.Nombre;
                     txtCosto.Text = Convert.ToString(tabla.PrecioCosto);
@@ -150,7 +150,7 @@ namespace Punto_de_venta.Mantenimientos
                 }
                 catch (Exception)
                 {
-                   // MessageBox.Show("Error");
+                    //MessageBox.Show("Error");
                 }
             }
         }
@@ -255,7 +255,8 @@ namespace Punto_de_venta.Mantenimientos
             if (editar || txtId.Text !="")
             {
                 try {
-                    var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == Convert.ToInt64(id));
+                    //id = Convert.ToInt64(id);
+                    var tablaP = entity.Producto.FirstOrDefault(x => x.IdProducto == id );
                     entity.Producto.Remove(tablaP);
                     entity.SaveChanges();
                     MessageBox.Show("¡Registro eliminado correctamente!");

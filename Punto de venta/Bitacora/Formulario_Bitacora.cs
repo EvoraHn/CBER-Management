@@ -21,7 +21,7 @@ namespace Punto_de_venta.Bitacora
 
         private void Formulario_Bitacora_Load(object sender, EventArgs e)
         {
-           var tBitacora = from b in entity.Bitacora
+           var tBitacora = from b in entity.Bitacora 
                              select new
                              {
                                 b.Formulario,
@@ -39,6 +39,11 @@ namespace Punto_de_venta.Bitacora
         }
 
         private void BtnNuevaFactura1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgBitacora_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
