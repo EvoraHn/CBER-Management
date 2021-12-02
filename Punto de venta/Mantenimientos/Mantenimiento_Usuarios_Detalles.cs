@@ -43,18 +43,40 @@ namespace Punto_de_venta.Mantenimientos
                 thUser.userTelefono = txtTelefono.Text;
 
                 entity.SaveChanges();
+
+                editar = false;
+                txtNombre.Enabled = false;
+                txtApellido.Enabled = false;
+                txtTelefono.Enabled = false;
+                MessageBox.Show("Detalles del Usuario Actualizados");
             }
             else
             {
-                Punto_de_venta.Bases_de_datos.UsuarioDetalles tUD = new Punto_de_venta.Bases_de_datos.UsuarioDetalles();
+                if (txtNombre.Enabled)
+                {
+                    Punto_de_venta.Bases_de_datos.UsuarioDetalles tUD = new Punto_de_venta.Bases_de_datos.UsuarioDetalles();
 
-                tUD.userNombre = txtNombre.Text;
-                tUD.userApellido = txtApellido.Text;
-                tUD.userTelefono = txtTelefono.Text;
+                    tUD.PKUsuario = (short)Convert.ToInt32(id);
+                    tUD.userNombre = txtNombre.Text;
+                    tUD.userApellido = txtApellido.Text;
+                    tUD.userTelefono = txtTelefono.Text;
 
-                entity.UsuarioDetalles.Add(tUD);
 
-                entity.SaveChanges();
+                    entity.UsuarioDetalles.Add(tUD);
+
+                    entity.SaveChanges();
+                    MessageBox.Show("Detalles del Usuario Actualizados");
+
+                    txtNombre.Enabled = false;
+                    txtApellido.Enabled = false;
+                    txtTelefono.Enabled = false;
+                    btnEditar.Enabled = true;
+                    btnEditar.BackColor = btnGuardar.BackColor;
+                }
+                else
+                {
+                    MessageBox.Show("Si desea modificar/guardar los datos de este usuario ya existente presione editar y luego guardar");
+                }
             }
         }
 
@@ -67,7 +89,23 @@ namespace Punto_de_venta.Mantenimientos
                 txtNombre.Text = texists.userNombre;
                 txtApellido.Text = texists.userApellido;
                 txtTelefono.Text = texists.userTelefono;
+                txtNombre.Enabled = false;
+                txtApellido.Enabled = false;
+                txtTelefono.Enabled = false;
             }
+            else
+            {
+                btnEditar.Enabled = false;
+                btnEditar.BackColor = Color.White;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            editar = true;
+            txtNombre.Enabled = true;
+            txtApellido.Enabled = true;
+            txtTelefono.Enabled = true;
         }
     }
 }

@@ -39,6 +39,7 @@ namespace Punto_de_venta.Mantenimientos
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace Punto_de_venta.Mantenimientos
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.Location = new System.Drawing.Point(189, 615);
+            this.btnGuardar.Location = new System.Drawing.Point(197, 615);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 34);
@@ -85,7 +86,7 @@ namespace Punto_de_venta.Mantenimientos
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(37, 523);
+            this.label14.Location = new System.Drawing.Point(113, 521);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 24);
             this.label14.TabIndex = 28;
@@ -96,7 +97,7 @@ namespace Punto_de_venta.Mantenimientos
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.Gray;
-            this.lbl1.Location = new System.Drawing.Point(37, 360);
+            this.lbl1.Location = new System.Drawing.Point(113, 358);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(79, 24);
             this.lbl1.TabIndex = 29;
@@ -107,7 +108,7 @@ namespace Punto_de_venta.Mantenimientos
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Gray;
-            this.label13.Location = new System.Drawing.Point(37, 441);
+            this.label13.Location = new System.Drawing.Point(113, 439);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 24);
             this.label13.TabIndex = 30;
@@ -118,10 +119,9 @@ namespace Punto_de_venta.Mantenimientos
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.Gray;
-            this.txtTelefono.Location = new System.Drawing.Point(37, 549);
+            this.txtTelefono.Location = new System.Drawing.Point(113, 547);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.PasswordChar = '*';
             this.txtTelefono.Size = new System.Drawing.Size(292, 34);
             this.txtTelefono.TabIndex = 32;
             // 
@@ -130,7 +130,7 @@ namespace Punto_de_venta.Mantenimientos
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.Gray;
-            this.txtNombre.Location = new System.Drawing.Point(37, 386);
+            this.txtNombre.Location = new System.Drawing.Point(113, 384);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(292, 34);
@@ -141,10 +141,9 @@ namespace Punto_de_venta.Mantenimientos
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.Color.Gray;
-            this.txtApellido.Location = new System.Drawing.Point(37, 467);
+            this.txtApellido.Location = new System.Drawing.Point(113, 465);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.PasswordChar = '*';
             this.txtApellido.Size = new System.Drawing.Size(292, 34);
             this.txtApellido.TabIndex = 31;
             // 
@@ -153,18 +152,38 @@ namespace Punto_de_venta.Mantenimientos
             this.logo.BackgroundImage = global::Punto_de_venta.Properties.Resources.hombre;
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logo.InitialImage = global::Punto_de_venta.Properties.Resources.Producto1;
-            this.logo.Location = new System.Drawing.Point(37, 41);
+            this.logo.Location = new System.Drawing.Point(113, 38);
             this.logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(292, 286);
             this.logo.TabIndex = 24;
             this.logo.TabStop = false;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(71)))));
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(235)))), ((int)(((byte)(214)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEditar.Location = new System.Drawing.Point(354, 615);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(140, 34);
+            this.btnEditar.TabIndex = 35;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // Mantenimiento_Usuarios_Detalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 676);
+            this.ClientSize = new System.Drawing.Size(522, 676);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label14);
@@ -197,5 +216,6 @@ namespace Punto_de_venta.Mantenimientos
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

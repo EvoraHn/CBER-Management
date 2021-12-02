@@ -34,7 +34,7 @@ namespace Punto_de_venta.Control_de_Ordenadores
             _ComboBox1.Name = "ComboBox1";
         }
 
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             var usuario = from u in entity.Usuario
@@ -44,10 +44,13 @@ namespace Punto_de_venta.Control_de_Ordenadores
                               u.FKPerfil
                           };
             DataTable usr = usuario.CopyAnonymusToDataTable();
-            //if (usr.Rows[0].ItemArray[0].ToString() != "1")
-            //{
-            //    button1.Visible = false;
-            //}
+            if (usr.Rows.Count > 0)
+            {
+                if (usr.Rows[0].ItemArray[0].ToString() != "1")
+                {
+                    button1.Visible = false;
+                }
+            }
             MaximizeBox = false;
             ComboBox1.Focus();
             populate();

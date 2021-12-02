@@ -14,6 +14,7 @@ namespace Punto_de_venta.Menú
     {
         string modulo = "";
         int userID = Clases.Usuario.idUsuario;
+        Punto_de_venta.Bases_de_datos.CyberElIngeEntities entity = new Punto_de_venta.Bases_de_datos.CyberElIngeEntities();
         public Menu_estilo_1()
         {
 
@@ -71,8 +72,20 @@ namespace Punto_de_venta.Menú
 
         private void Menu_estilo_1_Load(object sender, EventArgs e)
         {
-            //abrirFormularioHijo(new Punto_de_venta.Inicio.Inicio(userID));
-            //this.KeyPreview = true;
+            var usuario = from u in entity.Usuario
+                          where u.IdUsuario == Clases.Usuario.idUsuario
+                          select new
+                          {
+                              u.FKPerfil
+                          };
+            DataTable usr = usuario.CopyAnonymusToDataTable();
+            if (usr.Rows.Count > 0)
+            {
+                if (usr.Rows[0].ItemArray[0].ToString() != "1")
+                {
+                    btnUsuarios.Visible = false;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -110,6 +123,11 @@ namespace Punto_de_venta.Menú
         {
             Punto_de_venta.Control_de_Ordenadores.Form1 form = new Punto_de_venta.Control_de_Ordenadores.Form1();
             form.Show();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            abrirFormularioHijo(new Mantenimientos.Mantenimiento_Usuarios_2_0());
         }
     }
 }

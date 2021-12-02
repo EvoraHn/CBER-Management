@@ -491,6 +491,7 @@
     </Content>
     <Content Include="Imagenes\casa %281%29.png" />
     <Content Include="Imagenes\casa.png" />
+    <None Include="Resources\hombre1.png" />
     <None Include="Resources\pcs.png" />
     <None Include="Resources\BITACORA.png" />
     <None Include="Resources\goback.png" />

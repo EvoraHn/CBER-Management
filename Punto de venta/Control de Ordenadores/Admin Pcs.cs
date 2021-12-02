@@ -148,7 +148,7 @@ namespace Punto_de_venta.Control_de_Ordenadores
 
         private void dgPCs_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgPCs.RowCount > 0)
+            if (dgPCs.RowCount > 0 && !editar && !agregar)
             {
                 try
                 {
